@@ -1,0 +1,93 @@
+body {
+	@include base-font-size($font-copy);
+	font-weight: $font-copy-weight;
+	color: $text-color-primary;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 { 
+	font-weight: $font-heading-weight;
+}
+
+.h1 { 
+	@include larger4-font-size($font-heading);
+} 
+ 
+.h2 { 
+	@include larger3-font-size($font-heading);
+}
+
+.h3 { 
+	@include larger2-font-size($font-heading);
+}
+
+.h4 { 
+	@include larger1-font-size($font-heading);
+}
+
+.h5 { 
+	@include base-font-size($font-heading);
+}
+ 
+.h6 { 
+	@include smaller-font-size($font-heading);
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, p, ul, ol, li, small { 
+	margin-top: 0; 
+	margin-bottom: $normal-margin; 
+}
+
+.lead {
+	@include larger1-font-size($font-copy);
+}
+
+p {
+	font-size: inherit;
+	line-height: inherit;
+}
+
+small, .footnote {
+	@include smaller-font-size($font-copy);
+}
+
+label {
+	@include base-font-size($font-heading);
+	font-weight: bold;
+}
+
+label.label-radio {
+	font-weight: normal;
+	cursor: pointer;
+}
+
+ul.styled-list { 
+	list-style-type: disc; 
+	margin-left: 1.5em;
+}
+
+ol.styled-list { 
+	list-style: decimal; 
+	margin-left: 1.5em;
+}
+
+a {
+	color: inherit;
+	text-decoration: underline;
+}
+
+a:hover {
+	background-color: $text-color-emphasis;
+	color: $text-color-primary;
+}
+
+a:active {
+	background-color: $text-color-emphasis;
+	color: $text-color-primary;
+}
+
+
+em {
+	font-style: italic; 
+}
+
+.text-secondary { color: $text-color-secondary; }

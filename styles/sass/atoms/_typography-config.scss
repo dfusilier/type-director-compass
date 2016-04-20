@@ -1,0 +1,332 @@
+/******************************************************
+* FONT FAMILIES
+******************************************************/
+
+// Which font families will you use?
+
+$font-verdana: Verdana, sans-serif;
+$font-georgia: Georgia, sans-serif;
+
+
+// Returns the font-family from the 'stack' key in a Sass list
+@function getFontFamily($font) {
+
+    $font-family: map-get($font-family);
+
+    @if not $result {
+        @return "Comic Sans";
+    }
+
+    @return $font-family;
+}
+
+
+
+
+/******************************************************
+* FONT ROLES
+******************************************************/
+
+// For most projects I set a single fontBody and a
+// fontHeading, but this may not always be appropriate.
+
+$font-copy: $font-georgia;
+$font-copy-weight: normal;
+
+$font-heading: $font-verdana;
+$font-heading-weight: bold;
+
+
+/******************************************************
+* MULTIPLE FONTS? NORMALIZE THE X-HEIGHTS
+******************************************************/
+
+// Oftentimes two fonts set to different sizes do not appear
+// to be the same size. This is because the height of their
+// lowercase letters is not equal. 
+
+// For example, the x-height of Verdana appears 10% larger than
+// Georgia. To normalize it with 60px Georgia, we need to decrease
+// size by 10% (0.90). The resulting 54px Verdana will appear to
+// be the same size as 60px Georgia.
+
+$font-georgia-adjustment-ratio: 1.00; // 60px
+$font-verdana-adjustment-ratio: 0.90; // 54px
+ 
+// Given a font and font-size, this mixin will apply 
+// the appropriate adjustment.
+
+@function adjustFontSize($font, $font-size) {
+
+	// If Georgia
+	@if nth($font, 1) == nth($font-georgia, 1) { 
+		@return $font-size * $font-georgia-adjustment-ratio;
+	}
+
+	// If Verdana
+	@if nth($font, 1) == nth($font-verdana, 1) { 
+		@return $font-size * $font-verdana-adjustment-ratio;
+	}
+
+	@else { 
+		@debug($font);
+	}
+}
+
+
+
+/******************************************************
+* FONT-SIZE & LINE-SPACING - MASTER VARIABLES
+******************************************************/
+
+// Specifies the base font-size and line-heights for desktop and mobile. Note that this 
+// is NOT the minimum font size, rather the one optimized for comfortable reading. 
+
+// This also generates smaller-font-size by reducing the base-size by the scaling 
+// ratio. This should be reserved for footnotes and secondary reading experiences. 
+// Do make sure this isn't absurdly tiny though.
+
+// Desktop Master Variables - Edit these!
+
+$desktop-max-font-size: 42px;
+$desktop-max-line-height: $desktop-max-font-size * 1.25;
+
+$desktop-base-font-size: 16.25px;
+$desktop-base-line-height: $desktop-base-font-size * 1.65;
+
+
+// Mobile Master Variables - Edit these!
+
+$mob-max-font-size: 38px;
+$mob-max-line-height: $mob-max-font-size * 1.25;  
+
+$mob-base-font-size: 16px;
+$mob-base-line-height: $mob-base-font-size * 1.6;
+
+
+/******************************************************
+* SCALING RATIOS
+******************************************************/
+
+// Determines the scaling ratio necessary to produce n font-sizes larger than the base-font-size.
+
+$number-of-larger-sizes: 4;
+
+$mob-scaling-ratio: nth-root($mob-max-font-size / $mob-base-font-size, $number-of-larger-sizes);
+$mob-line-height-scaling-ratio: nth-root($mob-max-line-height / $mob-base-line-height, $number-of-larger-sizes);
+
+$desktop-scaling-ratio: nth-root($desktop-max-font-size / $desktop-base-font-size, $number-of-larger-sizes);
+$desktop-line-height-scaling-ratio: nth-root($desktop-max-line-height / $desktop-base-line-height, $number-of-larger-sizes);
+
+
+/******************************************************
+* DESKTOP - FONT SIZES / LINE-HEIGHTS
+******************************************************/
+
+// Larger sizes
+
+$desktop-larger4-line-height: $desktop-base-line-height * power($desktop-line-height-scaling-ratio, 4);
+$desktop-larger3-line-height: $desktop-base-line-height * power($desktop-line-height-scaling-ratio, 3);
+$desktop-larger2-line-height: $desktop-base-line-height * power($desktop-line-height-scaling-ratio, 2);
+$desktop-larger1-line-height: $desktop-base-line-height * power($desktop-line-height-scaling-ratio, 1);
+
+$desktop-larger4-font-size: $desktop-base-font-size * power($desktop-scaling-ratio, 4);
+$desktop-larger3-font-size: $desktop-base-font-size * power($desktop-scaling-ratio, 3);
+$desktop-larger2-font-size: $desktop-base-font-size * power($desktop-scaling-ratio, 2);
+$desktop-larger1-font-size: $desktop-base-font-size * power($desktop-scaling-ratio, 1);
+
+// Smaller size 
+
+$desktop-smaller-line-height: $desktop-base-line-height / $desktop-line-height-scaling-ratio;
+$desktop-smaller-font-size: $desktop-base-font-size / $desktop-scaling-ratio;
+
+
+/******************************************************
+* MOBILE - FONT SIZES / LINE-HEIGHTS
+******************************************************/
+
+// Larger sizes 
+
+$mob-larger4-font-size: $mob-base-font-size * power($mob-scaling-ratio, 4);
+$mob-larger3-font-size: $mob-base-font-size * power($mob-scaling-ratio, 3);
+$mob-larger2-font-size: $mob-base-font-size * power($mob-scaling-ratio, 2);
+$mob-larger1-font-size: $mob-base-font-size * power($mob-scaling-ratio, 1);
+
+$mob-larger4-line-height: $mob-base-line-height * power($mob-line-height-scaling-ratio, 4);
+$mob-larger3-line-height: $mob-base-line-height * power($mob-line-height-scaling-ratio, 3);
+$mob-larger2-line-height: $mob-base-line-height * power($mob-line-height-scaling-ratio, 2);
+$mob-larger1-line-height: $mob-base-line-height * power($mob-line-height-scaling-ratio, 1);
+
+// Smaller size
+
+$mob-smaller-font-size: $mob-base-font-size / $mob-scaling-ratio; 
+$mob-smaller-line-height: $mob-base-line-height / $mob-line-height-scaling-ratio;
+
+
+$mob-scaling-ratio: nth-root($mob-max-font-size / $mob-base-font-size, $number-of-larger-sizes);
+$mob-line-height-scaling-ratio: nth-root($mob-max-line-height / $mob-base-line-height, $number-of-larger-sizes);
+
+$desktop-scaling-ratio: nth-root($desktop-max-font-size / $desktop-base-font-size, $number-of-larger-sizes);
+$desktop-line-height-scaling-ratio: nth-root($desktop-max-line-height / $desktop-base-line-height, $number-of-larger-sizes);
+
+$default-numb-sizes: 6;
+
+// Create a modular scale. Returns a list of values.
+@function makeScale($base: 16px, $max: 32px, $numb-of-values: 6) {
+
+	// One value will be smaller than the base.
+	// One value will be the base itself.
+	// The remaining values will be larger than the base.
+	$numb-of-larger-values: $numb-of-values - 2;
+
+	// The ratio we'll use to calculate the missing sizes.
+	$scaling-ratio: nth-root($max / $base, $numb-of-larger-values);
+
+	// Calculate and add a smaller size to the scale.
+	$scale: $base / (($scaling-ratio - 1) * 0.5 + 1);
+
+	// Add the base size to the scale.
+	$scale: append($scale, $base);
+
+	// Calculate and add larger sizes to the scale.
+	@for $size from 1 through ($numb-of-larger-values) {
+	  $scale: append($scale, $base * power($scaling-ratio, $size));
+	}
+
+	@return $scale;
+}
+
+// Create a modular font scale. 
+// Returns a nested list of font-size and line-height values.
+
+@function makeFontScale(
+	$base-size: 16px, 
+	$base-line-height: 1.4,
+	$max-size: 32px,
+	$max-line-height: 1.25,
+	$numb-sizes: 6) {
+
+	// If line-heights are unitless values, 
+	// covert to unit values.
+	$base-line-height: if(unitless($base-line-height), $base-size * $base-line-height, $base-line-height);
+	$max-line-height: if(unitless($max-line-height), $max-size * $max-line-height, $max-line-height);
+
+	// Create font-size and line-height scales
+	$size-scale: makeScale($base-size, $max-size, $numb-sizes);
+	$line-height-scale: makeScale($base-line-height, $max-line-height, $numb-sizes);
+	
+	@return zip($size-scale, $line-height-scale);
+}
+
+// Desktop Master Variables - Edit these!
+
+// $desktop-max-font-size: 42px;
+// $desktop-max-line-height: $desktop-max-font-size * 1.25;
+
+// $desktop-base-font-size: 16.25px;
+// $desktop-base-line-height: $desktop-base-font-size * 1.65;
+
+
+// // Mobile Master Variables - Edit these!
+
+// $mob-max-font-size: 38px;
+// $mob-max-line-height: $mob-max-font-size * 1.25;  
+
+// $mob-base-font-size: 16px;
+// $mob-base-line-height: $mob-base-font-size * 1.6;
+
+
+$desktop-scale: makeFontScale(16px, 1.6, 42px, 1.25, 6);
+$mobile-scale: makeFontScale(15px, 1.5, 28px, 1.35, 6);
+@debug $desktop-scale;
+@debug $mobile-scale; 
+// $mob-scaling-ratio: nth-root($mob-max-font-size / $mob-base-font-size, $number-of-larger-sizes);
+// $mob-line-height-scaling-ratio: nth-root($mob-max-line-height / $mob-base-line-height, $number-of-larger-sizes);
+
+// $desktop-scaling-ratio: nth-root($desktop-max-font-size / $desktop-base-font-size, $number-of-larger-sizes);
+// $desktop-line-height-scaling-ratio: nth-root($desktop-max-line-height / $desktop-base-line-height, $number-of-larger-sizes);
+
+
+@mixin larger4-font-size($font) {
+	font-family: $font;
+	font-size: adjustFontSize($font, $mob-larger4-font-size);
+	line-height: $mob-larger4-line-height;
+
+	@media (min-width: $bp-tablet) {
+		font-size: adjustFontSize($font, $desktop-larger4-font-size);
+		line-height: $desktop-larger4-line-height;
+	}
+}
+
+@mixin larger3-font-size($font) {
+	font-family: $font;
+	font-size: adjustFontSize($font, $mob-larger3-font-size);
+	line-height: $mob-larger3-line-height;
+
+	@media (min-width: $bp-tablet) {
+		font-size: adjustFontSize($font, $desktop-larger3-font-size);
+		line-height: $desktop-larger3-line-height;
+	}
+}
+
+@mixin larger2-font-size($font) {
+	font-family: $font;
+	font-size: adjustFontSize($font, $mob-larger2-font-size);
+	line-height: $mob-larger2-line-height;
+
+	@media (min-width: $bp-tablet) {
+		font-size: adjustFontSize($font, $desktop-larger2-font-size);
+		line-height: $desktop-larger2-line-height;
+	}
+} 
+
+@mixin larger1-font-size($font) {
+	font-family: $font;
+	font-size: adjustFontSize($font, $mob-larger1-font-size);
+	line-height: $mob-larger1-line-height;
+
+	@media (min-width: $bp-tablet) {
+		font-size: adjustFontSize($font, $desktop-larger1-font-size);
+		line-height: $desktop-larger1-line-height;
+	}
+}
+
+@mixin base-font-size($font) {
+	font-family: $font;
+	font-size: adjustFontSize($font, $mob-base-font-size);
+	line-height: $mob-base-line-height;
+
+	@media (min-width: $bp-tablet) {
+		font-size: adjustFontSize($font, $desktop-base-font-size);
+		line-height: $desktop-base-line-height;
+	}
+}
+
+@mixin smaller-font-size($font) {
+	font-family: $font;
+	font-size: adjustFontSize($font, $mob-smaller-font-size);
+	line-height: $mob-smaller-line-height;
+
+	@media (min-width: $bp-tablet) {
+		font-size: adjustFontSize($font, $desktop-smaller-font-size);
+		line-height: $desktop-smaller-line-height;
+	}
+}
+ 
+// This is the white space above the cap height when 
+// the text is highlighted divided by the font size when 
+// measured. This is the space by which we want to reduce 
+// the margin-top to adjust for optical spacing inconsistencies
+// in larger type sizes.
+$base-font-gap-ratio: .268; // 15px / 56px
+
+$normal-margin: 12px;
+
+/******************************************************
+* TEXT COLORS
+******************************************************/
+
+$text-color-primary: rgba(#000000, 0.9);
+$text-color-secondary: rgba(#000000, 0.6);
+$text-color-tertiary: rgba(#000000, 0.4);
+$text-color-emphasis: red;

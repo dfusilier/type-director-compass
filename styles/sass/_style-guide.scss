@@ -1,0 +1,33 @@
+.font-comparison td, th {
+	padding: 10px; 
+	vertical-align: top;
+}
+
+.copy-larger4 { 
+	@include larger4-font-size($font-copy);
+} 
+ 
+.copy-larger3 { 
+	@include larger3-font-size($font-copy);
+}
+
+.copy-larger2 { 
+	@include larger2-font-size($font-copy); 
+}
+
+.normalize-x-height {
+
+	$normalization-size: 60px;
+ 
+	.georgia {
+		font-family: $font-georgia;
+		font-size: adjustFontSize($font-georgia, $normalization-size);
+		font-weight: normal;
+	}
+
+	.verdana {
+		font-family: $font-verdana;
+		font-size: adjustFontSize($font-verdana, $normalization-size);
+		font-weight: bold;
+	}
+}

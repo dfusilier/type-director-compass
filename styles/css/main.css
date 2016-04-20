@@ -1,0 +1,509 @@
+/* line 5, ../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 6, ../sass/main.scss */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/******************************************************
+* FONT FAMILIES
+******************************************************/
+/******************************************************
+* FONT ROLES
+******************************************************/
+/******************************************************
+* MULTIPLE FONTS? NORMALIZE THE X-HEIGHTS
+******************************************************/
+/******************************************************
+* FONT-SIZE & LINE-SPACING - MASTER VARIABLES
+******************************************************/
+/******************************************************
+* SCALING RATIOS
+******************************************************/
+/******************************************************
+* DESKTOP - FONT SIZES / LINE-HEIGHTS
+******************************************************/
+/******************************************************
+* MOBILE - FONT SIZES / LINE-HEIGHTS
+******************************************************/
+/******************************************************
+* TEXT COLORS
+******************************************************/
+/* line 1, ../sass/atoms/_typography.scss */
+body {
+  font-family: Georgia, sans-serif;
+  font-size: 16px;
+  line-height: 25.6px;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.9);
+}
+@media (min-width: 600px) {
+  /* line 1, ../sass/atoms/_typography.scss */
+  body {
+    font-size: 16.25px;
+    line-height: 26.8125px;
+  }
+}
+
+/* line 7, ../sass/atoms/_typography.scss */
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: bold;
+}
+
+/* line 11, ../sass/atoms/_typography.scss */
+.h1 {
+  font-family: Verdana, sans-serif;
+  font-size: 34.2px;
+  line-height: 47.5px;
+}
+@media (min-width: 600px) {
+  /* line 11, ../sass/atoms/_typography.scss */
+  .h1 {
+    font-size: 37.8px;
+    line-height: 52.5px;
+  }
+}
+
+/* line 15, ../sass/atoms/_typography.scss */
+.h2 {
+  font-family: Verdana, sans-serif;
+  font-size: 27.54928px;
+  line-height: 40.69867px;
+}
+@media (min-width: 600px) {
+  /* line 15, ../sass/atoms/_typography.scss */
+  .h2 {
+    font-size: 29.81212px;
+    line-height: 44.38169px;
+  }
+}
+
+/* line 19, ../sass/atoms/_typography.scss */
+.h3 {
+  font-family: Verdana, sans-serif;
+  font-size: 22.19189px;
+  line-height: 34.87119px;
+}
+@media (min-width: 600px) {
+  /* line 19, ../sass/atoms/_typography.scss */
+  .h3 {
+    font-size: 23.51223px;
+    line-height: 37.51875px;
+  }
+}
+
+/* line 23, ../sass/atoms/_typography.scss */
+.h4 {
+  font-family: Verdana, sans-serif;
+  font-size: 17.87633px;
+  line-height: 29.87813px;
+}
+@media (min-width: 600px) {
+  /* line 23, ../sass/atoms/_typography.scss */
+  .h4 {
+    font-size: 18.54363px;
+    line-height: 31.71705px;
+  }
+}
+
+/* line 27, ../sass/atoms/_typography.scss */
+.h5 {
+  font-family: Verdana, sans-serif;
+  font-size: 14.4px;
+  line-height: 25.6px;
+}
+@media (min-width: 600px) {
+  /* line 27, ../sass/atoms/_typography.scss */
+  .h5 {
+    font-size: 14.625px;
+    line-height: 26.8125px;
+  }
+}
+
+/* line 31, ../sass/atoms/_typography.scss */
+.h6 {
+  font-family: Verdana, sans-serif;
+  font-size: 11.5997px;
+  line-height: 21.93444px;
+}
+@media (min-width: 600px) {
+  /* line 31, ../sass/atoms/_typography.scss */
+  .h6 {
+    font-size: 11.53445px;
+    line-height: 22.66636px;
+  }
+}
+
+/* line 35, ../sass/atoms/_typography.scss */
+.h1, .h2, .h3, .h4, .h5, .h6, p, ul, ol, li, small {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+/* line 40, ../sass/atoms/_typography.scss */
+.lead {
+  font-family: Georgia, sans-serif;
+  font-size: 19.86259px;
+  line-height: 29.87813px;
+}
+@media (min-width: 600px) {
+  /* line 40, ../sass/atoms/_typography.scss */
+  .lead {
+    font-size: 20.60404px;
+    line-height: 31.71705px;
+  }
+}
+
+/* line 44, ../sass/atoms/_typography.scss */
+p {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* line 49, ../sass/atoms/_typography.scss */
+small, .footnote {
+  font-family: Georgia, sans-serif;
+  font-size: 12.88855px;
+  line-height: 21.93444px;
+}
+@media (min-width: 600px) {
+  /* line 49, ../sass/atoms/_typography.scss */
+  small, .footnote {
+    font-size: 12.81606px;
+    line-height: 22.66636px;
+  }
+}
+
+/* line 53, ../sass/atoms/_typography.scss */
+label {
+  font-family: Verdana, sans-serif;
+  font-size: 14.4px;
+  line-height: 25.6px;
+  font-weight: bold;
+}
+@media (min-width: 600px) {
+  /* line 53, ../sass/atoms/_typography.scss */
+  label {
+    font-size: 14.625px;
+    line-height: 26.8125px;
+  }
+}
+
+/* line 58, ../sass/atoms/_typography.scss */
+label.label-radio {
+  font-weight: normal;
+  cursor: pointer;
+}
+
+/* line 63, ../sass/atoms/_typography.scss */
+ul.styled-list {
+  list-style-type: disc;
+  margin-left: 1.5em;
+}
+
+/* line 68, ../sass/atoms/_typography.scss */
+ol.styled-list {
+  list-style: decimal;
+  margin-left: 1.5em;
+}
+
+/* line 73, ../sass/atoms/_typography.scss */
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* line 78, ../sass/atoms/_typography.scss */
+a:hover {
+  background-color: red;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+/* line 83, ../sass/atoms/_typography.scss */
+a:active {
+  background-color: red;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+/* line 89, ../sass/atoms/_typography.scss */
+em {
+  font-style: italic;
+}
+
+/* line 93, ../sass/atoms/_typography.scss */
+.text-secondary {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* line 1, ../sass/atoms/_inputs.scss */
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin-bottom: 12px;
+}
+
+/* line 8, ../sass/atoms/_inputs.scss */
+input[type=email],
+input[type=text],
+input[type=password],
+input[type=number],
+input[type=date],
+textarea {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px dashed #aaa2a7;
+  padding: 2px 8px;
+  width: 100%;
+  background-color: #f7f5f4;
+  font-family: inherit;
+  line-height: 1.55;
+  white-space: pre-line;
+  outline: none;
+  -moz-box-shadow: "none";
+  -webkit-box-shadow: "none";
+  box-shadow: "none";
+}
+/* line 27, ../sass/atoms/_inputs.scss */
+input[type=email].input-lg,
+input[type=text].input-lg,
+input[type=password].input-lg,
+input[type=number].input-lg,
+input[type=date].input-lg,
+textarea.input-lg {
+  font-family: Georgia, sans-serif;
+  font-size: 38px;
+  line-height: 47.5px;
+  padding: 5px 12px;
+}
+@media (min-width: 600px) {
+  /* line 27, ../sass/atoms/_inputs.scss */
+  input[type=email].input-lg,
+  input[type=text].input-lg,
+  input[type=password].input-lg,
+  input[type=number].input-lg,
+  input[type=date].input-lg,
+  textarea.input-lg {
+    font-size: 42px;
+    line-height: 52.5px;
+  }
+}
+/* line 61, ../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+input[type=email]:-moz-placeholder,
+input[type=text]:-moz-placeholder,
+input[type=password]:-moz-placeholder,
+input[type=number]:-moz-placeholder,
+input[type=date]:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #b1a5a1;
+  font-style: italic;
+  -webkit-transition: color .15s;
+}
+/* line 64, ../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+input[type=email]::-moz-placeholder,
+input[type=text]::-moz-placeholder,
+input[type=password]::-moz-placeholder,
+input[type=number]::-moz-placeholder,
+input[type=date]::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #b1a5a1;
+  font-style: italic;
+  -webkit-transition: color .15s;
+}
+/* line 67, ../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+input[type=email]:-ms-input-placeholder,
+input[type=text]:-ms-input-placeholder,
+input[type=password]:-ms-input-placeholder,
+input[type=number]:-ms-input-placeholder,
+input[type=date]:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #b1a5a1;
+  font-style: italic;
+  -webkit-transition: color .15s;
+}
+/* line 56, ../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+input[type=email]::-webkit-input-placeholder,
+input[type=text]::-webkit-input-placeholder,
+input[type=password]::-webkit-input-placeholder,
+input[type=number]::-webkit-input-placeholder,
+input[type=date]::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #b1a5a1;
+  font-style: italic;
+  -webkit-transition: color .15s;
+}
+/* line 37, ../sass/atoms/_inputs.scss */
+input[type=email]:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=number]:focus,
+input[type=date]:focus,
+textarea:focus {
+  border-color: #333333;
+}
+/* line 61, ../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+input[type=email]:focus:-moz-placeholder,
+input[type=text]:focus:-moz-placeholder,
+input[type=password]:focus:-moz-placeholder,
+input[type=number]:focus:-moz-placeholder,
+input[type=date]:focus:-moz-placeholder,
+textarea:focus:-moz-placeholder {
+  color: #d4ccca;
+  -webkit-transition: color .15s;
+}
+/* line 64, ../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+input[type=email]:focus::-moz-placeholder,
+input[type=text]:focus::-moz-placeholder,
+input[type=password]:focus::-moz-placeholder,
+input[type=number]:focus::-moz-placeholder,
+input[type=date]:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder {
+  color: #d4ccca;
+  -webkit-transition: color .15s;
+}
+/* line 67, ../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+input[type=email]:focus:-ms-input-placeholder,
+input[type=text]:focus:-ms-input-placeholder,
+input[type=password]:focus:-ms-input-placeholder,
+input[type=number]:focus:-ms-input-placeholder,
+input[type=date]:focus:-ms-input-placeholder,
+textarea:focus:-ms-input-placeholder {
+  color: #d4ccca;
+  -webkit-transition: color .15s;
+}
+/* line 56, ../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+input[type=email]:focus::-webkit-input-placeholder,
+input[type=text]:focus::-webkit-input-placeholder,
+input[type=password]:focus::-webkit-input-placeholder,
+input[type=number]:focus::-webkit-input-placeholder,
+input[type=date]:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+  color: #d4ccca;
+  -webkit-transition: color .15s;
+}
+
+/* line 1, ../sass/_style-guide.scss */
+.font-comparison td, th {
+  padding: 10px;
+  vertical-align: top;
+}
+
+/* line 6, ../sass/_style-guide.scss */
+.copy-larger4 {
+  font-family: Georgia, sans-serif;
+  font-size: 38px;
+  line-height: 47.5px;
+}
+@media (min-width: 600px) {
+  /* line 6, ../sass/_style-guide.scss */
+  .copy-larger4 {
+    font-size: 42px;
+    line-height: 52.5px;
+  }
+}
+
+/* line 10, ../sass/_style-guide.scss */
+.copy-larger3 {
+  font-family: Georgia, sans-serif;
+  font-size: 30.61031px;
+  line-height: 40.69867px;
+}
+@media (min-width: 600px) {
+  /* line 10, ../sass/_style-guide.scss */
+  .copy-larger3 {
+    font-size: 33.12457px;
+    line-height: 44.38169px;
+  }
+}
+
+/* line 14, ../sass/_style-guide.scss */
+.copy-larger2 {
+  font-family: Georgia, sans-serif;
+  font-size: 24.65766px;
+  line-height: 34.87119px;
+}
+@media (min-width: 600px) {
+  /* line 14, ../sass/_style-guide.scss */
+  .copy-larger2 {
+    font-size: 26.1247px;
+    line-height: 37.51875px;
+  }
+}
+
+/* line 22, ../sass/_style-guide.scss */
+.normalize-x-height .georgia {
+  font-family: Georgia, sans-serif;
+  font-size: 60px;
+  font-weight: normal;
+}
+/* line 28, ../sass/_style-guide.scss */
+.normalize-x-height .verdana {
+  font-family: Verdana, sans-serif;
+  font-size: 54px;
+  font-weight: bold;
+}
