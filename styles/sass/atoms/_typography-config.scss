@@ -69,29 +69,27 @@
 	@return $font-scale;
 }
 
-
-
 /******************************************************
-* FONT FAMILIES
+* BASE FONT
 ******************************************************/
-
-// Which font families will you use?
-
-// * MULTIPLE FONTS? NORMALIZE THE X-HEIGHTS
-
-// Oftentimes two fonts set to different sizes do not appear
-// to be the same size. This is because the height of their
-// lowercase letters is not equal. 
-
-// For example, the x-height of Verdana appears 10% larger than
-// Georgia. To normalize it with 60px Georgia, we need to decrease
-// size by 10% (0.90). The resulting 54px Verdana will appear to
-// be the same size as 60px Georgia.
 
 $font-georgia: (
 	family: unquote("Georgia, serif"),
 	normalize-ratio: 1.00
 );
+
+/******************************************************
+* ADDITIONAL FONTS
+******************************************************/
+
+// Oftentimes two fonts set to different sizes do not appear
+// to be the same size. This is because the height of their
+// lowercase letters is not equal. 
+
+// A good example is Verdana. Its x-height appears 10% larger than
+// Georgia. To normalize it with 60px Georgia, we need to decrease
+// size by 10% (normalize-ratio: 0.90). The resulting 54px Verdana 
+// will appear to be the same size as 60px Georgia.
 
 $font-verdana: (
 	family: unquote("Verdana, sans-serif"),
