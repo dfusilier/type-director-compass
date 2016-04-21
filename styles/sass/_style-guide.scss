@@ -4,30 +4,30 @@
 }
 
 .copy-larger4 { 
-	@include larger4-font-size($font-copy);
+	@include setResponsiveFontSize($font-copy, larger4);
 } 
  
 .copy-larger3 { 
-	@include larger3-font-size($font-copy);
+	@include setResponsiveFontSize($font-copy, larger3);
 }
 
 .copy-larger2 { 
-	@include larger2-font-size($font-copy); 
+	@include setResponsiveFontSize($font-copy, larger2); 
 }
 
 .normalize-x-height {
 
 	$normalization-size: 60px;
  
-	.georgia {
-		font-family: $font-georgia;
-		font-size: adjustFontSize($font-georgia, $normalization-size);
-		font-weight: normal;
-	}
+	// .georgia {
+	// 	font-family: $font-georgia;
+	// 	font-size: adjustFontSize($font-georgia, $normalization-size);
+	// 	font-weight: normal;
+	// }
 
-	.verdana {
-		font-family: $font-verdana;
-		font-size: adjustFontSize($font-verdana, $normalization-size);
-		font-weight: bold;
-	}
+	// .verdana {
+	// 	font-family: $font-verdana;
+	// 	font-size: adjustFontSize($font-verdana, $normalization-size);
+	// 	font-weight: bold;
+	// }
 }

@@ -1,5 +1,5 @@
 body {
-	@include base-font-size($font-copy);
+	@include setResponsiveFontSize($font-copy, base);
 	font-weight: $font-copy-weight;
 	color: $text-color-primary;
 }
@@ -9,27 +9,27 @@ body {
 }
 
 .h1 { 
-	@include larger4-font-size($font-heading);
+	@include setResponsiveFontSize($font-heading, larger4);
 } 
- 
+  
 .h2 { 
-	@include larger3-font-size($font-heading);
+	@include setResponsiveFontSize($font-heading, larger3);
 }
 
 .h3 { 
-	@include larger2-font-size($font-heading);
+	@include setResponsiveFontSize($font-heading, larger2);
 }
 
 .h4 { 
-	@include larger1-font-size($font-heading);
+	@include setResponsiveFontSize($font-heading, larger1);
 }
 
 .h5 { 
-	@include base-font-size($font-heading);
+	@include setResponsiveFontSize($font-heading, base);
 }
  
 .h6 { 
-	@include smaller-font-size($font-heading);
+	@include setResponsiveFontSize($font-heading, smaller);
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, p, ul, ol, li, small { 
@@ -38,7 +38,7 @@ body {
 }
 
 .lead {
-	@include larger1-font-size($font-copy);
+	@include setResponsiveFontSize($font-copy, larger1);
 }
 
 p {
@@ -47,28 +47,28 @@ p {
 }
 
 small, .footnote {
-	@include smaller-font-size($font-copy);
+	@include setResponsiveFontSize($font-copy, smaller); 
 }
 
-label {
-	@include base-font-size($font-heading);
-	font-weight: bold;
-}
+// label {
+// 	@include base-font-size($font-heading);
+// 	font-weight: bold;
+// }
 
-label.label-radio {
-	font-weight: normal;
-	cursor: pointer;
-}
+// label.label-radio {
+// 	font-weight: normal;
+// 	cursor: pointer;
+// }
 
-ul.styled-list { 
-	list-style-type: disc; 
-	margin-left: 1.5em;
-}
+// ul.styled-list { 
+// 	list-style-type: disc; 
+// 	margin-left: 1.5em;
+// }
 
-ol.styled-list { 
-	list-style: decimal; 
-	margin-left: 1.5em;
-}
+// ol.styled-list { 
+// 	list-style: decimal; 
+// 	margin-left: 1.5em;
+// }
 
 a {
 	color: inherit;
