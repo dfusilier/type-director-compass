@@ -70,6 +70,705 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "feather";
+  src: url("../../fonts/feather-webfont.eot");
+  src: url("../../fonts/feather-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/feather-webfont.woff") format("woff"), url("../../fonts/feather-webfont.ttf") format("truetype"), url("../../fonts/feather-webfont.svg#feather") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Character Mapping Method */
+/* line 16, ../sass/atoms/_icons.scss */
+[data-icon]:before {
+  display: inline-block;
+  font-family: "feather";
+  content: attr(data-icon);
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* CSS Class Mapping Method */
+/* line 32, ../sass/atoms/_icons.scss */
+[class^="icon-"],
+[class*=" icon-"] {
+  display: inline-block;
+  font-family: "feather";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 46, ../sass/atoms/_icons.scss */
+.icon-eye:before {
+  content: "\e000";
+}
+
+/* line 50, ../sass/atoms/_icons.scss */
+.icon-paper-clip:before {
+  content: "\e001";
+}
+
+/* line 54, ../sass/atoms/_icons.scss */
+.icon-mail:before {
+  content: "\e002";
+}
+
+/* line 58, ../sass/atoms/_icons.scss */
+.icon-mail:before {
+  content: "\e002";
+}
+
+/* line 62, ../sass/atoms/_icons.scss */
+.icon-toggle:before {
+  content: "\e003";
+}
+
+/* line 66, ../sass/atoms/_icons.scss */
+.icon-layout:before {
+  content: "\e004";
+}
+
+/* line 70, ../sass/atoms/_icons.scss */
+.icon-link:before {
+  content: "\e005";
+}
+
+/* line 74, ../sass/atoms/_icons.scss */
+.icon-bell:before {
+  content: "\e006";
+}
+
+/* line 78, ../sass/atoms/_icons.scss */
+.icon-lock:before {
+  content: "\e007";
+}
+
+/* line 82, ../sass/atoms/_icons.scss */
+.icon-unlock:before {
+  content: "\e008";
+}
+
+/* line 86, ../sass/atoms/_icons.scss */
+.icon-ribbon:before {
+  content: "\e009";
+}
+
+/* line 90, ../sass/atoms/_icons.scss */
+.icon-image:before {
+  content: "\e010";
+}
+
+/* line 94, ../sass/atoms/_icons.scss */
+.icon-signal:before {
+  content: "\e011";
+}
+
+/* line 98, ../sass/atoms/_icons.scss */
+.icon-target:before {
+  content: "\e012";
+}
+
+/* line 102, ../sass/atoms/_icons.scss */
+.icon-clipboard:before {
+  content: "\e013";
+}
+
+/* line 106, ../sass/atoms/_icons.scss */
+.icon-clock:before {
+  content: "\e014";
+}
+
+/* line 110, ../sass/atoms/_icons.scss */
+.icon-clock:before {
+  content: "\e014";
+}
+
+/* line 114, ../sass/atoms/_icons.scss */
+.icon-watch:before {
+  content: "\e015";
+}
+
+/* line 118, ../sass/atoms/_icons.scss */
+.icon-air-play:before {
+  content: "\e016";
+}
+
+/* line 122, ../sass/atoms/_icons.scss */
+.icon-camera:before {
+  content: "\e017";
+}
+
+/* line 126, ../sass/atoms/_icons.scss */
+.icon-video:before {
+  content: "\e018";
+}
+
+/* line 130, ../sass/atoms/_icons.scss */
+.icon-disc:before {
+  content: "\e019";
+}
+
+/* line 134, ../sass/atoms/_icons.scss */
+.icon-printer:before {
+  content: "\e020";
+}
+
+/* line 138, ../sass/atoms/_icons.scss */
+.icon-monitor:before {
+  content: "\e021";
+}
+
+/* line 142, ../sass/atoms/_icons.scss */
+.icon-server:before {
+  content: "\e022";
+}
+
+/* line 146, ../sass/atoms/_icons.scss */
+.icon-cog:before {
+  content: "\e023";
+}
+
+/* line 150, ../sass/atoms/_icons.scss */
+.icon-heart:before {
+  content: "\e024";
+}
+
+/* line 154, ../sass/atoms/_icons.scss */
+.icon-paragraph:before {
+  content: "\e025";
+}
+
+/* line 158, ../sass/atoms/_icons.scss */
+.icon-align-justify:before {
+  content: "\e026";
+}
+
+/* line 162, ../sass/atoms/_icons.scss */
+.icon-align-left:before {
+  content: "\e027";
+}
+
+/* line 166, ../sass/atoms/_icons.scss */
+.icon-align-center:before {
+  content: "\e028";
+}
+
+/* line 170, ../sass/atoms/_icons.scss */
+.icon-align-right:before {
+  content: "\e029";
+}
+
+/* line 174, ../sass/atoms/_icons.scss */
+.icon-book:before {
+  content: "\e030";
+}
+
+/* line 178, ../sass/atoms/_icons.scss */
+.icon-layers:before {
+  content: "\e031";
+}
+
+/* line 182, ../sass/atoms/_icons.scss */
+.icon-stack:before {
+  content: "\e032";
+}
+
+/* line 186, ../sass/atoms/_icons.scss */
+.icon-stack-2:before {
+  content: "\e033";
+}
+
+/* line 190, ../sass/atoms/_icons.scss */
+.icon-paper:before {
+  content: "\e034";
+}
+
+/* line 194, ../sass/atoms/_icons.scss */
+.icon-paper-stack:before {
+  content: "\e035";
+}
+
+/* line 198, ../sass/atoms/_icons.scss */
+.icon-search:before {
+  content: "\e036";
+}
+
+/* line 202, ../sass/atoms/_icons.scss */
+.icon-zoom-in:before {
+  content: "\e037";
+}
+
+/* line 206, ../sass/atoms/_icons.scss */
+.icon-zoom-out:before {
+  content: "\e038";
+}
+
+/* line 210, ../sass/atoms/_icons.scss */
+.icon-reply:before {
+  content: "\e039";
+}
+
+/* line 214, ../sass/atoms/_icons.scss */
+.icon-circle-plus:before {
+  content: "\e040";
+}
+
+/* line 218, ../sass/atoms/_icons.scss */
+.icon-circle-minus:before {
+  content: "\e041";
+}
+
+/* line 222, ../sass/atoms/_icons.scss */
+.icon-circle-check:before {
+  content: "\e042";
+}
+
+/* line 226, ../sass/atoms/_icons.scss */
+.icon-circle-cross:before {
+  content: "\e043";
+}
+
+/* line 230, ../sass/atoms/_icons.scss */
+.icon-square-plus:before {
+  content: "\e044";
+}
+
+/* line 234, ../sass/atoms/_icons.scss */
+.icon-square-minus:before {
+  content: "\e045";
+}
+
+/* line 238, ../sass/atoms/_icons.scss */
+.icon-square-check:before {
+  content: "\e046";
+}
+
+/* line 242, ../sass/atoms/_icons.scss */
+.icon-square-cross:before {
+  content: "\e047";
+}
+
+/* line 246, ../sass/atoms/_icons.scss */
+.icon-microphone:before {
+  content: "\e048";
+}
+
+/* line 250, ../sass/atoms/_icons.scss */
+.icon-record:before {
+  content: "\e049";
+}
+
+/* line 254, ../sass/atoms/_icons.scss */
+.icon-skip-back:before {
+  content: "\e050";
+}
+
+/* line 258, ../sass/atoms/_icons.scss */
+.icon-rewind:before {
+  content: "\e051";
+}
+
+/* line 262, ../sass/atoms/_icons.scss */
+.icon-play:before {
+  content: "\e052";
+}
+
+/* line 266, ../sass/atoms/_icons.scss */
+.icon-pause:before {
+  content: "\e053";
+}
+
+/* line 270, ../sass/atoms/_icons.scss */
+.icon-stop:before {
+  content: "\e054";
+}
+
+/* line 274, ../sass/atoms/_icons.scss */
+.icon-fast-forward:before {
+  content: "\e055";
+}
+
+/* line 278, ../sass/atoms/_icons.scss */
+.icon-skip-forward:before {
+  content: "\e056";
+}
+
+/* line 282, ../sass/atoms/_icons.scss */
+.icon-shuffle:before {
+  content: "\e057";
+}
+
+/* line 286, ../sass/atoms/_icons.scss */
+.icon-repeat:before {
+  content: "\e058";
+}
+
+/* line 290, ../sass/atoms/_icons.scss */
+.icon-folder:before {
+  content: "\e059";
+}
+
+/* line 294, ../sass/atoms/_icons.scss */
+.icon-umbrella:before {
+  content: "\e060";
+}
+
+/* line 298, ../sass/atoms/_icons.scss */
+.icon-moon:before {
+  content: "\e061";
+}
+
+/* line 302, ../sass/atoms/_icons.scss */
+.icon-thermometer:before {
+  content: "\e062";
+}
+
+/* line 306, ../sass/atoms/_icons.scss */
+.icon-drop:before {
+  content: "\e063";
+}
+
+/* line 310, ../sass/atoms/_icons.scss */
+.icon-sun:before {
+  content: "\e064";
+}
+
+/* line 314, ../sass/atoms/_icons.scss */
+.icon-cloud:before {
+  content: "\e065";
+}
+
+/* line 318, ../sass/atoms/_icons.scss */
+.icon-cloud-upload:before {
+  content: "\e066";
+}
+
+/* line 322, ../sass/atoms/_icons.scss */
+.icon-cloud-download:before {
+  content: "\e067";
+}
+
+/* line 326, ../sass/atoms/_icons.scss */
+.icon-upload:before {
+  content: "\e068";
+}
+
+/* line 330, ../sass/atoms/_icons.scss */
+.icon-download:before {
+  content: "\e069";
+}
+
+/* line 334, ../sass/atoms/_icons.scss */
+.icon-location:before {
+  content: "\e070";
+}
+
+/* line 338, ../sass/atoms/_icons.scss */
+.icon-location-2:before {
+  content: "\e071";
+}
+
+/* line 342, ../sass/atoms/_icons.scss */
+.icon-map:before {
+  content: "\e072";
+}
+
+/* line 346, ../sass/atoms/_icons.scss */
+.icon-battery:before {
+  content: "\e073";
+}
+
+/* line 350, ../sass/atoms/_icons.scss */
+.icon-head:before {
+  content: "\e074";
+}
+
+/* line 354, ../sass/atoms/_icons.scss */
+.icon-briefcase:before {
+  content: "\e075";
+}
+
+/* line 358, ../sass/atoms/_icons.scss */
+.icon-speech-bubble:before {
+  content: "\e076";
+}
+
+/* line 362, ../sass/atoms/_icons.scss */
+.icon-anchor:before {
+  content: "\e077";
+}
+
+/* line 366, ../sass/atoms/_icons.scss */
+.icon-globe:before {
+  content: "\e078";
+}
+
+/* line 370, ../sass/atoms/_icons.scss */
+.icon-box:before {
+  content: "\e079";
+}
+
+/* line 374, ../sass/atoms/_icons.scss */
+.icon-reload:before {
+  content: "\e080";
+}
+
+/* line 378, ../sass/atoms/_icons.scss */
+.icon-share:before {
+  content: "\e081";
+}
+
+/* line 382, ../sass/atoms/_icons.scss */
+.icon-marquee:before {
+  content: "\e082";
+}
+
+/* line 386, ../sass/atoms/_icons.scss */
+.icon-marquee-plus:before {
+  content: "\e083";
+}
+
+/* line 390, ../sass/atoms/_icons.scss */
+.icon-marquee-minus:before {
+  content: "\e084";
+}
+
+/* line 394, ../sass/atoms/_icons.scss */
+.icon-tag:before {
+  content: "\e085";
+}
+
+/* line 398, ../sass/atoms/_icons.scss */
+.icon-power:before {
+  content: "\e086";
+}
+
+/* line 402, ../sass/atoms/_icons.scss */
+.icon-command:before {
+  content: "\e087";
+}
+
+/* line 406, ../sass/atoms/_icons.scss */
+.icon-alt:before {
+  content: "\e088";
+}
+
+/* line 410, ../sass/atoms/_icons.scss */
+.icon-esc:before {
+  content: "\e089";
+}
+
+/* line 414, ../sass/atoms/_icons.scss */
+.icon-bar-graph:before {
+  content: "\e090";
+}
+
+/* line 418, ../sass/atoms/_icons.scss */
+.icon-bar-graph-2:before {
+  content: "\e091";
+}
+
+/* line 422, ../sass/atoms/_icons.scss */
+.icon-pie-graph:before {
+  content: "\e092";
+}
+
+/* line 426, ../sass/atoms/_icons.scss */
+.icon-star:before {
+  content: "\e093";
+}
+
+/* line 430, ../sass/atoms/_icons.scss */
+.icon-arrow-left:before {
+  content: "\e094";
+}
+
+/* line 434, ../sass/atoms/_icons.scss */
+.icon-arrow-right:before {
+  content: "\e095";
+}
+
+/* line 438, ../sass/atoms/_icons.scss */
+.icon-arrow-up:before {
+  content: "\e096";
+}
+
+/* line 442, ../sass/atoms/_icons.scss */
+.icon-arrow-down:before {
+  content: "\e097";
+}
+
+/* line 446, ../sass/atoms/_icons.scss */
+.icon-volume:before {
+  content: "\e098";
+}
+
+/* line 450, ../sass/atoms/_icons.scss */
+.icon-mute:before {
+  content: "\e099";
+}
+
+/* line 454, ../sass/atoms/_icons.scss */
+.icon-content-right:before {
+  content: "\e100";
+}
+
+/* line 458, ../sass/atoms/_icons.scss */
+.icon-content-left:before {
+  content: "\e101";
+}
+
+/* line 462, ../sass/atoms/_icons.scss */
+.icon-grid:before {
+  content: "\e102";
+}
+
+/* line 466, ../sass/atoms/_icons.scss */
+.icon-grid-2:before {
+  content: "\e103";
+}
+
+/* line 470, ../sass/atoms/_icons.scss */
+.icon-columns:before {
+  content: "\e104";
+}
+
+/* line 474, ../sass/atoms/_icons.scss */
+.icon-loader:before {
+  content: "\e105";
+}
+
+/* line 478, ../sass/atoms/_icons.scss */
+.icon-bag:before {
+  content: "\e106";
+}
+
+/* line 482, ../sass/atoms/_icons.scss */
+.icon-ban:before {
+  content: "\e107";
+}
+
+/* line 486, ../sass/atoms/_icons.scss */
+.icon-flag:before {
+  content: "\e108";
+}
+
+/* line 490, ../sass/atoms/_icons.scss */
+.icon-trash:before {
+  content: "\e109";
+}
+
+/* line 494, ../sass/atoms/_icons.scss */
+.icon-expand:before {
+  content: "\e110";
+}
+
+/* line 498, ../sass/atoms/_icons.scss */
+.icon-contract:before {
+  content: "\e111";
+}
+
+/* line 502, ../sass/atoms/_icons.scss */
+.icon-maximize:before {
+  content: "\e112";
+}
+
+/* line 506, ../sass/atoms/_icons.scss */
+.icon-minimize:before {
+  content: "\e113";
+}
+
+/* line 510, ../sass/atoms/_icons.scss */
+.icon-plus:before {
+  content: "\e114";
+}
+
+/* line 514, ../sass/atoms/_icons.scss */
+.icon-minus:before {
+  content: "\e115";
+}
+
+/* line 518, ../sass/atoms/_icons.scss */
+.icon-check:before {
+  content: "\e116";
+}
+
+/* line 522, ../sass/atoms/_icons.scss */
+.icon-cross:before {
+  content: "\e117";
+}
+
+/* line 526, ../sass/atoms/_icons.scss */
+.icon-move:before {
+  content: "\e118";
+}
+
+/* line 530, ../sass/atoms/_icons.scss */
+.icon-delete:before {
+  content: "\e119";
+}
+
+/* line 534, ../sass/atoms/_icons.scss */
+.icon-menu:before {
+  content: "\e120";
+}
+
+/* line 538, ../sass/atoms/_icons.scss */
+.icon-archive:before {
+  content: "\e121";
+}
+
+/* line 542, ../sass/atoms/_icons.scss */
+.icon-inbox:before {
+  content: "\e122";
+}
+
+/* line 546, ../sass/atoms/_icons.scss */
+.icon-outbox:before {
+  content: "\e123";
+}
+
+/* line 550, ../sass/atoms/_icons.scss */
+.icon-file:before {
+  content: "\e124";
+}
+
+/* line 554, ../sass/atoms/_icons.scss */
+.icon-file-add:before {
+  content: "\e125";
+}
+
+/* line 558, ../sass/atoms/_icons.scss */
+.icon-file-subtract:before {
+  content: "\e126";
+}
+
+/* line 562, ../sass/atoms/_icons.scss */
+.icon-help:before {
+  content: "\e127";
+}
+
+/* line 566, ../sass/atoms/_icons.scss */
+.icon-open:before {
+  content: "\e128";
+}
+
+/* line 570, ../sass/atoms/_icons.scss */
+.icon-ellipsis:before {
+  content: "\e129";
+}
+
 /******************************************************
 * BASE FONT
 ******************************************************/
@@ -91,34 +790,34 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 1, ../sass/atoms/_typography.scss */
 body {
   font-family: Georgia, serif;
-  font-size: 15px;
-  line-height: 22.5px;
+  font-size: 18px;
+  line-height: 27px;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.9);
 }
 @media screen and (min-width: 600px) {
   /* line 1, ../sass/atoms/_typography.scss */
   body {
-    font-size: 16px;
-    line-height: 25.6px;
+    font-size: 20px;
+    line-height: 32px;
   }
 }
 
 /* line 7, ../sass/atoms/_typography.scss */
-.h1, .h2, .h3, .h4, .h5, .h6 {
+.h1, .h2, .h3, .h4, .h5, .font-comparison th, .h6 {
   font-weight: bold;
 }
 
 /* line 11, ../sass/atoms/_typography.scss */
 .h1 {
   font-family: Verdana, sans-serif;
-  font-size: 25.2px;
+  font-size: 24.92px;
   line-height: 37.8px;
 }
 @media screen and (min-width: 600px) {
   /* line 11, ../sass/atoms/_typography.scss */
   .h1 {
-    font-size: 37.8px;
+    font-size: 37.38px;
     line-height: 52.5px;
   }
 }
@@ -126,75 +825,75 @@ body {
 /* line 15, ../sass/atoms/_typography.scss */
 .h2 {
   font-family: Verdana, sans-serif;
-  font-size: 21.55926px;
-  line-height: 33.20202px;
+  font-size: 22.31396px;
+  line-height: 34.7504px;
 }
 @media screen and (min-width: 600px) {
   /* line 15, ../sass/atoms/_typography.scss */
   .h2 {
-    font-size: 29.69679px;
-    line-height: 43.8712px;
+    font-size: 31.05164px;
+    line-height: 46.38814px;
   }
 }
 
 /* line 19, ../sass/atoms/_typography.scss */
 .h3 {
   font-family: Verdana, sans-serif;
-  font-size: 18.44451px;
-  line-height: 29.16333px;
+  font-size: 19.98045px;
+  line-height: 31.94683px;
 }
 @media screen and (min-width: 600px) {
   /* line 19, ../sass/atoms/_typography.scss */
   .h3 {
-    font-size: 23.33067px;
-    line-height: 36.66061px;
+    font-size: 25.79465px;
+    line-height: 40.9878px;
   }
 }
 
 /* line 23, ../sass/atoms/_typography.scss */
 .h4 {
   font-family: Verdana, sans-serif;
-  font-size: 15.77976px;
-  line-height: 25.61591px;
+  font-size: 17.89097px;
+  line-height: 29.36945px;
 }
 @media screen and (min-width: 600px) {
   /* line 23, ../sass/atoms/_typography.scss */
   .h4 {
-    font-size: 18.32926px;
-    line-height: 30.63514px;
+    font-size: 21.42766px;
+    line-height: 36.21615px;
   }
 }
 
 /* line 27, ../sass/atoms/_typography.scss */
-.h5 {
+.h5, .font-comparison th {
   font-family: Verdana, sans-serif;
-  font-size: 13.5px;
-  line-height: 22.5px;
+  font-size: 16.02px;
+  line-height: 27px;
 }
 @media screen and (min-width: 600px) {
   /* line 27, ../sass/atoms/_typography.scss */
-  .h5 {
-    font-size: 14.4px;
-    line-height: 25.6px;
+  .h5, .font-comparison th {
+    font-size: 17.8px;
+    line-height: 32px;
   }
 }
 
 /* line 31, ../sass/atoms/_typography.scss */
 .h6 {
   font-family: Verdana, sans-serif;
-  font-size: 12.44887px;
-  line-height: 21.04293px;
+  font-size: 15.18234px;
+  line-height: 25.91086px;
 }
 @media screen and (min-width: 600px) {
   /* line 31, ../sass/atoms/_typography.scss */
   .h6 {
-    font-size: 12.67123px;
-    line-height: 23.30785px;
+    font-size: 16.29325px;
+    line-height: 30.13734px;
   }
 }
 
 /* line 35, ../sass/atoms/_typography.scss */
-.h1, .h2, .h3, .h4, .h5, .h6, p, ul, ol, li, small {
+.h1, .h2, .h3, .h4, .h5, .font-comparison th, .h6, p, ul, ol, li, small {
   margin-top: 0;
   margin-bottom: 12px;
 }
@@ -202,14 +901,14 @@ body {
 /* line 40, ../sass/atoms/_typography.scss */
 .lead {
   font-family: Georgia, serif;
-  font-size: 17.53307px;
-  line-height: 25.61591px;
+  font-size: 20.10221px;
+  line-height: 29.36945px;
 }
 @media screen and (min-width: 600px) {
   /* line 40, ../sass/atoms/_typography.scss */
   .lead {
-    font-size: 20.36584px;
-    line-height: 30.63514px;
+    font-size: 24.07603px;
+    line-height: 36.21615px;
   }
 }
 
@@ -222,14 +921,14 @@ p {
 /* line 49, ../sass/atoms/_typography.scss */
 small, .footnote {
   font-family: Georgia, serif;
-  font-size: 13.83208px;
-  line-height: 21.04293px;
+  font-size: 17.05881px;
+  line-height: 25.91086px;
 }
 @media screen and (min-width: 600px) {
   /* line 49, ../sass/atoms/_typography.scss */
   small, .footnote {
-    font-size: 14.07915px;
-    line-height: 23.30785px;
+    font-size: 18.30702px;
+    line-height: 30.13734px;
   }
 }
 
@@ -237,74 +936,221 @@ small, .footnote {
 a {
   color: inherit;
   text-decoration: underline;
+  cursor: pointer;
 }
 
-/* line 78, ../sass/atoms/_typography.scss */
+/* line 79, ../sass/atoms/_typography.scss */
 a:hover {
-  background-color: red;
-  color: rgba(0, 0, 0, 0.9);
+  color: red;
 }
 
 /* line 83, ../sass/atoms/_typography.scss */
 a:active {
-  background-color: red;
-  color: rgba(0, 0, 0, 0.9);
+  color: red;
 }
 
-/* line 89, ../sass/atoms/_typography.scss */
+/* line 88, ../sass/atoms/_typography.scss */
 em {
   font-style: italic;
 }
 
-/* line 93, ../sass/atoms/_typography.scss */
-.text-secondary {
-  color: rgba(0, 0, 0, 0.6);
+/* line 92, ../sass/atoms/_typography.scss */
+.text-secondary, .font-comparison th {
+  color: rgba(0, 0, 0, 0.5);
 }
 
 /* line 1, ../sass/_style-guide.scss */
-.font-comparison td, th {
-  padding: 10px;
-  vertical-align: top;
+body {
+  background-color: #EFEFEF;
 }
 
-/* line 6, ../sass/_style-guide.scss */
+/* line 5, ../sass/_style-guide.scss */
+nav {
+  margin-bottom: 48px;
+}
+/* line 7, ../sass/_style-guide.scss */
+nav a {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+/* line 13, ../sass/_style-guide.scss */
+.section {
+  width: 100%;
+  padding: 30px 24px;
+}
+@media (min-width: 600px) {
+  /* line 13, ../sass/_style-guide.scss */
+  .section {
+    padding: 60px;
+  }
+}
+
+/* line 21, ../sass/_style-guide.scss */
+.narrow-wrapper {
+  width: 100%;
+  max-width: 575px;
+}
+
+/* line 26, ../sass/_style-guide.scss */
+.font-comparison {
+  width: 100%;
+  table-layout: fixed;
+  background-color: #FFFFFF;
+}
+
+/* line 32, ../sass/_style-guide.scss */
+.font-comparison td, th {
+  padding: 12px 15px 15px 20px;
+  vertical-align: top;
+  border-right: 1px solid #ededed;
+  position: relative;
+}
+
+/* line 44, ../sass/_style-guide.scss */
+.font-comparison tr {
+  border-top: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
+}
+
+/* line 49, ../sass/_style-guide.scss */
+.font-comparison th:first-child {
+  border-right: 1px solid #ededed;
+  text-align: right;
+}
+
+/* line 54, ../sass/_style-guide.scss */
+.metrics {
+  padding: 12px 15px 15px 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* line 64, ../sass/_style-guide.scss */
 .copy-larger4 {
   font-family: Georgia, serif;
-  font-size: 28.0px;
+  font-size: 28px;
   line-height: 37.8px;
 }
 @media screen and (min-width: 600px) {
-  /* line 6, ../sass/_style-guide.scss */
+  /* line 64, ../sass/_style-guide.scss */
   .copy-larger4 {
     font-size: 42px;
     line-height: 52.5px;
   }
 }
 
-/* line 10, ../sass/_style-guide.scss */
+/* line 68, ../sass/_style-guide.scss */
 .copy-larger3 {
   font-family: Georgia, serif;
-  font-size: 23.95473px;
-  line-height: 33.20202px;
+  font-size: 25.07187px;
+  line-height: 34.7504px;
 }
 @media screen and (min-width: 600px) {
-  /* line 10, ../sass/_style-guide.scss */
+  /* line 68, ../sass/_style-guide.scss */
   .copy-larger3 {
-    font-size: 32.99643px;
-    line-height: 43.8712px;
+    font-size: 34.88948px;
+    line-height: 46.38814px;
   }
 }
 
-/* line 14, ../sass/_style-guide.scss */
+/* line 72, ../sass/_style-guide.scss */
 .copy-larger2 {
   font-family: Georgia, serif;
-  font-size: 20.4939px;
-  line-height: 29.16333px;
+  font-size: 22.44994px;
+  line-height: 31.94683px;
 }
 @media screen and (min-width: 600px) {
-  /* line 14, ../sass/_style-guide.scss */
+  /* line 72, ../sass/_style-guide.scss */
   .copy-larger2 {
-    font-size: 25.92296px;
-    line-height: 36.66061px;
+    font-size: 28.98275px;
+    line-height: 40.9878px;
+  }
+}
+
+/* line 77, ../sass/_style-guide.scss */
+.icon-larger4 {
+  font-family: 'Feather';
+  font-size: 26.6px;
+  line-height: 37.8px;
+}
+@media screen and (min-width: 600px) {
+  /* line 77, ../sass/_style-guide.scss */
+  .icon-larger4 {
+    font-size: 39.9px;
+    line-height: 52.5px;
+  }
+}
+
+/* line 81, ../sass/_style-guide.scss */
+.icon-larger3 {
+  font-family: 'Feather';
+  font-size: 23.81827px;
+  line-height: 34.7504px;
+}
+@media screen and (min-width: 600px) {
+  /* line 81, ../sass/_style-guide.scss */
+  .icon-larger3 {
+    font-size: 33.145px;
+    line-height: 46.38814px;
+  }
+}
+
+/* line 85, ../sass/_style-guide.scss */
+.icon-larger2 {
+  font-family: 'Feather';
+  font-size: 21.32745px;
+  line-height: 31.94683px;
+}
+@media screen and (min-width: 600px) {
+  /* line 85, ../sass/_style-guide.scss */
+  .icon-larger2 {
+    font-size: 27.53362px;
+    line-height: 40.9878px;
+  }
+}
+
+/* line 89, ../sass/_style-guide.scss */
+.icon-larger1 {
+  font-family: 'Feather';
+  font-size: 19.0971px;
+  line-height: 29.36945px;
+}
+@media screen and (min-width: 600px) {
+  /* line 89, ../sass/_style-guide.scss */
+  .icon-larger1 {
+    font-size: 22.87223px;
+    line-height: 36.21615px;
+  }
+}
+
+/* line 93, ../sass/_style-guide.scss */
+.icon-base {
+  font-family: 'Feather';
+  font-size: 17.1px;
+  line-height: 27px;
+}
+@media screen and (min-width: 600px) {
+  /* line 93, ../sass/_style-guide.scss */
+  .icon-base {
+    font-size: 19px;
+    line-height: 32px;
+  }
+}
+
+/* line 97, ../sass/_style-guide.scss */
+.icon-smaller {
+  font-family: Georgia, serif;
+  font-size: 17.05881px;
+  line-height: 25.91086px;
+}
+@media screen and (min-width: 600px) {
+  /* line 97, ../sass/_style-guide.scss */
+  .icon-smaller {
+    font-size: 18.30702px;
+    line-height: 30.13734px;
   }
 }

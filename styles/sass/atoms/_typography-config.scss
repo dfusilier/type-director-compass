@@ -1,74 +1,3 @@
-// Create a modular scale. Returns a list of values.
-@function makeScale($base: 16px, $max: 32px, $numb-of-values: 6) {
-
-	$scale: ();
-
-	// One value will be smaller than the base.
-	// One value will be the base itself.
-	// The remaining values will be larger than the base.
-	$numb-of-larger-values: $numb-of-values - 2;
-
-	// The ratio we'll use to calculate the missing sizes.
-	$scaling-ratio: nth-root($max / $base, $numb-of-larger-values);
-
-	// Calculate and add a smaller size to the scale.
-	$scale: $base / (($scaling-ratio - 1) * 0.5 + 1);
-
-	// Add the base size to the scale.
-	$scale: append($scale, $base);
-
-	// Calculate and add larger sizes to the scale.
-	@for $size from 1 through ($numb-of-larger-values) {
-		$scale: append($scale, $base * power($scaling-ratio, $size));
-	}
-
-	@return $scale;
-}
-
-// Create a modular font scale. 
-// Returns a nested list of font-size and line-height values.
-
-@function makeFontScale(
-	$base-size: 16px, 
-	$base-line-height: 1.4,
-	$max-size: 32px,
-	$max-line-height: 1.25,
-	$names-of-sizes: unquote("smaller, base, larger1, larger2, larger3, larger4")
-	) {
-
-	$font-scale: ();
-	$number-of-sizes: length($names-of-sizes);
-
-	// If line-height params are unitless values, 
-	// covert to unit values.
-	$base-line-height: if(unitless($base-line-height), $base-size * $base-line-height, $base-line-height);
-	$max-line-height: if(unitless($max-line-height), $max-size * $max-line-height, $max-line-height);
-
-	// Create font-size and line-height scales
-	$size-scale: makeScale($base-size, $max-size, $number-of-sizes);
-	$line-height-scale: makeScale($base-line-height, $max-line-height, $number-of-sizes);
-	
-	// Pair each name with the correponding font-size 
-	// and line-height, then add the size to the scale.
-	@for $i from 1 to ($number-of-sizes + 1) {
-
-		// Key for font-size
-		$name-of-size: unquote(nth($names-of-sizes, $i));
-
-		// Values for font-size
-		$values: (
-			font-size: nth($size-scale, $i),
-			line-height: nth($line-height-scale, $i)
-		);
-
-		// Merge To the scale. 
-		$font-scale: map-merge($font-scale, ($name-of-size: $values));
-	}
-
-	@debug $font-scale; 
-	@return $font-scale;
-}
-
 /******************************************************
 * BASE FONT
 ******************************************************/
@@ -93,7 +22,12 @@ $font-georgia: (
 
 $font-verdana: (
 	family: unquote("Verdana, sans-serif"),
-	normalize-ratio: 0.90
+	normalize-ratio: 0.89
+);
+ 
+$font-feather: (
+	family: unquote("'Feather'"),
+	normalize-ratio: 0.95
 );
 
 /******************************************************
@@ -109,9 +43,18 @@ $font-copy-weight: normal;
 $font-heading: $font-verdana;
 $font-heading-weight: bold;
 
+$font-icon: $font-feather;
+$font-icon-weight: normal;
+
 /******************************************************
 * FONT SCALE
 ******************************************************/
+
+// How many sizes do you need? What should they be named?
+$names-of-sizes: "smaller", "base", "larger1", "larger2", "larger3", "larger4";
+
+// Now define your breakpoints below. For each breakpoint, we'll generate
+// a scale composed of the sizes you defined above.
 
 // Specifies the base font-size and line-heights for desktop and mobile.
 // Note that this is NOT the minimum font size, rather the one optimized 
@@ -121,19 +64,18 @@ $font-heading-weight: bold;
 // scaling ratio. This should be reserved for footnotes and secondary 
 // reading experiences. Do make sure this isn't absurdly tiny though.
 
-$names-of-sizes: "smaller", "base", "larger1", "larger2", "larger3", "larger4";
 
 $responsive-font-scale: (	
 
 	// Phone sizes
 	default: (
-		scale: makeFontScale(15px, 1.5, 28px, 1.35, $names-of-sizes)
+		scale: makeFontScale(18px, 1.5, 28px, 1.35, $names-of-sizes)
 	),
 
 	// Tablet sizes and larger
 	tablet: (
 		media-query: "screen and (min-width: 600px)",
-		scale: makeFontScale(16px, 1.6, 42px, 1.25, $names-of-sizes)
+		scale: makeFontScale(20px, 1.6, 42px, 1.25, $names-of-sizes)
 	)
 ); 
 
@@ -143,7 +85,6 @@ $responsive-font-scale: (
 
 @mixin _setFontSize($scale, $size-name, $normalize-ratio) {
 	$font-size: map-get($scale, $size-name);
-	@debug $normalize-ratio;
 	font-size: map-get($font-size, font-size) * $normalize-ratio;
 	line-height: map-get($font-size, line-height); 
 }
@@ -192,6 +133,6 @@ $normal-margin: 12px;
 ******************************************************/
 
 $text-color-primary: rgba(#000000, 0.9);
-$text-color-secondary: rgba(#000000, 0.6);
-$text-color-tertiary: rgba(#000000, 0.4);
+$text-color-secondary: rgba(#000000, 0.5);
+$text-color-tertiary: rgba(#000000, 0.35);
 $text-color-emphasis: red;

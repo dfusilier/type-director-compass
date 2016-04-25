@@ -1,6 +1,64 @@
+body {
+	background-color: #EFEFEF;
+}
+
+nav {
+	margin-bottom: $normal-margin * 4;
+	a {
+		display: inline-block;
+		margin-right: 15px;
+	}
+}
+
+.section {
+	width: 100%;
+	padding: 30px 24px;
+	@media (min-width: 600px) {
+		padding: 60px;
+	}
+}
+
+.narrow-wrapper {
+	width: 100%;
+	max-width: 575px;
+}
+
+.font-comparison  {
+	width: 100%;
+	table-layout: fixed;
+	background-color: #FFFFFF;
+}
+
 .font-comparison td, th {
-	padding: 10px; 
+	padding: 12px 15px 15px 20px; 
 	vertical-align: top;
+	border-right: 1px solid #ededed;
+	position: relative;
+}
+
+.font-comparison th {
+	@extend .h5;
+	@extend .text-secondary;
+}
+
+.font-comparison tr {
+	border-top: 1px solid #ededed;
+	border-bottom: 1px solid #ededed;
+}
+
+.font-comparison th:first-child {
+	border-right: 1px solid #ededed;
+	text-align: right;
+}
+
+.metrics {
+	padding: 12px 15px 15px 20px;
+	// border-top: 1px solid #ededed;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(255,255,255, 0.95);
 }
 
 .copy-larger4 { 
@@ -15,19 +73,27 @@
 	@include setResponsiveFontSize($font-copy, larger2); 
 }
 
-.normalize-x-height {
 
-	$normalization-size: 60px;
+.icon-larger4 { 
+	@include setResponsiveFontSize($font-icon, larger4);
+} 
  
-	// .georgia {
-	// 	font-family: $font-georgia;
-	// 	font-size: adjustFontSize($font-georgia, $normalization-size);
-	// 	font-weight: normal;
-	// }
+.icon-larger3 { 
+	@include setResponsiveFontSize($font-icon, larger3);
+}
 
-	// .verdana {
-	// 	font-family: $font-verdana;
-	// 	font-size: adjustFontSize($font-verdana, $normalization-size);
-	// 	font-weight: bold;
-	// }
+.icon-larger2 { 
+	@include setResponsiveFontSize($font-icon, larger2); 
+}
+
+.icon-larger1 { 
+	@include setResponsiveFontSize($font-icon, larger1);
+} 
+ 
+.icon-base { 
+	@include setResponsiveFontSize($font-icon, base);
+}
+
+.icon-smaller { 
+	@include setResponsiveFontSize($font-copy, smaller); 
 }

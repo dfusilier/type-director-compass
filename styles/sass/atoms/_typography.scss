@@ -73,16 +73,15 @@ small, .footnote {
 a {
 	color: inherit;
 	text-decoration: underline;
+	cursor: pointer;
 }
 
 a:hover {
-	background-color: $text-color-emphasis;
-	color: $text-color-primary;
+	color: red;
 }
 
 a:active {
-	background-color: $text-color-emphasis;
-	color: $text-color-primary;
+	color: red;
 }
 
 

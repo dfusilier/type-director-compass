@@ -1,0 +1,73 @@
+// Create a modular scale. Returns a list of values.
+@function makeScale($base: 16px, $max: 32px, $numb-of-values: 6) {
+
+	$scale: ();
+
+	// One value will be smaller than the base.
+	// One value will be the base itself.
+	// The remaining values will be larger than the base.
+	$numb-of-larger-values: $numb-of-values - 2;
+
+	// The ratio we'll use to calculate the missing sizes.
+	$scaling-ratio: nth-root($max / $base, $numb-of-larger-values);
+
+	// Calculate and add a smaller size to the scale.
+	// This is a half multiple below the base, because
+	// a full multiple often results in an overly small
+	// smaller size which can only be corrected by making
+	// the max size smaller.
+	$scale: append($scale, ($base + ($base / $scaling-ratio)) / 2);
+
+	// Add the base size to the scale.
+	$scale: append($scale, $base);
+
+	// Calculate and add larger sizes to the scale.
+	@for $size from 1 through ($numb-of-larger-values) {
+		$scale: append($scale, $base * power($scaling-ratio, $size));
+	}
+
+	@return $scale;
+}
+
+// Create a modular font scale. 
+// Returns a nested list of font-size and line-height values.
+
+@function makeFontScale(
+	$base-size: 16px, 
+	$base-line-height: 1.4,
+	$max-size: 32px,
+	$max-line-height: 1.25,
+	$names-of-sizes: unquote("smaller, base, larger1, larger2, larger3, larger4")
+	) {
+
+	$font-scale: ();
+	$number-of-sizes: length($names-of-sizes);
+
+	// If line-height params are unitless values, 
+	// covert to unit values.
+	$base-line-height: if(unitless($base-line-height), $base-size * $base-line-height, $base-line-height);
+	$max-line-height: if(unitless($max-line-height), $max-size * $max-line-height, $max-line-height);
+
+	// Create font-size and line-height scales
+	$size-scale: makeScale($base-size, $max-size, $number-of-sizes);
+	$line-height-scale: makeScale($base-line-height, $max-line-height, $number-of-sizes);
+	
+	// Pair each name with the correponding font-size 
+	// and line-height, then add the size to the scale.
+	@for $i from 1 to ($number-of-sizes + 1) {
+
+		// Key for font-size
+		$name-of-size: unquote(nth($names-of-sizes, $i));
+
+		// Values for font-size
+		$values: (
+			font-size: nth($size-scale, $i),
+			line-height: nth($line-height-scale, $i)
+		);
+
+		// Merge To the scale. 
+		$font-scale: map-merge($font-scale, ($name-of-size: $values));
+	}
+ 
+	@return $font-scale;
+}
