@@ -3,8 +3,8 @@
 ******************************************************/
 
 $font-georgia: (
-	family: unquote("Georgia, serif"),
-	normalize-ratio: 1.00
+	"family": unquote("Georgia, serif"),
+	"normalize-ratio": 1.00
 );
 
 /******************************************************
@@ -21,13 +21,13 @@ $font-georgia: (
 // will appear to be the same size as 60px Georgia.
 
 $font-verdana: (
-	family: unquote("Verdana, sans-serif"),
-	normalize-ratio: 0.89
+	"family": unquote("Verdana, sans-serif"),
+	"normalize-ratio": 0.89
 );
  
 $font-feather: (
-	family: unquote("'Feather'"),
-	normalize-ratio: 0.95
+	"family": unquote("'Feather'"),
+	"normalize-ratio": 0.95
 );
 
 /******************************************************
@@ -53,17 +53,15 @@ $font-icon-weight: normal;
 // How many sizes do you need? What should they be named?
 $names-of-sizes: "smaller", "base", "larger1", "larger2", "larger3", "larger4";
 
-// Now define your breakpoints below. For each breakpoint, we'll generate
-// a scale composed of the sizes you defined above.
+// Now define your breakpoint map below. For each breakpoint, we'll generate
+// a scale using our makeFontScale function with the following params:
+// ($base-font-size, $base-line-height, $max-font-size, $max-line-height, $names-of-sizes)
 
-// Specifies the base font-size and line-heights for desktop and mobile.
-// Note that this is NOT the minimum font size, rather the one optimized 
-// for comfortable reading. 
-
-// This also generates smaller-font-size by reducing the base-size by the  
-// scaling ratio. This should be reserved for footnotes and secondary 
-// reading experiences. Do make sure this isn't absurdly tiny though.
-
+// Note that the base font size is NOT the minimum font size, rather the
+// one optimized for comfortable reading. One smaller font size is produced
+// by reducing the base-size by half the scaling ratio. This size should be 
+// reserved for footnotes and secondary reading experiences. Make sure this 
+// isn't absurdly tiny!
 
 $responsive-font-scale: (	
 

@@ -1,5 +1,5 @@
 // Create a modular scale. Returns a list of values.
-@function makeScale($base: 16px, $max: 32px, $numb-of-values: 6) {
+@function makeScale($base: 16px, $max: 32px, $numb-of-values: 6, $rounding: false) {
 
 	$scale: ();
 
@@ -22,8 +22,18 @@
 	$scale: append($scale, $base);
 
 	// Calculate and add larger sizes to the scale.
-	@for $size from 1 through ($numb-of-larger-values) {
-		$scale: append($scale, $base * power($scaling-ratio, $size));
+	@for $i from 1 through ($numb-of-larger-values) {
+		$size: $base * power($scaling-ratio, $i);
+		$scale: append($scale, $size);
+	}
+
+	// Optionally round the scale.
+	@if $rounding == true {
+		$rounded-scale: ();
+		@each $size in $scale {
+			$rounded-scale: append($rounded-scale, round($size));
+		}
+		$scale: $rounded-scale;
 	}
 
 	@return $scale;
@@ -37,7 +47,8 @@
 	$base-line-height: 1.4,
 	$max-size: 32px,
 	$max-line-height: 1.25,
-	$names-of-sizes: unquote("smaller, base, larger1, larger2, larger3, larger4")
+	$names-of-sizes: unquote("smaller, base, larger1, larger2, larger3, larger4"),
+	$rounding: false
 	) {
 
 	$font-scale: ();
@@ -49,15 +60,15 @@
 	$max-line-height: if(unitless($max-line-height), $max-size * $max-line-height, $max-line-height);
 
 	// Create font-size and line-height scales
-	$size-scale: makeScale($base-size, $max-size, $number-of-sizes);
-	$line-height-scale: makeScale($base-line-height, $max-line-height, $number-of-sizes);
+	$size-scale: makeScale($base-size, $max-size, $number-of-sizes, $rounding);
+	$line-height-scale: makeScale($base-line-height, $max-line-height, $number-of-sizes, $rounding);
 	
 	// Pair each name with the correponding font-size 
 	// and line-height, then add the size to the scale.
 	@for $i from 1 to ($number-of-sizes + 1) {
 
 		// Key for font-size
-		$name-of-size: unquote(nth($names-of-sizes, $i));
+		$name-of-size: nth($names-of-sizes, $i);
 
 		// Values for font-size
 		$values: (
