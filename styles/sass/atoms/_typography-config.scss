@@ -63,59 +63,29 @@ $names-of-sizes: "smaller", "base", "larger1", "larger2", "larger3", "larger4";
 // reserved for footnotes and secondary reading experiences. Make sure this 
 // isn't absurdly tiny!
 
-$responsive-font-scale: (	
+$breakpoints: (	
 
 	// Phone sizes
-	default: (
-		scale: makeFontScale(18px, 1.5, 28px, 1.35, $names-of-sizes)
+	"default": (
+		"base-font-size": 18px,
+		"base-line-height": 1.5,
+		"max-font-size": 28px,
+		"max-line-height": 1.35,
+		"rounding": false
 	),
 
 	// Tablet sizes and larger
-	tablet: (
-		media-query: "screen and (min-width: 600px)",
-		scale: makeFontScale(20px, 1.6, 42px, 1.25, $names-of-sizes)
+	"tablet": (
+		"media-query": "screen and (min-width: 600px)",
+		"base-font-size": 20px,
+		"base-line-height": 1.6,
+		"max-font-size": 42px,
+		"max-line-height": 1.25,
+		"rounding": false
 	)
 ); 
 
-/******************************************************
-* MIXINS
-******************************************************/
-
-@mixin _setFontSize($scale, $size-name, $normalize-ratio) {
-	$font-size: map-get($scale, $size-name);
-	font-size: map-get($font-size, font-size) * $normalize-ratio;
-	line-height: map-get($font-size, line-height); 
-}
-
-@mixin setFontSize($font, $font-size, $breakpoint) {
-	$family: map-get($font, family);
-	
-	$scale: map-get($responsive-font-scale, $breakpoint);
-}
-
-@mixin setResponsiveFontSize($font, $size-name) {
-
-	$family: map-get($font, family);
-	$normalize-ratio: map-get($font, normalize-ratio);
-
-	font-family: $family;
-
-	@each $breakpoint-name, $breakpoint-map in $responsive-font-scale {
-		$scale: map-get($breakpoint-map, scale);
-
-		@if $breakpoint-name == default {
-			@include _setFontSize($scale, $size-name, $normalize-ratio);
-		}
-
-		@else {
-			$media-query: map-get($breakpoint-map, media-query);
-			@media #{$media-query} {
-				@include _setFontSize($scale, $size-name, $normalize-ratio);
-			}
-		}
-	}
-}
-
+$sane-scale: makeSaneScale($breakpoints, $names-of-sizes);
  
 // This is the white space above the cap height when 
 // the text is highlighted divided by the font size when 
