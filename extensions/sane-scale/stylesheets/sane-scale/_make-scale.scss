@@ -1,4 +1,6 @@
+
 // Create a modular scale. Returns a list of values.
+
 @function ss-make-scale(
 	$base: 16px, 
 	$max: 32px, 
@@ -8,7 +10,6 @@
 ) {
 
 	$scale: ();
-
 
 	// The ratio we'll use to calculate the missing sizes.
 	$scaling-ratio: nth-root($max / $base, $larger-values); 

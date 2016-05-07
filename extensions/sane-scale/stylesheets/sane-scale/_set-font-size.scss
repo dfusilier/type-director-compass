@@ -2,32 +2,35 @@
 * MIXINS
 ******************************************************/
 
-@mixin _ss-set-font-size($font, $size, $breakpoint-name) {
+@mixin ss-apply-font-styles($font, $size, $breakpoint-name) {
 	$normalize-ratio: map-get($font, "normalize-ratio");
 	font-size: map-deep-get($sane-scale, $breakpoint-name, "scale", $size, "font-size") * $normalize-ratio;
 	line-height: map-deep-get($sane-scale, $breakpoint-name, "scale", $size, "line-height") * $normalize-ratio;
 }
 
+// Apply non-responsive styling. Only the size used for
+// the specified media query will be applied.
 @mixin ss-set-font-size($font, $size, $breakpoint-name) {
 	font-family: map-get($font, "family");
-	@include _ss-set-font-size($font, $size, $breakpoint-name);
+	@include ss-apply-font-styles($font, $size, $breakpoint-name);
 }
 
+// Apply responsive styling. Corresponding sizes for
+// each media query will be applied.
 @mixin ss-set-responsive-font-size($font, $size) {
-
-	@debug $size;
-
 	font-family: map-get($font, "family");
 	@each $breakpoint-name, $breakpoint-value in $sane-scale {
 
+		// For the default styles, don't include a media query.
 		@if $breakpoint-name == "default" {
-			@include _ss-set-font-size($font, $size, $breakpoint-name);
+			@include ss-apply-font-styles($font, $size, $breakpoint-name);
 		}
 
+		// For other breakpoints, set style with a media query.
 		@else {
 			$media-query: map-deep-get($sane-scale, $breakpoint-name, "media-query");
 			@media #{$media-query} {
-				@include _ss-set-font-size($font, $size, $breakpoint-name);
+				@include ss-apply-font-styles($font, $size, $breakpoint-name);
 			} 
 		}
 	}
