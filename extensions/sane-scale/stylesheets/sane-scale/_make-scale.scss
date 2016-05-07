@@ -9,24 +9,25 @@
 	$scale: ();
 
 	// One value will be smaller than the base.
-	// One value will be the base itself.
-	// The remaining values will be larger than the base.
-	$numb-of-larger-values: $numb-of-values - 2;
+	$numb-of-smaller-values: 1;
+
+	// Subtract the smaller values the and base value from total
+	// to calculate number of larger values.
+	$numb-of-larger-values: $numb-of-values - $numb-of-smaller-values - 1;
 
 	// The ratio we'll use to calculate the missing sizes.
 	$scaling-ratio: nth-root($max / $base, $numb-of-larger-values);
 
-	// Calculate and add a smaller size to the scale.
-	// This is a half multiple below the base, because
-	// a full multiple often results in an overly small
-	// smaller size which can only be corrected by making
-	// the max size smaller.
-	$scale: append($scale, ($base + ($base / $scaling-ratio)) / 2);
+	// Calculate and add smaller values to the scale.
+	@for $i from -$numb-of-smaller-values through -1 {
+		$size: $base * power($scaling-ratio, $i);
+		$scale: append($scale, $size);
+	}
 
-	// Add the base size to the scale.
+	// Add the base value to the scale.
 	$scale: append($scale, $base);
 
-	// Calculate and add larger sizes to the scale.
+	// Calculate and add larger values to the scale.
 	@for $i from 1 through ($numb-of-larger-values) {
 		$size: $base * power($scaling-ratio, $i);
 		$scale: append($scale, $size);
@@ -40,5 +41,6 @@
 		}
 	}
 
+	@debug $scale;
 	@return $scale;
 }

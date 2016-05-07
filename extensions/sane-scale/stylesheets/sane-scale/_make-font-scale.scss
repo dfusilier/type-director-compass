@@ -20,7 +20,7 @@
 	$max-line-height: if(unitless($max-line-height), $max-size * $max-line-height, $max-line-height);
 
 	// Create font-size and line-height scales
-	$size-scale: ss-make-scale($base-size, $max-size, $number-of-sizes, $rounding);
+	$font-size-scale: ss-make-scale($base-size, $max-size, $number-of-sizes, $rounding);
 	$line-height-scale: ss-make-scale($base-line-height, $max-line-height, $number-of-sizes, $rounding);
 	
 	// Pair each name with the correponding font-size 
@@ -32,11 +32,11 @@
 
 		// Values for font-size
 		$values: (
-			font-size: nth($size-scale, $i),
+			font-size: nth($font-size-scale, $i),
 			line-height: nth($line-height-scale, $i)
 		);
 
-		// Merge To the scale. 
+		// Merge into $font-scale. 
 		$font-scale: map-merge($font-scale, ($name-of-size: $values));
 	}
  

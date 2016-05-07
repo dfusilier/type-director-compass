@@ -142,9 +142,7 @@
 		$(".metrics").each(function(index, metrics) {
 			var $metrics = $(metrics);
 			var $style = $metrics.prev();
-
 			var font_size = parseFloat($style.css("font-size")).toFixed(1);
-
 			var line_height = parseFloat($style.css("line-height")).toFixed(1);
 
 			$metrics.text(font_size + "px on " + line_height + "px");
