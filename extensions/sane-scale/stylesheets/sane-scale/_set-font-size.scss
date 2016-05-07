@@ -2,10 +2,15 @@
 * MIXINS
 ******************************************************/
 
+// Apply styles for a specific font, breakpoint, and size.
 @mixin ss-apply-font-styles($font, $size, $breakpoint-name) {
+
+	// Get font-size and adjust by the normalize ratio.
 	$normalize-ratio: map-get($font, "normalize-ratio");
 	font-size: map-deep-get($sane-scale, $breakpoint-name, "scale", $size, "font-size") * $normalize-ratio;
-	line-height: map-deep-get($sane-scale, $breakpoint-name, "scale", $size, "line-height") * $normalize-ratio;
+
+	// Get line-height, but don't adjust by the normalize ratio.
+	line-height: map-deep-get($sane-scale, $breakpoint-name, "scale", $size, "line-height");
 }
 
 // Apply non-responsive styling. Only the size used for
