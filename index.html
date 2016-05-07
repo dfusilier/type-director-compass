@@ -138,7 +138,7 @@
 	<section class="banner"></section>
 </body>
 <script type="text/javascript">
-	$(document).ready(function () {
+	var displayMetrics = function () {
 		$(".metrics").each(function(index, metrics) {
 			var $metrics = $(metrics);
 			var $style = $metrics.prev();
@@ -149,6 +149,13 @@
 
 			$metrics.text(font_size + "px on " + line_height + "px");
 		});
+	}
+	$(document).ready(function () {
+		displayMetrics();
+	});
+
+	$(window).resize(function () {
+		displayMetrics();
 	});
 </script>
 </html>
