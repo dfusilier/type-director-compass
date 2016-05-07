@@ -1,0 +1,8 @@
+@import "sane-scale/map-deep-get";
+@import "sane-scale/make-scale";
+@import "sane-scale/make-font-scale";
+@import "sane-scale/make-responsive-font-scale";
+
+$sane-scale: ss-make-responsive-font-scale() !default; 
+
+@import "sane-scale/set-font-size";

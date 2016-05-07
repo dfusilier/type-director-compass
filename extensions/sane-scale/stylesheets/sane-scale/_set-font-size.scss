@@ -1,0 +1,31 @@
+/******************************************************
+* MIXINS
+******************************************************/
+
+@mixin _ss-set-font-size($font, $size, $breakpoint-name) {
+	$normalize-ratio: map-get($font, "normalize-ratio");
+	font-size: map-deep-get($sane-scale, $breakpoint-name, "scale", $size, "font-size") * $normalize-ratio;
+	line-height: map-deep-get($sane-scale, $breakpoint-name, "scale", $size, "line-height") * $normalize-ratio;
+}
+
+@mixin ss-set-font-size($font, $size, $breakpoint-name) {
+	font-family: map-get($font, "family");
+	@include _ss-set-font-size($font, $size, $breakpoint-name);
+}
+
+@mixin ss-set-responsive-font-size($font, $size) {
+	font-family: map-get($font, "family");
+	@each $breakpoint-name, $breakpoint-value in $sane-scale {
+
+		@if $breakpoint-name == "default" {
+			@include _ss-set-font-size($font, $size, $breakpoint-name);
+		}
+
+		@else {
+			$media-query: map-deep-get($sane-scale, $breakpoint-name, "media-query");
+			@media #{$media-query} {
+				@include _ss-set-font-size($font, $size, $breakpoint-name);
+			} 
+		}
+	}
+}

@@ -1,0 +1,44 @@
+
+// Create a modular font scale. 
+// Returns a nested list of font-size and line-height values.
+
+@function ss-make-font-scale(
+	$base-size, 
+	$base-line-height,
+	$max-size,
+	$max-line-height,
+	$names-of-sizes,
+	$rounding: false 
+) {
+
+	$font-scale: ();
+	$number-of-sizes: length($names-of-sizes);
+
+	// If line-height params are unitless values, 
+	// covert to unit values.
+	$base-line-height: if(unitless($base-line-height), $base-size * $base-line-height, $base-line-height);
+	$max-line-height: if(unitless($max-line-height), $max-size * $max-line-height, $max-line-height);
+
+	// Create font-size and line-height scales
+	$size-scale: ss-make-scale($base-size, $max-size, $number-of-sizes, $rounding);
+	$line-height-scale: ss-make-scale($base-line-height, $max-line-height, $number-of-sizes, $rounding);
+	
+	// Pair each name with the correponding font-size 
+	// and line-height, then add the size to the scale.
+	@for $i from 1 to ($number-of-sizes + 1) {
+
+		// Key for font-size
+		$name-of-size: nth($names-of-sizes, $i);
+
+		// Values for font-size
+		$values: (
+			font-size: nth($size-scale, $i),
+			line-height: nth($line-height-scale, $i)
+		);
+
+		// Merge To the scale. 
+		$font-scale: map-merge($font-scale, ($name-of-size: $values));
+	}
+ 
+	@return $font-scale;
+}

@@ -1,0 +1,99 @@
+body {
+	background-color: #EFEFEF;
+}
+
+nav {
+	margin-bottom: $normal-margin * 4;
+	a {
+		display: inline-block;
+		margin-right: 15px;
+	}
+}
+
+.section {
+	width: 100%;
+	padding: 30px 24px;
+	@media (min-width: 600px) {
+		padding: 60px;
+	}
+}
+
+.narrow-wrapper {
+	width: 100%;
+	max-width: 575px;
+}
+
+.font-comparison  {
+	width: 100%;
+	table-layout: fixed;
+	background-color: #FFFFFF;
+}
+
+.font-comparison td, th {
+	padding: 12px 15px 15px 20px; 
+	vertical-align: top;
+	border-right: 1px solid #ededed;
+	position: relative;
+}
+
+.font-comparison th {
+	@extend .h5;
+	@extend .text-secondary;
+}
+
+.font-comparison tr {
+	border-top: 1px solid #ededed;
+	border-bottom: 1px solid #ededed;
+}
+
+.font-comparison th:first-child {
+	border-right: 1px solid #ededed;
+	text-align: right;
+}
+
+.metrics {
+	padding: 12px 15px 15px 20px;
+	// border-top: 1px solid #ededed;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(255,255,255, 0.95);
+}
+
+.copy-larger4 { 
+	@include ss-set-responsive-font-size($font-copy, larger4);
+} 
+ 
+.copy-larger3 { 
+	@include ss-set-responsive-font-size($font-copy, larger3);
+}
+
+.copy-larger2 { 
+	@include ss-set-responsive-font-size($font-copy, larger2); 
+}
+
+
+.icon-larger4 { 
+	@include ss-set-responsive-font-size($font-icon, larger4);
+} 
+ 
+.icon-larger3 { 
+	@include ss-set-responsive-font-size($font-icon, larger3);
+}
+
+.icon-larger2 { 
+	@include ss-set-responsive-font-size($font-icon, larger2); 
+}
+
+.icon-larger1 { 
+	@include ss-set-responsive-font-size($font-icon, larger1);
+} 
+ 
+.icon-base { 
+	@include ss-set-responsive-font-size($font-icon, base);
+}
+
+.icon-smaller { 
+	@include ss-set-responsive-font-size($font-copy, smaller); 
+}

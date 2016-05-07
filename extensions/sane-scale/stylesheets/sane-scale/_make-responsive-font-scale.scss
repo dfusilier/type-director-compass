@@ -1,0 +1,46 @@
+// Augments a breakpoint map by building a "scale" property
+// containing the specified sizes to each breakpoint.
+
+@function ss-make-responsive-font-scale(
+	$breakpoints: (
+		// Phone sizes
+		"default": (
+			"base-font-size": 18px,
+			"base-line-height": 1.5,
+			"max-font-size": 28px,
+			"max-line-height": 1.35,
+			"rounding": false
+		),
+		// Tablet sizes and larger
+		"tablet": (
+			"media-query": "screen and (min-width: 600px)",
+			"base-font-size": 20px,
+			"base-line-height": 1.6,
+			"max-font-size": 42px,
+			"max-line-height": 1.25,
+			"rounding": false
+		)
+	),
+	$sizes: ("smaller", "base", "larger1", "larger2", "larger3", "larger4")
+) {
+
+	$sane-scale: ();
+
+	@each $breakpoint-name, $breakpoint-value in $breakpoints {
+
+		// Create the scale using breakpoint params provided.
+		$scale: ss-make-font-scale(
+			map-get($breakpoint-value, "base-font-size"),
+			map-get($breakpoint-value, "base-line-height"),
+			map-get($breakpoint-value, "max-font-size"),
+			map-get($breakpoint-value, "max-line-height"), 
+			$sizes,
+			map-get($breakpoint-value, "rounded")
+		);
+
+		$new-breakpoint-value: map-merge($breakpoint-value, ("scale": $scale));
+		$sane-scale: map-merge($sane-scale, ($breakpoint-name: $new-breakpoint-value));
+	}
+
+	@return $sane-scale;
+}

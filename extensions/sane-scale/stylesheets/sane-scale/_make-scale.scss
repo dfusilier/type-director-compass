@@ -1,0 +1,44 @@
+// Create a modular scale. Returns a list of values.
+@function ss-make-scale(
+	$base: 16px, 
+	$max: 32px, 
+	$numb-of-values: 6, 
+	$rounding: false
+) {
+
+	$scale: ();
+
+	// One value will be smaller than the base.
+	// One value will be the base itself.
+	// The remaining values will be larger than the base.
+	$numb-of-larger-values: $numb-of-values - 2;
+
+	// The ratio we'll use to calculate the missing sizes.
+	$scaling-ratio: nth-root($max / $base, $numb-of-larger-values);
+
+	// Calculate and add a smaller size to the scale.
+	// This is a half multiple below the base, because
+	// a full multiple often results in an overly small
+	// smaller size which can only be corrected by making
+	// the max size smaller.
+	$scale: append($scale, ($base + ($base / $scaling-ratio)) / 2);
+
+	// Add the base size to the scale.
+	$scale: append($scale, $base);
+
+	// Calculate and add larger sizes to the scale.
+	@for $i from 1 through ($numb-of-larger-values) {
+		$size: $base * power($scaling-ratio, $i);
+		$scale: append($scale, $size);
+	}
+
+	// Optionally round the scale.
+	@if $rounding == true {
+		@each $size-name, $size-value in $scale {
+			$new-value: round($size-value);
+			$scale: map-merge($scale, ($size-name: $new-value));
+		}
+	}
+
+	@return $scale;
+}

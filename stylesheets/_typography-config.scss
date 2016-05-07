@@ -1,0 +1,106 @@
+/******************************************************
+* BASE FONT
+******************************************************/
+
+$font-georgia: (
+	"family": unquote("Georgia, serif"),
+	"normalize-ratio": 1.00
+);
+
+/******************************************************
+* ADDITIONAL FONTS
+******************************************************/
+
+// Oftentimes two fonts set to different sizes do not appear
+// to be the same size. This is because the height of their
+// lowercase letters is not equal. 
+
+// A good example is Verdana. Its x-height appears 10% larger than
+// Georgia. To normalize it with 60px Georgia, we need to decrease
+// size by 10% (normalize-ratio: 0.90). The resulting 54px Verdana 
+// will appear to be the same size as 60px Georgia.
+ 
+$font-verdana: (
+	"family": unquote("Verdana, sans-serif"),
+	"normalize-ratio": 0.89
+);
+ 
+$font-feather: (
+	"family": unquote("'Feather'"),
+	"normalize-ratio": 0.95
+);
+
+/******************************************************
+* FONT ROLES
+******************************************************/
+
+// For most projects I set a single fontBody and a
+// fontHeading, but this may not always be appropriate.
+
+$font-copy: $font-georgia;
+$font-copy-weight: normal;
+
+$font-heading: $font-verdana;
+$font-heading-weight: bold;
+
+$font-icon: $font-feather;
+$font-icon-weight: normal;
+
+/******************************************************
+* FONT SCALE
+******************************************************/
+
+// How many sizes do you need? What should they be named?
+$names-of-sizes: "smaller", "base", "larger1", "larger2", "larger3", "larger4";
+
+// Now define your breakpoint map below. For each breakpoint, we'll generate
+// a scale using our makeFontScale function with the following params:
+// ($base-font-size, $base-line-height, $max-font-size, $max-line-height, $names-of-sizes)
+
+// Note that the base font size is NOT the minimum font size, rather the
+// one optimized for comfortable reading. One smaller font size is produced
+// by reducing the base-size by half the scaling ratio. This size should be 
+// reserved for footnotes and secondary reading experiences. Make sure this 
+// isn't absurdly tiny!
+
+$breakpoints: (	
+
+	// Phone sizes
+	"default": (
+		"base-font-size": 18px,
+		"base-line-height": 1.5,
+		"max-font-size": 28px,
+		"max-line-height": 1.35,
+		"rounding": false
+	),
+
+	// Tablet sizes and larger
+	"tablet": (
+		"media-query": "screen and (min-width: 600px)",
+		"base-font-size": 20px,
+		"base-line-height": 1.6,
+		"max-font-size": 42px,
+		"max-line-height": 1.25,
+		"rounding": false
+	)
+); 
+
+$sane-scale: ss-make-responsive-font-scale($breakpoints, $names-of-sizes);
+
+// This is the white space above the cap height when 
+// the text is highlighted divided by the font size when 
+// measured. This is the space by which we want to reduce 
+// the margin-top to adjust for optical spacing inconsistencies
+// in larger type sizes.
+$base-font-gap-ratio: .268; // 15px / 56px
+
+$normal-margin: 12px;
+
+/******************************************************
+* TEXT COLORS
+******************************************************/
+
+$text-color-primary: rgba(#000000, 0.9);
+$text-color-secondary: rgba(#000000, 0.5);
+$text-color-tertiary: rgba(#000000, 0.35);
+$text-color-emphasis: red;
