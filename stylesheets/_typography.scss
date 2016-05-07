@@ -1,5 +1,5 @@
 body {
-	@include ss-set-responsive-font-size($font-copy, base);
+	@include ss-set-responsive-font-size($font-copy, 0);
 	font-weight: $font-copy-weight;
 	color: $text-color-primary;
 }
@@ -9,27 +9,27 @@ body {
 }
 
 .h1 { 
-	@include ss-set-responsive-font-size($font-heading, "larger4");
+	@include ss-set-responsive-font-size($font-heading, 4);
 } 
   
 .h2 { 
-	@include ss-set-responsive-font-size($font-heading, "larger3");
+	@include ss-set-responsive-font-size($font-heading, 3);
 } 
 
 .h3 { 
-	@include ss-set-responsive-font-size($font-heading, "larger2");
+	@include ss-set-responsive-font-size($font-heading, 2);
 }
 
 .h4 { 
-	@include ss-set-responsive-font-size($font-heading, "larger1");
+	@include ss-set-responsive-font-size($font-heading, 1);
 }
 
 .h5 { 
-	@include ss-set-responsive-font-size($font-heading, "base");
+	@include ss-set-responsive-font-size($font-heading, 0);
 }
  
 .h6 { 
-	@include ss-set-responsive-font-size($font-heading, "smaller");
+	@include ss-set-responsive-font-size($font-heading, -1);
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, p, ul, ol, li, small { 
@@ -38,7 +38,7 @@ body {
 }
 
 .lead {
-	@include ss-set-responsive-font-size($font-copy, "larger1");
+	@include ss-set-responsive-font-size($font-copy, 1);
 }
 
 p {
@@ -47,7 +47,7 @@ p {
 }
 
 small, .footnote {
-	@include ss-set-responsive-font-size($font-copy, "smaller"); 
+	@include ss-set-responsive-font-size($font-copy, -1); 
 }
 
 // label {

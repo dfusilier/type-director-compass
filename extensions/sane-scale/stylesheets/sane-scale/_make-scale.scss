@@ -2,24 +2,19 @@
 @function ss-make-scale(
 	$base: 16px, 
 	$max: 32px, 
-	$numb-of-values: 6, 
+	$smaller-values: 1,
+	$larger-values: 4,
 	$rounding: false
 ) {
 
 	$scale: ();
 
-	// One value will be smaller than the base.
-	$numb-of-smaller-values: 1;
-
-	// Subtract the smaller values the and base value from total
-	// to calculate number of larger values.
-	$numb-of-larger-values: $numb-of-values - $numb-of-smaller-values - 1;
 
 	// The ratio we'll use to calculate the missing sizes.
-	$scaling-ratio: nth-root($max / $base, $numb-of-larger-values);
+	$scaling-ratio: nth-root($max / $base, $larger-values); 
 
 	// Calculate and add smaller values to the scale.
-	@for $i from -$numb-of-smaller-values through -1 {
+	@for $i from -$smaller-values through -1 {
 		$size: $base * power($scaling-ratio, $i);
 		$scale: append($scale, $size);
 	}
@@ -28,7 +23,7 @@
 	$scale: append($scale, $base);
 
 	// Calculate and add larger values to the scale.
-	@for $i from 1 through ($numb-of-larger-values) {
+	@for $i from 1 through ($larger-values) {
 		$size: $base * power($scaling-ratio, $i);
 		$scale: append($scale, $size);
 	}
@@ -41,6 +36,5 @@
 		}
 	}
 
-	@debug $scale;
 	@return $scale;
 }

@@ -62,38 +62,38 @@ nav {
 }
 
 .copy-larger4 { 
-	@include ss-set-responsive-font-size($font-copy, larger4);
+	@include ss-set-responsive-font-size($font-copy, 4);
 } 
  
 .copy-larger3 { 
-	@include ss-set-responsive-font-size($font-copy, larger3);
+	@include ss-set-responsive-font-size($font-copy, 3);
 }
 
 .copy-larger2 { 
-	@include ss-set-responsive-font-size($font-copy, larger2); 
+	@include ss-set-responsive-font-size($font-copy, 2); 
 }
 
 
 .icon-larger4 { 
-	@include ss-set-responsive-font-size($font-icon, larger4);
+	@include ss-set-responsive-font-size($font-icon, 4);
 } 
  
 .icon-larger3 { 
-	@include ss-set-responsive-font-size($font-icon, larger3);
+	@include ss-set-responsive-font-size($font-icon, 3);
 }
 
 .icon-larger2 { 
-	@include ss-set-responsive-font-size($font-icon, larger2); 
+	@include ss-set-responsive-font-size($font-icon, 2); 
 }
 
 .icon-larger1 { 
-	@include ss-set-responsive-font-size($font-icon, larger1);
+	@include ss-set-responsive-font-size($font-icon, 1);
 } 
  
 .icon-base { 
-	@include ss-set-responsive-font-size($font-icon, base);
+	@include ss-set-responsive-font-size($font-icon, 0);
 }
 
 .icon-smaller { 
-	@include ss-set-responsive-font-size($font-copy, smaller); 
+	@include ss-set-responsive-font-size($font-copy, -1); 
 }

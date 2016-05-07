@@ -21,7 +21,8 @@
 			"rounding": false
 		)
 	),
-	$sizes: ("smaller", "base", "larger1", "larger2", "larger3", "larger4")
+	$numb-smaller-sizes: 1,
+	$numb-larger-sizes: 4
 ) {
 
 	$sane-scale: ();
@@ -34,7 +35,8 @@
 			map-get($breakpoint-value, "base-line-height"),
 			map-get($breakpoint-value, "max-font-size"),
 			map-get($breakpoint-value, "max-line-height"), 
-			$sizes,
+			$numb-smaller-sizes,
+			$numb-larger-sizes,
 			map-get($breakpoint-value, "rounded")
 		);
 

@@ -7,12 +7,13 @@
 	$base-line-height,
 	$max-size,
 	$max-line-height,
-	$names-of-sizes,
+	$numb-smaller-sizes: 1,
+	$numb-larger-sizes: 4,
 	$rounding: false 
 ) {
 
+	$numb-all-sizes: $numb-smaller-sizes + $numb-larger-sizes + 1;
 	$font-scale: ();
-	$number-of-sizes: length($names-of-sizes);
 
 	// If line-height params are unitless values, 
 	// covert to unit values.
@@ -20,20 +21,23 @@
 	$max-line-height: if(unitless($max-line-height), $max-size * $max-line-height, $max-line-height);
 
 	// Create font-size and line-height scales
-	$font-size-scale: ss-make-scale($base-size, $max-size, $number-of-sizes, $rounding);
-	$line-height-scale: ss-make-scale($base-line-height, $max-line-height, $number-of-sizes, $rounding);
+	$font-size-scale: ss-make-scale($base-size, $max-size, $numb-smaller-sizes, $numb-larger-sizes, $rounding);
+	$line-height-scale: ss-make-scale($base-line-height, $max-line-height, $numb-smaller-sizes, $numb-larger-sizes, $rounding);
 	
 	// Pair each name with the correponding font-size 
 	// and line-height, then add the size to the scale.
-	@for $i from 1 to ($number-of-sizes + 1) {
+	@for $i from -$numb-smaller-sizes to $numb-larger-sizes + 1 {
+		
+		// Calculate array position to use to find size in list.
+		$arr-position: $i + $numb-smaller-sizes + 1;
 
 		// Key for font-size
-		$name-of-size: nth($names-of-sizes, $i);
+		$name-of-size: $i;
 
 		// Values for font-size
 		$values: (
-			font-size: nth($font-size-scale, $i),
-			line-height: nth($line-height-scale, $i)
+			font-size: nth($font-size-scale, $arr-position),
+			line-height: nth($line-height-scale, $arr-position)
 		);
 
 		// Merge into $font-scale. 

@@ -50,8 +50,9 @@ $font-icon-weight: normal;
 * FONT SCALE
 ******************************************************/
 
-// How many sizes do you need? What should they be named?
-$names-of-sizes: "smaller", "base", "larger1", "larger2", "larger3", "larger4";
+// Other than the base, how many sizes do you need?
+$numb-smaller-sizes: 1;
+$numb-larger-sizes: 4;
 
 // Now define your breakpoint map below. For each breakpoint, we'll generate
 // a scale using our makeFontScale function with the following params:
@@ -85,7 +86,7 @@ $breakpoints: (
 	)
 ); 
 
-$sane-scale: ss-make-responsive-font-scale($breakpoints, $names-of-sizes);
+$sane-scale: ss-make-responsive-font-scale($breakpoints, $numb-smaller-sizes, $numb-larger-sizes);
 
 // This is the white space above the cap height when 
 // the text is highlighted divided by the font size when 
