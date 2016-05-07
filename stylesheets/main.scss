@@ -1,13 +1,11 @@
 @import "compass/reset";
-@import "compass/css3/box-shadow"; 
-@import "compass/css3/user-interface";
 @import "compass/css3/box-sizing";
+@import "sane-scale";  
 
 * {
 	@include box-sizing(border-box);
 }
 
-@import "sane-scale"; 
 @import "icons";
 @import "typography";
 @import "style-guide.scss";
