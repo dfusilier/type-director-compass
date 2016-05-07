@@ -73,7 +73,6 @@ nav {
 	@include ss-set-responsive-font-size($font-copy, 2); 
 }
 
-
 .icon-larger4 { 
 	@include ss-set-responsive-font-size($font-icon, 4);
 } 

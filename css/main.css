@@ -785,9 +785,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 * FONT SCALE
 ******************************************************/
 /******************************************************
-* TEXT COLORS
+* OTHER TYPE VARIABLES
 ******************************************************/
-/* line 1, ../stylesheets/_typography.scss */
+/******************************************************
+* STYLING
+******************************************************/
+/* line 106, ../stylesheets/_typography.scss */
 body {
   font-family: Georgia, serif;
   font-size: 18px;
@@ -796,165 +799,165 @@ body {
   color: rgba(0, 0, 0, 0.9);
 }
 @media screen and (min-width: 600px) {
-  /* line 1, ../stylesheets/_typography.scss */
+  /* line 106, ../stylesheets/_typography.scss */
   body {
     font-size: 20px;
     line-height: 32px;
   }
 }
 
-/* line 7, ../stylesheets/_typography.scss */
+/* line 112, ../stylesheets/_typography.scss */
 .h1, .h2, .h3, .h4, .h5, .font-comparison th, .h6 {
   font-weight: bold;
 }
 
-/* line 11, ../stylesheets/_typography.scss */
+/* line 116, ../stylesheets/_typography.scss */
 .h1 {
   font-family: Verdana, sans-serif;
   font-size: 24.92px;
   line-height: 37.8px;
 }
 @media screen and (min-width: 600px) {
-  /* line 11, ../stylesheets/_typography.scss */
+  /* line 116, ../stylesheets/_typography.scss */
   .h1 {
     font-size: 37.38px;
     line-height: 52.5px;
   }
 }
 
-/* line 15, ../stylesheets/_typography.scss */
+/* line 120, ../stylesheets/_typography.scss */
 .h2 {
   font-family: Verdana, sans-serif;
   font-size: 22.31396px;
   line-height: 34.7504px;
 }
 @media screen and (min-width: 600px) {
-  /* line 15, ../stylesheets/_typography.scss */
+  /* line 120, ../stylesheets/_typography.scss */
   .h2 {
     font-size: 31.05164px;
     line-height: 46.38814px;
   }
 }
 
-/* line 19, ../stylesheets/_typography.scss */
+/* line 124, ../stylesheets/_typography.scss */
 .h3 {
   font-family: Verdana, sans-serif;
   font-size: 19.98045px;
   line-height: 31.94683px;
 }
 @media screen and (min-width: 600px) {
-  /* line 19, ../stylesheets/_typography.scss */
+  /* line 124, ../stylesheets/_typography.scss */
   .h3 {
     font-size: 25.79465px;
     line-height: 40.9878px;
   }
 }
 
-/* line 23, ../stylesheets/_typography.scss */
+/* line 128, ../stylesheets/_typography.scss */
 .h4 {
   font-family: Verdana, sans-serif;
   font-size: 17.89097px;
   line-height: 29.36945px;
 }
 @media screen and (min-width: 600px) {
-  /* line 23, ../stylesheets/_typography.scss */
+  /* line 128, ../stylesheets/_typography.scss */
   .h4 {
     font-size: 21.42766px;
     line-height: 36.21615px;
   }
 }
 
-/* line 27, ../stylesheets/_typography.scss */
+/* line 132, ../stylesheets/_typography.scss */
 .h5, .font-comparison th {
   font-family: Verdana, sans-serif;
   font-size: 16.02px;
   line-height: 27px;
 }
 @media screen and (min-width: 600px) {
-  /* line 27, ../stylesheets/_typography.scss */
+  /* line 132, ../stylesheets/_typography.scss */
   .h5, .font-comparison th {
     font-size: 17.8px;
     line-height: 32px;
   }
 }
 
-/* line 31, ../stylesheets/_typography.scss */
+/* line 136, ../stylesheets/_typography.scss */
 .h6 {
   font-family: Verdana, sans-serif;
   font-size: 14.34469px;
   line-height: 24.82171px;
 }
 @media screen and (min-width: 600px) {
-  /* line 31, ../stylesheets/_typography.scss */
+  /* line 136, ../stylesheets/_typography.scss */
   .h6 {
     font-size: 14.78649px;
     line-height: 28.27468px;
   }
 }
 
-/* line 35, ../stylesheets/_typography.scss */
+/* line 140, ../stylesheets/_typography.scss */
 .h1, .h2, .h3, .h4, .h5, .font-comparison th, .h6, p, ul, ol, li, small {
   margin-top: 0;
   margin-bottom: 12px;
 }
 
-/* line 40, ../stylesheets/_typography.scss */
+/* line 145, ../stylesheets/_typography.scss */
 .lead {
   font-family: Georgia, serif;
   font-size: 20.10221px;
   line-height: 29.36945px;
 }
 @media screen and (min-width: 600px) {
-  /* line 40, ../stylesheets/_typography.scss */
+  /* line 145, ../stylesheets/_typography.scss */
   .lead {
     font-size: 24.07603px;
     line-height: 36.21615px;
   }
 }
 
-/* line 44, ../stylesheets/_typography.scss */
+/* line 149, ../stylesheets/_typography.scss */
 p {
   font-size: inherit;
   line-height: inherit;
 }
 
-/* line 49, ../stylesheets/_typography.scss */
+/* line 154, ../stylesheets/_typography.scss */
 small, .footnote {
   font-family: Georgia, serif;
   font-size: 16.11763px;
   line-height: 24.82171px;
 }
 @media screen and (min-width: 600px) {
-  /* line 49, ../stylesheets/_typography.scss */
+  /* line 154, ../stylesheets/_typography.scss */
   small, .footnote {
     font-size: 16.61404px;
     line-height: 28.27468px;
   }
 }
 
-/* line 73, ../stylesheets/_typography.scss */
+/* line 158, ../stylesheets/_typography.scss */
 a {
   color: inherit;
   text-decoration: underline;
   cursor: pointer;
 }
 
-/* line 79, ../stylesheets/_typography.scss */
+/* line 164, ../stylesheets/_typography.scss */
 a:hover {
   color: red;
 }
 
-/* line 83, ../stylesheets/_typography.scss */
+/* line 168, ../stylesheets/_typography.scss */
 a:active {
   color: red;
 }
 
-/* line 88, ../stylesheets/_typography.scss */
+/* line 173, ../stylesheets/_typography.scss */
 em {
   font-style: italic;
 }
 
-/* line 92, ../stylesheets/_typography.scss */
+/* line 177, ../stylesheets/_typography.scss */
 .text-secondary, .font-comparison th {
   color: rgba(0, 0, 0, 0.5);
 }
@@ -1071,84 +1074,84 @@ nav a {
   }
 }
 
-/* line 77, ../stylesheets/_style-guide.scss */
+/* line 76, ../stylesheets/_style-guide.scss */
 .icon-larger4 {
   font-family: 'Feather';
   font-size: 26.6px;
   line-height: 37.8px;
 }
 @media screen and (min-width: 600px) {
-  /* line 77, ../stylesheets/_style-guide.scss */
+  /* line 76, ../stylesheets/_style-guide.scss */
   .icon-larger4 {
     font-size: 39.9px;
     line-height: 52.5px;
   }
 }
 
-/* line 81, ../stylesheets/_style-guide.scss */
+/* line 80, ../stylesheets/_style-guide.scss */
 .icon-larger3 {
   font-family: 'Feather';
   font-size: 23.81827px;
   line-height: 34.7504px;
 }
 @media screen and (min-width: 600px) {
-  /* line 81, ../stylesheets/_style-guide.scss */
+  /* line 80, ../stylesheets/_style-guide.scss */
   .icon-larger3 {
     font-size: 33.145px;
     line-height: 46.38814px;
   }
 }
 
-/* line 85, ../stylesheets/_style-guide.scss */
+/* line 84, ../stylesheets/_style-guide.scss */
 .icon-larger2 {
   font-family: 'Feather';
   font-size: 21.32745px;
   line-height: 31.94683px;
 }
 @media screen and (min-width: 600px) {
-  /* line 85, ../stylesheets/_style-guide.scss */
+  /* line 84, ../stylesheets/_style-guide.scss */
   .icon-larger2 {
     font-size: 27.53362px;
     line-height: 40.9878px;
   }
 }
 
-/* line 89, ../stylesheets/_style-guide.scss */
+/* line 88, ../stylesheets/_style-guide.scss */
 .icon-larger1 {
   font-family: 'Feather';
   font-size: 19.0971px;
   line-height: 29.36945px;
 }
 @media screen and (min-width: 600px) {
-  /* line 89, ../stylesheets/_style-guide.scss */
+  /* line 88, ../stylesheets/_style-guide.scss */
   .icon-larger1 {
     font-size: 22.87223px;
     line-height: 36.21615px;
   }
 }
 
-/* line 93, ../stylesheets/_style-guide.scss */
+/* line 92, ../stylesheets/_style-guide.scss */
 .icon-base {
   font-family: 'Feather';
   font-size: 17.1px;
   line-height: 27px;
 }
 @media screen and (min-width: 600px) {
-  /* line 93, ../stylesheets/_style-guide.scss */
+  /* line 92, ../stylesheets/_style-guide.scss */
   .icon-base {
     font-size: 19px;
     line-height: 32px;
   }
 }
 
-/* line 97, ../stylesheets/_style-guide.scss */
+/* line 96, ../stylesheets/_style-guide.scss */
 .icon-smaller {
   font-family: Georgia, serif;
   font-size: 16.11763px;
   line-height: 24.82171px;
 }
 @media screen and (min-width: 600px) {
-  /* line 97, ../stylesheets/_style-guide.scss */
+  /* line 96, ../stylesheets/_style-guide.scss */
   .icon-smaller {
     font-size: 16.61404px;
     line-height: 28.27468px;

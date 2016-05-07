@@ -1,3 +1,108 @@
+/******************************************************
+* BASE FONT
+******************************************************/
+
+$font-georgia: (
+	"family": unquote("Georgia, serif"),
+	"normalize-ratio": 1.00
+);
+
+
+
+/******************************************************
+* ADDITIONAL FONTS
+******************************************************/
+
+// Oftentimes two fonts set to different sizes do not appear
+// to be the same size. This is because the height of their
+// lowercase letters is not equal. 
+
+// A good example is Verdana. Its appears 11% larger than 
+// Georgia. To normalize it with Georgia, we need to decrease 
+// size by 11% (normalize-ratio: 0.89). The normalized sizes 
+// of Verdana will appear to be the same size as Georgia.
+ 
+$font-verdana: (
+	"family": unquote("Verdana, sans-serif"),
+	"normalize-ratio": 0.89
+);
+ 
+$font-feather: (
+	"family": unquote("'Feather'"),
+	"normalize-ratio": 0.95
+);
+
+
+
+/******************************************************
+* FONT ROLES
+******************************************************/
+
+// For simple projects I like to define font-copy, font-heading 
+// and font-icon roles, but this may not always be appropriate.
+
+$font-copy: $font-georgia;
+$font-copy-weight: normal;
+
+$font-heading: $font-verdana;
+$font-heading-weight: bold;
+
+$font-icon: $font-feather;
+$font-icon-weight: normal;
+
+
+
+/******************************************************
+* FONT SCALE
+******************************************************/
+
+// Other than the base, how many sizes do you need?
+$numb-smaller-sizes: 1;
+$numb-larger-sizes: 4;
+
+// Define your breakpoints and their parameters.
+$breakpoints: (	
+
+	// Phone sizes
+	"default": (
+		"base-font-size": 18px,
+		"base-line-height": 1.5,
+		"max-font-size": 28px,
+		"max-line-height": 1.35,
+		"rounding": false
+	),
+
+	// Tablet sizes and larger
+	"tablet": (
+		"media-query": "screen and (min-width: 600px)",
+		"base-font-size": 20px,
+		"base-line-height": 1.6,
+		"max-font-size": 42px,
+		"max-line-height": 1.25,
+		"rounding": false
+	)
+); 
+
+// Build and override the default scale with your own.
+$sane-scale: ss-make-responsive-font-scale($breakpoints, $numb-smaller-sizes, $numb-larger-sizes);
+
+
+
+/******************************************************
+* OTHER TYPE VARIABLES
+******************************************************/
+
+$text-color-primary: rgba(#000000, 0.9);
+$text-color-secondary: rgba(#000000, 0.5);
+$text-color-tertiary: rgba(#000000, 0.35);
+$normal-margin: 12px;
+
+
+
+/******************************************************
+* STYLING
+******************************************************/
+
 body {
 	@include ss-set-responsive-font-size($font-copy, 0);
 	font-weight: $font-copy-weight;
@@ -49,26 +154,6 @@ p {
 small, .footnote {
 	@include ss-set-responsive-font-size($font-copy, -1); 
 }
-
-// label {
-// 	@include base-font-size($font-heading);
-// 	font-weight: bold;
-// }
-
-// label.label-radio {
-// 	font-weight: normal;
-// 	cursor: pointer;
-// }
-
-// ul.styled-list { 
-// 	list-style-type: disc; 
-// 	margin-left: 1.5em;
-// }
-
-// ol.styled-list { 
-// 	list-style: decimal; 
-// 	margin-left: 1.5em;
-// }
 
 a {
 	color: inherit;
