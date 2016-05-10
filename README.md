@@ -92,15 +92,15 @@ That's it! Note that `sane-scale` is a key variable. This map will be used by th
 
 Use `@include ss-set-responsive-font-size($font, $size)` to apply a responsive size. The sizes available to you are based on your parameters: 
 * 0 is your base size.
-* 1, 2, 3... are your increasingly large sizes.
-* -1, -2, -3... are your increasingly small sizes.
+* 1, 2, 3... are your increasingly larger sizes.
+* -1, -2, -3... are your increasingly smaller sizes.
 
 ```scss
-p.lead {
+.lead {
 	@include ss-set-responsive-font-size($font-georgia, 1);
 }
 ```
-We just created a responsive lead paragraph style. It will use `$font-georgia` at size 1 for each breakpoint: 20.1px by default, and then resizing to 24.1px for tablets and larger.
+We just applied responsive styling to a lead paragraph style. It will use `$font-georgia` at size 1 for each breakpoint: 20.1px by default, and then resizing to 24.1px for tablets and larger.
 
 ```scss
 .h4 { 
