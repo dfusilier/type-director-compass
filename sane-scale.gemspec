@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   # If more than one author, comma separate inside of the brackets
   s.email = ["dfusil2@gmail.com"]
   # URL of the extension
-  s.homepage = "http://www.davidfusilier.com"
+  s.homepage = "https://github.com/dfusilier/sane-scale.git"
 
   # Gem Files
   # These are the files to be included in your Compass extension.

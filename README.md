@@ -2,17 +2,23 @@
 
 Sane Scale is a framework for defining and applying typographic styles. Its goal is to generate a complex, nuanced typographic system from only a few key variables. 
 
+
+
 ## Features
 
 1. Modular. Typographic measurements are based on proportional lists of values. 
 2. Responsive. Typography adjusts to the constraints of each breakpoint.
 3. Font rebalancing. Different fonts set to the same size often don't appear to be. Fonts are normalized, so every font appears to be exactly the size you intend.
 
+
+
 ## Install 
 
 * Terminal: `gem install sane-scale`
 * Compass config.rb: `require 'sane-scale'`
 * SCSS: `@import 'sane-scale';`
+
+
 
 ## Usage
 
@@ -28,6 +34,8 @@ $font-georgia: (
 	"normalize-ratio": 1.00
 ); 
 
+
+
 // Additional fonts
 
 $font-verdana: (
@@ -41,13 +49,15 @@ $font-feather: (
 );
 ```
 
-Oftentimes two fonts set to different sizes do not appear to be the same size. This is because the height of their lowercase letters is not equal. The `normalize-ratio` is the ratio we'll use to adjust the size of anything set in this font. 
+Oftentimes two fonts set to the same size do not appear to be. This is because the heights of their lowercase letters are not equal. By using the `normalize-ratio` property, additional fonts can be normalized to the default font. This will ensure they align to the modular scale.
 
-For example, Verdana appears 11% larger than Georgia. To normalize it with Georgia, we need to decrease size by 11% (normalize-ratio: 0.89). The normalized sizes of Verdana will appear to be the same size as Georgia.
+As an example, Verdana appears 11% larger than Georgia. To normalize it with Georgia, we can set a `normalize-ratio: 0.89`. This will cause Verdana to be 11% smaller than Georgia when both are set to the same size.
+
+
 
 ### Define your breakpoints
 
-Sane scale uses a SASS map of breakpoints (with relevant parameters) in the following format:
+Sane Scale uses a SASS map of breakpoints (with relevant parameters) in the following format:
 
 ```scss
 $breakpoints: (	
@@ -72,9 +82,11 @@ $breakpoints: (
 	)
 ); 
 ```
-For each breakpoint, you'll need to specify a font-size and line-height for both the base size and the max size. Additional sizes and line-heights will be interpolated from these constraints.
+For each breakpoint, you'll need to specify a font-size and line-height for both the base size and the max size. Additional font-sizes and line-heights will be interpolated from these constraints.
 
-You'll also need to specify a `media-query` for all breakpoints, excluding your `default` breakpoint. Feel free to name the other breakpoints whatever you like.
+A `media-query` property should also be set for each, exluding the default breakpoint. Feel free to name the other breakpoints whatever you like.
+
+
 
 ### Build the scale
 
@@ -86,7 +98,9 @@ $numb-larger-sizes: 4;
 
 $sane-scale: ss-make-responsive-font-scale($breakpoints, $numb-smaller-sizes, $numb-larger-sizes);
 ```
-That's it! Note that `sane-scale` is a key variable. This map will be used by the following mixins to lookup and apply sizes.
+That's it! Note that `$sane-scale` is a key variable. This map will be used by the following mixins to lookup and apply sizes.
+
+
 
 ### Apply responsize sizing
 
