@@ -3,6 +3,7 @@
 # By default, you should always included Compass. Do not include your
 #  extension.
 require 'compass'
+require 'sassy-math'
 
 # This tells Compass what your Compass extension is called, 
 # and where to find its files. Replace 'extension' with the 
@@ -16,7 +17,7 @@ Compass::Frameworks.register('sane-scale', :path => extension_path)
 # version contains alphas, it will be created as a 
 # prerelease version. Date is in the form of YYYY-MM-DD
 module SaneScale
-  VERSION = "0.1"
+  VERSION = "0.1.2"
   DATE = "2016-05-09"
 end
 

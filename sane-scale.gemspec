@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   # Description of your extension
   s.description = %q{Modular, responsive, scalable typography}
   # A summary of your Compass extension. Should be different than Description
-  s.summary = %q{A SASS framework for defining and applying typographic styles. Generate a nuanced typographic system that is both modular and responsive with only a few key variables. Using multiple fonts? Sane scale makes it simple to normalize your fonts so they appear visually equal when set to the same size.  }
+  s.summary = %q{Sane Scale is a framework for defining and applying typographic styles. Its goal is to generate a complex, nuanced typographic system from only a few key variables.}
   # The names of the author(s) of the extension.
   # If more than one author, comma separate inside of the brackets
   s.authors = ["David Fusilier"]
@@ -24,6 +24,8 @@ Gem::Specification.new do |s|
   s.email = ["dfusil2@gmail.com"]
   # URL of the extension
   s.homepage = "https://github.com/dfusilier/sane-scale.git"
+  # More
+  s.licenses    = ['MIT']
 
   # Gem Files
   # These are the files to be included in your Compass extension.
@@ -54,6 +56,7 @@ Gem::Specification.new do |s|
   # These are Gem dependencies, not Compass dependencies. Including gems
   #  here will make sure the relevant gem and version are installed on the
   #  user's system when installing your gem.
+  s.add_dependency("sassy-math",[">= 1.5.1"])
   s.add_dependency("sass",      [">= 3.3"])
   s.add_dependency("compass",   [">= 1.0.3"])
 end

@@ -1,6 +1,6 @@
 # Sane Scale
 
-Sane Scale is a framework for defining and applying typographic styles. Its goal is to generate a complex, nuanced typographic system from only a few key variables. 
+Sane Scale is a SASS framework for defining and applying typographic styles. Its goal is to generate a complex, nuanced typographic system from only a few key variables. 
 
 
 
