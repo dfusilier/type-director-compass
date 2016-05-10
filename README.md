@@ -119,7 +119,7 @@ We just applied responsive styling to a lead paragraph style. It will use `$font
 	@include ss-set-responsive-font-size($font-verdana, 1);
 }
 ```
-We justed used the same size `.h4` heading, but with `$font-verdana`. That will result in a font-size of 17.9px by default and 21.4px for tablets and larger. Mathematically different, but visually equal.
+We used the same size for the `.h4` heading, but with `$font-verdana`. That will result in a font-size of 17.9px by default and 21.4px for tablets and larger. Mathematically different, but visually equal.
 
 
 
