@@ -34,8 +34,6 @@ $font-georgia: (
 	"normalize-ratio": 1.00
 ); 
 
-
-
 // Additional fonts
 
 $font-verdana: (
