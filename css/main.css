@@ -1,4 +1,4 @@
-/* line 5, ../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,59 +20,59 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
-/* line 6, ../stylesheets/main.scss */
+/******************************************************
+* MIXINS
+******************************************************/
+/* line 5, ../stylesheets/main.scss */
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/******************************************************
-* MIXINS
-******************************************************/
 @font-face {
   font-family: "feather";
   src: url("../fonts/feather-webfont.eot");
@@ -842,7 +842,7 @@ body {
 /* line 124, ../stylesheets/_typography.scss */
 .h3 {
   font-family: Verdana, sans-serif;
-  font-size: 19.98045px;
+  font-size: 19.58px;
   line-height: 31.94683px;
 }
 @media screen and (min-width: 600px) {
@@ -856,7 +856,7 @@ body {
 /* line 128, ../stylesheets/_typography.scss */
 .h4 {
   font-family: Verdana, sans-serif;
-  font-size: 17.89097px;
+  font-size: 17.8px;
   line-height: 29.36945px;
 }
 @media screen and (min-width: 600px) {
@@ -884,13 +884,13 @@ body {
 /* line 136, ../stylesheets/_typography.scss */
 .h6 {
   font-family: Verdana, sans-serif;
-  font-size: 14.34469px;
+  font-size: 14.24px;
   line-height: 24.82171px;
 }
 @media screen and (min-width: 600px) {
   /* line 136, ../stylesheets/_typography.scss */
   .h6 {
-    font-size: 14.78649px;
+    font-size: 15.13px;
     line-height: 28.27468px;
   }
 }
@@ -904,7 +904,7 @@ body {
 /* line 145, ../stylesheets/_typography.scss */
 .lead {
   font-family: Georgia, serif;
-  font-size: 20.10221px;
+  font-size: 20px;
   line-height: 29.36945px;
 }
 @media screen and (min-width: 600px) {
@@ -924,15 +924,8 @@ p {
 /* line 154, ../stylesheets/_typography.scss */
 small, .footnote {
   font-family: Georgia, serif;
-  font-size: 16.11763px;
+  font-size: 16px;
   line-height: 24.82171px;
-}
-@media screen and (min-width: 600px) {
-  /* line 154, ../stylesheets/_typography.scss */
-  small, .footnote {
-    font-size: 16.61404px;
-    line-height: 28.27468px;
-  }
 }
 
 /* line 158, ../stylesheets/_typography.scss */
@@ -1063,7 +1056,7 @@ nav a {
 /* line 72, ../stylesheets/_style-guide.scss */
 .copy-larger2 {
   font-family: Georgia, serif;
-  font-size: 22.44994px;
+  font-size: 22px;
   line-height: 31.94683px;
 }
 @media screen and (min-width: 600px) {
@@ -1105,7 +1098,7 @@ nav a {
 /* line 84, ../stylesheets/_style-guide.scss */
 .icon-larger2 {
   font-family: 'Feather';
-  font-size: 21.32745px;
+  font-size: 20.9px;
   line-height: 31.94683px;
 }
 @media screen and (min-width: 600px) {
@@ -1119,7 +1112,7 @@ nav a {
 /* line 88, ../stylesheets/_style-guide.scss */
 .icon-larger1 {
   font-family: 'Feather';
-  font-size: 19.0971px;
+  font-size: 19px;
   line-height: 29.36945px;
 }
 @media screen and (min-width: 600px) {
@@ -1147,13 +1140,13 @@ nav a {
 /* line 96, ../stylesheets/_style-guide.scss */
 .icon-smaller {
   font-family: Georgia, serif;
-  font-size: 16.11763px;
+  font-size: 16px;
   line-height: 24.82171px;
 }
 @media screen and (min-width: 600px) {
   /* line 96, ../stylesheets/_style-guide.scss */
   .icon-smaller {
-    font-size: 16.61404px;
+    font-size: 17px;
     line-height: 28.27468px;
   }
 }

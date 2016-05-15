@@ -5,7 +5,7 @@
 $font-georgia: (
 	"family": unquote("Georgia, serif"),
 	"normalize-ratio": 1.00
-);
+); 
 
 
 
@@ -69,7 +69,7 @@ $breakpoints: (
 		"base-line-height": 1.5,
 		"max-font-size": 28px,
 		"max-line-height": 1.35,
-		"rounding": false
+		"round-under": 24px
 	),
 
 	// Tablet sizes and larger
@@ -79,7 +79,7 @@ $breakpoints: (
 		"base-line-height": 1.6,
 		"max-font-size": 42px,
 		"max-line-height": 1.25,
-		"rounding": false
+		"round-under": 24px  
 	)
 ); 
 
@@ -152,7 +152,7 @@ p {
 }
 
 small, .footnote {
-	@include ss-set-responsive-font-size($font-copy, -1); 
+	@include ss-set-font-size($font-copy, -1, "default"); 
 }
 
 a {
