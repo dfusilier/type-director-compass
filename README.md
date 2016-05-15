@@ -66,7 +66,7 @@ $breakpoints: (
 		"base-line-height": 1.5,
 		"max-font-size": 28px,
 		"max-line-height": 1.35,
-		"rounding": false
+		"round-under": 0px
 	),
 
 	// Tablet sizes and larger
@@ -76,14 +76,15 @@ $breakpoints: (
 		"base-line-height": 1.6,
 		"max-font-size": 42px,
 		"max-line-height": 1.25,
-		"rounding": false
+		"round-under": 0px
 	)
 ); 
 ```
 For each breakpoint, you'll need to specify a font-size and line-height for both the base size and the max size. Additional font-sizes and line-heights will be interpolated from these constraints.
 
-A `media-query` property should also be set for each, exluding the default breakpoint. Feel free to name the other breakpoints whatever you like.
+A `media-query` property should also be set for each, exluding the default. Feel free to name the other breakpoints whatever you like.
 
+Finally, you should specify a `round-under` value. Measurements under this value will be rounded to the nearest px. If you don't want about rounding, set the value to 0px. 
 
 
 ### Build the scale

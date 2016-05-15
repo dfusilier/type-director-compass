@@ -10,7 +10,7 @@
 			"base-line-height": 1.5,
 			"max-font-size": 28px,
 			"max-line-height": 1.35,
-			"rounding": false
+			"round-under": 0px
 		),
 		// Tablet sizes and larger
 		"tablet": (
@@ -19,7 +19,7 @@
 			"base-line-height": 1.6,
 			"max-font-size": 42px,
 			"max-line-height": 1.25,
-			"rounding": false
+			"round-under": 0px
 		)
 	),
 	$numb-smaller-sizes: 1,
@@ -31,6 +31,7 @@
 	// Create a scale for each breakpoint.
 	@each $breakpoint-name, $breakpoint-value in $breakpoints {
 
+
 		// Create a font scale.
 		$scale: ss-make-font-scale(
 			map-get($breakpoint-value, "base-font-size"),
@@ -39,7 +40,7 @@
 			map-get($breakpoint-value, "max-line-height"), 
 			$numb-smaller-sizes,
 			$numb-larger-sizes,
-			map-get($breakpoint-value, "rounded")
+			map-get($breakpoint-value, "round-under")
 		);
 
 		// Merge into responsive scale.

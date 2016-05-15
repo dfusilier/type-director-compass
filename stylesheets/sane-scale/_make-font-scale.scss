@@ -9,7 +9,7 @@
 	$max-line-height,
 	$numb-smaller-sizes: 1,
 	$numb-larger-sizes: 4,
-	$rounding: false 
+	$round-under: 0px 
 ) {
 
 	// If line-height params are unitless values, 
@@ -18,8 +18,8 @@
 	$max-line-height: if(unitless($max-line-height), $max-size * $max-line-height, $max-line-height);
 
 	// Create font-size and line-height scales
-	$font-size-scale: ss-make-scale($base-size, $max-size, $numb-smaller-sizes, $numb-larger-sizes, $rounding);
-	$line-height-scale: ss-make-scale($base-line-height, $max-line-height, $numb-smaller-sizes, $numb-larger-sizes, $rounding);
+	$font-size-scale: ss-make-scale($base-size, $max-size, $numb-smaller-sizes, $numb-larger-sizes, $round-under);
+	$line-height-scale: ss-make-scale($base-line-height, $max-line-height, $numb-smaller-sizes, $numb-larger-sizes, $round-under);
     
 	$font-scale: ();
 	

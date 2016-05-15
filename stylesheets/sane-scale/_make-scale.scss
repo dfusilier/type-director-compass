@@ -6,7 +6,7 @@
 	$max: 32px, 
 	$smaller-values: 1,
 	$larger-values: 4,
-	$rounding: false
+	$round-under: 0px
 ) {
 
 	$scale: ();
@@ -29,13 +29,14 @@
 		$scale: append($scale, $size);
 	}
 
-	// Optionally round the scale.
-	@if $rounding == true {
-		@each $size-name, $size-value in $scale {
-			$new-value: round($size-value);
-			$scale: map-merge($scale, ($size-name: $new-value));
-		}
+	$rounded-scale: ();
+
+	// Round the scale if the value is under the rounding threshold.
+	@each $value in $scale {
+		
+		$new-value: if($value < $round-under, round($value), $value);
+		$rounded-scale: append($rounded-scale, ($new-value));
 	}
 
-	@return $scale;
+	@return $rounded-scale;
 }
