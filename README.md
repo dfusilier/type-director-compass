@@ -64,7 +64,7 @@ Similarly, you may also want to apply an adjustment to line-heights on a font-by
 
 ### Define your constraints
 
-Font scales built from constraints defined via a SASS map in the following format:
+Font scales are built from constraints defined via a SASS map in the following format:
 
 ```scss
 $font-scales: (	
