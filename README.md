@@ -18,49 +18,57 @@ Sane Scale is a SASS framework for defining and applying typographic styles. Its
 * Compass config.rb: `require 'sane-scale'`
 * SCSS: `@import 'sane-scale';`
 
+With a sample configuration and type specimen:
+
+* Terminal: `compass create project-name -r sane-scale --using sane-scale`
 
 
 ## Usage
 
 ### Declare your fonts
 
-For Sane Scale, fonts are defined via SASS maps in the following format:
+Fonts are defined via SASS maps in the following format:
 
 ```scss
 // Default font
 
 $font-georgia: (
 	"family": unquote("Georgia, serif"),
-	"normalize-ratio": 1.00
-); 
+	"font-size-adjustment": 1.00,
+	"line-height-adjustment": 1.00
+);
 
 // Additional fonts
 
 $font-verdana: (
 	"family": unquote("Verdana, sans-serif"),
-	"normalize-ratio": 0.89
+	"font-size-adjustment": 0.89,
+	"line-height-adjustment": 0.93
 );
  
 $font-feather: (
 	"family": unquote("'Feather'"),
-	"normalize-ratio": 0.95
+	"font-size-adjustment": 0.95,
+	"line-height-adjustment": 1.00
 );
 ```
 
-Oftentimes two fonts set to the same size do not appear to be. This is because the heights of their lowercase letters are not equal. By using the `normalize-ratio` property, additional fonts can be normalized to the default font. This will ensure they align to the modular scale.
+Oftentimes two fonts set to the same size do not appear to be. This is because the heights of their lowercase letters are not equal. By using the `font-size-adjustment` property, additional fonts can be normalized to the default font. This will ensure they align to the modular scale.
 
 As an example, Verdana appears 11% larger than Georgia. To normalize it with Georgia, we can set a `normalize-ratio: 0.89`. This will cause Verdana to be 11% smaller than Georgia when both are set to the same size.
 
+Similarly, you may also want to apply an adjustment to line-heights on a font-by-font basis. Specify a `line-height-adjustment` adjustment to do so.
 
 
-### Define your breakpoints
 
-Sane Scale uses a SASS map of breakpoints (with relevant parameters) in the following format:
+### Define your font scales
+
+Font scales are defined via SASS maps in the following format:
 
 ```scss
-$breakpoints: (	
+$font-scales: (	
 
-	// Phone sizes
+	// Phone sizes. 
 	"default": (
 		"base-font-size": 18px,
 		"base-line-height": 1.5,
@@ -69,10 +77,10 @@ $breakpoints: (
 		"rounding": false
 	),
 
-	// Tablet sizes and larger
+	// Tablet sizes and larger. 
 	"tablet": (
 		"media-query": "screen and (min-width: 600px)",
-		"base-font-size": 20px,
+		"base-font-size": 16px,
 		"base-line-height": 1.6,
 		"max-font-size": 42px,
 		"max-line-height": 1.25,
@@ -80,10 +88,11 @@ $breakpoints: (
 	)
 ); 
 ```
-For each breakpoint, you'll need to specify a font-size and line-height for both the base size and the max size. Additional font-sizes and line-heights will be interpolated from these constraints.
+For each scale, you'll need to specify a font-size and line-height for both the base size and the max size. Additional font-sizes and line-heights will be interpolated from these constraints.
 
-A `media-query` property should also be set for each, exluding the default breakpoint. Feel free to name the other breakpoints whatever you like.
+A `media-query` property should also be set for each, exluding the default scale. Feel free to name the other scales whatever you like.
 
+If you need a bit of typographic guidance, [Responsive Typography: The Basics](https://ia.net/know-how/responsive-typography-the-basics "Responsive Typography: The Basics") by Information Architects is an excellent read.
 
 
 ### Build the scale
@@ -94,9 +103,9 @@ All thats left to do is to define the sizes you need and build the scale itself:
 $numb-smaller-sizes: 1;
 $numb-larger-sizes: 4;
 
-$sane-scale: ss-make-responsive-font-scale($breakpoints, $numb-smaller-sizes, $numb-larger-sizes);
+$typography: ss-build-typography($font-scales, $numb-smaller-sizes, $numb-larger-sizes);
 ```
-That's it! Note that `$sane-scale` is a key variable. This map will be used by the following mixins to lookup and apply sizes.
+That's it! Note that `$typography` is a key variable. This map will be used by the following mixins to lookup and apply sizes.
 
 
 
@@ -112,14 +121,14 @@ Use `@include ss-set-responsive-font-size($font, $size)` to apply a responsive s
 	@include ss-set-responsive-font-size($font-georgia, 1);
 }
 ```
-We just applied responsive styling to a lead paragraph style. It will use `$font-georgia` at size 1 for each breakpoint: 20.1px by default, and then resizing to 24.1px for tablets and larger.
+We just applied responsive styling to the lead paragraph style. It will use media queries to apply `$font-georgia` at size `1` from the corresponding scale: 18.4px by default, and then resizing to 22.2px for tablets and larger.
 
 ```scss
 .h4 { 
 	@include ss-set-responsive-font-size($font-verdana, 1);
 }
 ```
-We used the same size for the `.h4` heading, but with `$font-verdana`. That will result in a font-size of 17.9px by default and 21.4px for tablets and larger. Mathematically different, but visually equal.
+We used the same size for the `.h4` heading, but with `$font-verdana`. That will result in a font-size of 16.4px by default and 19.8px for tablets and larger. Mathematically different, but visually equal.
 
 
 

@@ -1,0 +1,78 @@
+@import "sane-scale";
+
+/******************************************************
+* FONTS
+******************************************************/
+
+// Default font
+
+$font-georgia: (
+	"family": unquote("Georgia, serif"),
+	"font-size-adjustment": 1.00,
+	"line-height-adjustment": 1.00
+);
+
+// Additional fonts
+
+$font-verdana: (
+	"family": unquote("Verdana, sans-serif"),
+	"font-size-adjustment": 0.89,
+	"line-height-adjustment": 0.93
+);
+ 
+$font-feather: (
+	"family": unquote("'Feather'"),
+	"font-size-adjustment": 0.95,
+	"line-height-adjustment": 1.00
+);
+
+/******************************************************
+* FONT ROLES
+******************************************************/
+
+// For simple projects I like to define font-copy, font-heading 
+// and font-icon roles, but this may not always be appropriate.
+
+$font-copy: $font-georgia;
+$font-copy-weight: normal;
+
+$font-heading: $font-verdana;
+$font-heading-weight: bold;
+
+$font-icon: $font-feather;
+$font-icon-weight: normal;
+
+/******************************************************
+* FONT SCALE
+******************************************************/
+
+// Define your font scales and their constraints.
+
+$font-scales: (	
+
+	// Phone sizes. 
+	"default": (
+		"base-font-size": 16px,
+		"base-line-height": 1.5,
+		"max-font-size": 28px,
+		"max-line-height": 1.35,
+		"rounding": false
+	),
+
+	// Tablet sizes and larger. 
+	"tablet": (
+		"media-query": "screen and (min-width: 600px)",
+		"base-font-size": 18px,
+		"base-line-height": 1.6,
+		"max-font-size": 42px,
+		"max-line-height": 1.25,
+		"rounding": false
+	)
+); 
+
+// Other than the base, how many sizes do you need?
+$numb-smaller-sizes: 1;
+$numb-larger-sizes: 4;
+
+// Build and override the default scale with your own.
+$typography: ss-build-typography($font-scales, $numb-smaller-sizes, $numb-larger-sizes);

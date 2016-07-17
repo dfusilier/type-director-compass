@@ -1,0 +1,1149 @@
+/* line 5, ../../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../.gem/ruby/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/******************************************************
+* MIXINS
+******************************************************/
+/******************************************************
+* FONTS
+******************************************************/
+/******************************************************
+* FONT ROLES
+******************************************************/
+/******************************************************
+* FONT SCALE
+******************************************************/
+/******************************************************
+* Typography
+******************************************************/
+/* line 12, ../sass/_typography.scss */
+body {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.9);
+}
+@media screen and (min-width: 600px) {
+  /* line 12, ../sass/_typography.scss */
+  body {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+}
+
+/* line 18, ../sass/_typography.scss */
+.h1, .h2, .h3, .h4, .h5, .font-comparison th, .h6 {
+  font-weight: bold;
+}
+
+/* line 22, ../sass/_typography.scss */
+.h1 {
+  font-family: Verdana, sans-serif;
+  font-size: 24.92px;
+  line-height: 1.41067;
+}
+@media screen and (min-width: 600px) {
+  /* line 22, ../sass/_typography.scss */
+  .h1 {
+    font-size: 37.38px;
+    line-height: 1.30618;
+  }
+}
+
+/* line 26, ../sass/_typography.scss */
+.h2 {
+  font-family: Verdana, sans-serif;
+  font-size: 21.66649px;
+  line-height: 1.44833;
+}
+@media screen and (min-width: 600px) {
+  /* line 26, ../sass/_typography.scss */
+  .h2 {
+    font-size: 30.24441px;
+    line-height: 1.38933;
+  }
+}
+
+/* line 30, ../sass/_typography.scss */
+.h3 {
+  font-family: Verdana, sans-serif;
+  font-size: 18.83775px;
+  line-height: 1.48698;
+}
+@media screen and (min-width: 600px) {
+  /* line 30, ../sass/_typography.scss */
+  .h3 {
+    font-size: 24.47095px;
+    line-height: 1.47777;
+  }
+}
+
+/* line 34, ../sass/_typography.scss */
+.h4 {
+  font-family: Verdana, sans-serif;
+  font-size: 16.37833px;
+  line-height: 1.52667;
+}
+@media screen and (min-width: 600px) {
+  /* line 34, ../sass/_typography.scss */
+  .h4 {
+    font-size: 19.79961px;
+    line-height: 1.57185;
+  }
+}
+
+/* line 38, ../sass/_typography.scss */
+.h5, .font-comparison th {
+  font-family: Verdana, sans-serif;
+  font-size: 14.24px;
+  line-height: 1.56742;
+}
+@media screen and (min-width: 600px) {
+  /* line 38, ../sass/_typography.scss */
+  .h5, .font-comparison th {
+    font-size: 16.02px;
+    line-height: 1.67191;
+  }
+}
+
+/* line 42, ../sass/_typography.scss */
+.h6 {
+  font-family: Verdana, sans-serif;
+  font-size: 12.38085px;
+  line-height: 1.60925;
+}
+@media screen and (min-width: 600px) {
+  /* line 42, ../sass/_typography.scss */
+  .h6 {
+    font-size: 12.96189px;
+    line-height: 1.77834;
+  }
+}
+
+/* line 46, ../sass/_typography.scss */
+.h1, .h2, .h3, .h4, .h5, .font-comparison th, .h6, p, ul, ol, li, small {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+/* line 51, ../sass/_typography.scss */
+.lead {
+  font-family: Georgia, serif;
+  font-size: 18.40261px;
+  line-height: 1.46101;
+}
+@media screen and (min-width: 600px) {
+  /* line 51, ../sass/_typography.scss */
+  .lead {
+    font-size: 22.24676px;
+    line-height: 1.50424;
+  }
+}
+
+/* line 55, ../sass/_typography.scss */
+p {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* line 60, ../sass/_typography.scss */
+small, .footnote {
+  font-family: Georgia, serif;
+  font-size: 13.91107px;
+  line-height: 1.54004;
+}
+@media screen and (min-width: 600px) {
+  /* line 60, ../sass/_typography.scss */
+  small, .footnote {
+    font-size: 14.56392px;
+    line-height: 1.70185;
+  }
+}
+
+/* line 64, ../sass/_typography.scss */
+a {
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* line 70, ../sass/_typography.scss */
+a:hover {
+  color: red;
+}
+
+/* line 74, ../sass/_typography.scss */
+a:active {
+  color: red;
+}
+
+/* line 79, ../sass/_typography.scss */
+em {
+  font-style: italic;
+}
+
+/* line 83, ../sass/_typography.scss */
+.text-secondary, .font-comparison th {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+@font-face {
+  font-family: "feather";
+  src: url("../fonts/feather-webfont.eot");
+  src: url("../fonts/feather-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/feather-webfont.woff") format("woff"), url("../fonts/feather-webfont.ttf") format("truetype"), url("../fonts/feather-webfont.svg#feather") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Character Mapping Method */
+/* line 16, ../sass/_icons.scss */
+[data-icon]:before {
+  display: inline-block;
+  font-family: "feather";
+  content: attr(data-icon);
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* CSS Class Mapping Method */
+/* line 32, ../sass/_icons.scss */
+[class^="icon-"],
+[class*=" icon-"] {
+  display: inline-block;
+  font-family: "feather";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 46, ../sass/_icons.scss */
+.icon-eye:before {
+  content: "\e000";
+}
+
+/* line 50, ../sass/_icons.scss */
+.icon-paper-clip:before {
+  content: "\e001";
+}
+
+/* line 54, ../sass/_icons.scss */
+.icon-mail:before {
+  content: "\e002";
+}
+
+/* line 58, ../sass/_icons.scss */
+.icon-mail:before {
+  content: "\e002";
+}
+
+/* line 62, ../sass/_icons.scss */
+.icon-toggle:before {
+  content: "\e003";
+}
+
+/* line 66, ../sass/_icons.scss */
+.icon-layout:before {
+  content: "\e004";
+}
+
+/* line 70, ../sass/_icons.scss */
+.icon-link:before {
+  content: "\e005";
+}
+
+/* line 74, ../sass/_icons.scss */
+.icon-bell:before {
+  content: "\e006";
+}
+
+/* line 78, ../sass/_icons.scss */
+.icon-lock:before {
+  content: "\e007";
+}
+
+/* line 82, ../sass/_icons.scss */
+.icon-unlock:before {
+  content: "\e008";
+}
+
+/* line 86, ../sass/_icons.scss */
+.icon-ribbon:before {
+  content: "\e009";
+}
+
+/* line 90, ../sass/_icons.scss */
+.icon-image:before {
+  content: "\e010";
+}
+
+/* line 94, ../sass/_icons.scss */
+.icon-signal:before {
+  content: "\e011";
+}
+
+/* line 98, ../sass/_icons.scss */
+.icon-target:before {
+  content: "\e012";
+}
+
+/* line 102, ../sass/_icons.scss */
+.icon-clipboard:before {
+  content: "\e013";
+}
+
+/* line 106, ../sass/_icons.scss */
+.icon-clock:before {
+  content: "\e014";
+}
+
+/* line 110, ../sass/_icons.scss */
+.icon-clock:before {
+  content: "\e014";
+}
+
+/* line 114, ../sass/_icons.scss */
+.icon-watch:before {
+  content: "\e015";
+}
+
+/* line 118, ../sass/_icons.scss */
+.icon-air-play:before {
+  content: "\e016";
+}
+
+/* line 122, ../sass/_icons.scss */
+.icon-camera:before {
+  content: "\e017";
+}
+
+/* line 126, ../sass/_icons.scss */
+.icon-video:before {
+  content: "\e018";
+}
+
+/* line 130, ../sass/_icons.scss */
+.icon-disc:before {
+  content: "\e019";
+}
+
+/* line 134, ../sass/_icons.scss */
+.icon-printer:before {
+  content: "\e020";
+}
+
+/* line 138, ../sass/_icons.scss */
+.icon-monitor:before {
+  content: "\e021";
+}
+
+/* line 142, ../sass/_icons.scss */
+.icon-server:before {
+  content: "\e022";
+}
+
+/* line 146, ../sass/_icons.scss */
+.icon-cog:before {
+  content: "\e023";
+}
+
+/* line 150, ../sass/_icons.scss */
+.icon-heart:before {
+  content: "\e024";
+}
+
+/* line 154, ../sass/_icons.scss */
+.icon-paragraph:before {
+  content: "\e025";
+}
+
+/* line 158, ../sass/_icons.scss */
+.icon-align-justify:before {
+  content: "\e026";
+}
+
+/* line 162, ../sass/_icons.scss */
+.icon-align-left:before {
+  content: "\e027";
+}
+
+/* line 166, ../sass/_icons.scss */
+.icon-align-center:before {
+  content: "\e028";
+}
+
+/* line 170, ../sass/_icons.scss */
+.icon-align-right:before {
+  content: "\e029";
+}
+
+/* line 174, ../sass/_icons.scss */
+.icon-book:before {
+  content: "\e030";
+}
+
+/* line 178, ../sass/_icons.scss */
+.icon-layers:before {
+  content: "\e031";
+}
+
+/* line 182, ../sass/_icons.scss */
+.icon-stack:before {
+  content: "\e032";
+}
+
+/* line 186, ../sass/_icons.scss */
+.icon-stack-2:before {
+  content: "\e033";
+}
+
+/* line 190, ../sass/_icons.scss */
+.icon-paper:before {
+  content: "\e034";
+}
+
+/* line 194, ../sass/_icons.scss */
+.icon-paper-stack:before {
+  content: "\e035";
+}
+
+/* line 198, ../sass/_icons.scss */
+.icon-search:before {
+  content: "\e036";
+}
+
+/* line 202, ../sass/_icons.scss */
+.icon-zoom-in:before {
+  content: "\e037";
+}
+
+/* line 206, ../sass/_icons.scss */
+.icon-zoom-out:before {
+  content: "\e038";
+}
+
+/* line 210, ../sass/_icons.scss */
+.icon-reply:before {
+  content: "\e039";
+}
+
+/* line 214, ../sass/_icons.scss */
+.icon-circle-plus:before {
+  content: "\e040";
+}
+
+/* line 218, ../sass/_icons.scss */
+.icon-circle-minus:before {
+  content: "\e041";
+}
+
+/* line 222, ../sass/_icons.scss */
+.icon-circle-check:before {
+  content: "\e042";
+}
+
+/* line 226, ../sass/_icons.scss */
+.icon-circle-cross:before {
+  content: "\e043";
+}
+
+/* line 230, ../sass/_icons.scss */
+.icon-square-plus:before {
+  content: "\e044";
+}
+
+/* line 234, ../sass/_icons.scss */
+.icon-square-minus:before {
+  content: "\e045";
+}
+
+/* line 238, ../sass/_icons.scss */
+.icon-square-check:before {
+  content: "\e046";
+}
+
+/* line 242, ../sass/_icons.scss */
+.icon-square-cross:before {
+  content: "\e047";
+}
+
+/* line 246, ../sass/_icons.scss */
+.icon-microphone:before {
+  content: "\e048";
+}
+
+/* line 250, ../sass/_icons.scss */
+.icon-record:before {
+  content: "\e049";
+}
+
+/* line 254, ../sass/_icons.scss */
+.icon-skip-back:before {
+  content: "\e050";
+}
+
+/* line 258, ../sass/_icons.scss */
+.icon-rewind:before {
+  content: "\e051";
+}
+
+/* line 262, ../sass/_icons.scss */
+.icon-play:before {
+  content: "\e052";
+}
+
+/* line 266, ../sass/_icons.scss */
+.icon-pause:before {
+  content: "\e053";
+}
+
+/* line 270, ../sass/_icons.scss */
+.icon-stop:before {
+  content: "\e054";
+}
+
+/* line 274, ../sass/_icons.scss */
+.icon-fast-forward:before {
+  content: "\e055";
+}
+
+/* line 278, ../sass/_icons.scss */
+.icon-skip-forward:before {
+  content: "\e056";
+}
+
+/* line 282, ../sass/_icons.scss */
+.icon-shuffle:before {
+  content: "\e057";
+}
+
+/* line 286, ../sass/_icons.scss */
+.icon-repeat:before {
+  content: "\e058";
+}
+
+/* line 290, ../sass/_icons.scss */
+.icon-folder:before {
+  content: "\e059";
+}
+
+/* line 294, ../sass/_icons.scss */
+.icon-umbrella:before {
+  content: "\e060";
+}
+
+/* line 298, ../sass/_icons.scss */
+.icon-moon:before {
+  content: "\e061";
+}
+
+/* line 302, ../sass/_icons.scss */
+.icon-thermometer:before {
+  content: "\e062";
+}
+
+/* line 306, ../sass/_icons.scss */
+.icon-drop:before {
+  content: "\e063";
+}
+
+/* line 310, ../sass/_icons.scss */
+.icon-sun:before {
+  content: "\e064";
+}
+
+/* line 314, ../sass/_icons.scss */
+.icon-cloud:before {
+  content: "\e065";
+}
+
+/* line 318, ../sass/_icons.scss */
+.icon-cloud-upload:before {
+  content: "\e066";
+}
+
+/* line 322, ../sass/_icons.scss */
+.icon-cloud-download:before {
+  content: "\e067";
+}
+
+/* line 326, ../sass/_icons.scss */
+.icon-upload:before {
+  content: "\e068";
+}
+
+/* line 330, ../sass/_icons.scss */
+.icon-download:before {
+  content: "\e069";
+}
+
+/* line 334, ../sass/_icons.scss */
+.icon-location:before {
+  content: "\e070";
+}
+
+/* line 338, ../sass/_icons.scss */
+.icon-location-2:before {
+  content: "\e071";
+}
+
+/* line 342, ../sass/_icons.scss */
+.icon-map:before {
+  content: "\e072";
+}
+
+/* line 346, ../sass/_icons.scss */
+.icon-battery:before {
+  content: "\e073";
+}
+
+/* line 350, ../sass/_icons.scss */
+.icon-head:before {
+  content: "\e074";
+}
+
+/* line 354, ../sass/_icons.scss */
+.icon-briefcase:before {
+  content: "\e075";
+}
+
+/* line 358, ../sass/_icons.scss */
+.icon-speech-bubble:before {
+  content: "\e076";
+}
+
+/* line 362, ../sass/_icons.scss */
+.icon-anchor:before {
+  content: "\e077";
+}
+
+/* line 366, ../sass/_icons.scss */
+.icon-globe:before {
+  content: "\e078";
+}
+
+/* line 370, ../sass/_icons.scss */
+.icon-box:before {
+  content: "\e079";
+}
+
+/* line 374, ../sass/_icons.scss */
+.icon-reload:before {
+  content: "\e080";
+}
+
+/* line 378, ../sass/_icons.scss */
+.icon-share:before {
+  content: "\e081";
+}
+
+/* line 382, ../sass/_icons.scss */
+.icon-marquee:before {
+  content: "\e082";
+}
+
+/* line 386, ../sass/_icons.scss */
+.icon-marquee-plus:before {
+  content: "\e083";
+}
+
+/* line 390, ../sass/_icons.scss */
+.icon-marquee-minus:before {
+  content: "\e084";
+}
+
+/* line 394, ../sass/_icons.scss */
+.icon-tag:before {
+  content: "\e085";
+}
+
+/* line 398, ../sass/_icons.scss */
+.icon-power:before {
+  content: "\e086";
+}
+
+/* line 402, ../sass/_icons.scss */
+.icon-command:before {
+  content: "\e087";
+}
+
+/* line 406, ../sass/_icons.scss */
+.icon-alt:before {
+  content: "\e088";
+}
+
+/* line 410, ../sass/_icons.scss */
+.icon-esc:before {
+  content: "\e089";
+}
+
+/* line 414, ../sass/_icons.scss */
+.icon-bar-graph:before {
+  content: "\e090";
+}
+
+/* line 418, ../sass/_icons.scss */
+.icon-bar-graph-2:before {
+  content: "\e091";
+}
+
+/* line 422, ../sass/_icons.scss */
+.icon-pie-graph:before {
+  content: "\e092";
+}
+
+/* line 426, ../sass/_icons.scss */
+.icon-star:before {
+  content: "\e093";
+}
+
+/* line 430, ../sass/_icons.scss */
+.icon-arrow-left:before {
+  content: "\e094";
+}
+
+/* line 434, ../sass/_icons.scss */
+.icon-arrow-right:before {
+  content: "\e095";
+}
+
+/* line 438, ../sass/_icons.scss */
+.icon-arrow-up:before {
+  content: "\e096";
+}
+
+/* line 442, ../sass/_icons.scss */
+.icon-arrow-down:before {
+  content: "\e097";
+}
+
+/* line 446, ../sass/_icons.scss */
+.icon-volume:before {
+  content: "\e098";
+}
+
+/* line 450, ../sass/_icons.scss */
+.icon-mute:before {
+  content: "\e099";
+}
+
+/* line 454, ../sass/_icons.scss */
+.icon-content-right:before {
+  content: "\e100";
+}
+
+/* line 458, ../sass/_icons.scss */
+.icon-content-left:before {
+  content: "\e101";
+}
+
+/* line 462, ../sass/_icons.scss */
+.icon-grid:before {
+  content: "\e102";
+}
+
+/* line 466, ../sass/_icons.scss */
+.icon-grid-2:before {
+  content: "\e103";
+}
+
+/* line 470, ../sass/_icons.scss */
+.icon-columns:before {
+  content: "\e104";
+}
+
+/* line 474, ../sass/_icons.scss */
+.icon-loader:before {
+  content: "\e105";
+}
+
+/* line 478, ../sass/_icons.scss */
+.icon-bag:before {
+  content: "\e106";
+}
+
+/* line 482, ../sass/_icons.scss */
+.icon-ban:before {
+  content: "\e107";
+}
+
+/* line 486, ../sass/_icons.scss */
+.icon-flag:before {
+  content: "\e108";
+}
+
+/* line 490, ../sass/_icons.scss */
+.icon-trash:before {
+  content: "\e109";
+}
+
+/* line 494, ../sass/_icons.scss */
+.icon-expand:before {
+  content: "\e110";
+}
+
+/* line 498, ../sass/_icons.scss */
+.icon-contract:before {
+  content: "\e111";
+}
+
+/* line 502, ../sass/_icons.scss */
+.icon-maximize:before {
+  content: "\e112";
+}
+
+/* line 506, ../sass/_icons.scss */
+.icon-minimize:before {
+  content: "\e113";
+}
+
+/* line 510, ../sass/_icons.scss */
+.icon-plus:before {
+  content: "\e114";
+}
+
+/* line 514, ../sass/_icons.scss */
+.icon-minus:before {
+  content: "\e115";
+}
+
+/* line 518, ../sass/_icons.scss */
+.icon-check:before {
+  content: "\e116";
+}
+
+/* line 522, ../sass/_icons.scss */
+.icon-cross:before {
+  content: "\e117";
+}
+
+/* line 526, ../sass/_icons.scss */
+.icon-move:before {
+  content: "\e118";
+}
+
+/* line 530, ../sass/_icons.scss */
+.icon-delete:before {
+  content: "\e119";
+}
+
+/* line 534, ../sass/_icons.scss */
+.icon-menu:before {
+  content: "\e120";
+}
+
+/* line 538, ../sass/_icons.scss */
+.icon-archive:before {
+  content: "\e121";
+}
+
+/* line 542, ../sass/_icons.scss */
+.icon-inbox:before {
+  content: "\e122";
+}
+
+/* line 546, ../sass/_icons.scss */
+.icon-outbox:before {
+  content: "\e123";
+}
+
+/* line 550, ../sass/_icons.scss */
+.icon-file:before {
+  content: "\e124";
+}
+
+/* line 554, ../sass/_icons.scss */
+.icon-file-add:before {
+  content: "\e125";
+}
+
+/* line 558, ../sass/_icons.scss */
+.icon-file-subtract:before {
+  content: "\e126";
+}
+
+/* line 562, ../sass/_icons.scss */
+.icon-help:before {
+  content: "\e127";
+}
+
+/* line 566, ../sass/_icons.scss */
+.icon-open:before {
+  content: "\e128";
+}
+
+/* line 570, ../sass/_icons.scss */
+.icon-ellipsis:before {
+  content: "\e129";
+}
+
+/******************************************************
+* Style Guide
+******************************************************/
+/* line 9, ../sass/main.scss */
+body {
+  background-color: #EFEFEF;
+}
+
+/* line 13, ../sass/main.scss */
+nav {
+  margin-bottom: 48px;
+}
+/* line 15, ../sass/main.scss */
+nav a {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+/* line 21, ../sass/main.scss */
+.section {
+  width: 100%;
+  padding: 30px 24px;
+}
+@media (min-width: 600px) {
+  /* line 21, ../sass/main.scss */
+  .section {
+    padding: 60px;
+  }
+}
+
+/* line 29, ../sass/main.scss */
+.narrow-wrapper {
+  width: 100%;
+  max-width: 575px;
+}
+
+/* line 34, ../sass/main.scss */
+.font-comparison {
+  width: 100%;
+  table-layout: fixed;
+  background-color: #FFFFFF;
+}
+
+/* line 40, ../sass/main.scss */
+.font-comparison td, th {
+  padding: 12px 15px 15px 20px;
+  vertical-align: top;
+  border-right: 1px solid #ededed;
+  position: relative;
+}
+
+/* line 52, ../sass/main.scss */
+.font-comparison tr {
+  border-top: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
+}
+
+/* line 57, ../sass/main.scss */
+.font-comparison th:first-child {
+  border-right: 1px solid #ededed;
+  text-align: right;
+}
+
+/* line 62, ../sass/main.scss */
+.metrics {
+  padding: 12px 15px 15px 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* line 72, ../sass/main.scss */
+.copy-larger4 {
+  font-family: Georgia, serif;
+  font-size: 28.0px;
+  line-height: 1.35;
+}
+@media screen and (min-width: 600px) {
+  /* line 72, ../sass/main.scss */
+  .copy-larger4 {
+    font-size: 42px;
+    line-height: 1.25;
+  }
+}
+
+/* line 76, ../sass/main.scss */
+.copy-larger3 {
+  font-family: Georgia, serif;
+  font-size: 24.34437px;
+  line-height: 1.38603;
+}
+@media screen and (min-width: 600px) {
+  /* line 76, ../sass/main.scss */
+  .copy-larger3 {
+    font-size: 33.98248px;
+    line-height: 1.32957;
+  }
+}
+
+/* line 80, ../sass/main.scss */
+.copy-larger2 {
+  font-family: Georgia, serif;
+  font-size: 21.16601px;
+  line-height: 1.42302;
+}
+@media screen and (min-width: 600px) {
+  /* line 80, ../sass/main.scss */
+  .copy-larger2 {
+    font-size: 27.49545px;
+    line-height: 1.41421;
+  }
+}
+
+/* line 84, ../sass/main.scss */
+.icon-larger4 {
+  font-family: 'Feather';
+  font-size: 26.6px;
+  line-height: 1.42105;
+}
+@media screen and (min-width: 600px) {
+  /* line 84, ../sass/main.scss */
+  .icon-larger4 {
+    font-size: 39.9px;
+    line-height: 1.31579;
+  }
+}
+
+/* line 88, ../sass/main.scss */
+.icon-larger3 {
+  font-family: 'Feather';
+  font-size: 23.12715px;
+  line-height: 1.45898;
+}
+@media screen and (min-width: 600px) {
+  /* line 88, ../sass/main.scss */
+  .icon-larger3 {
+    font-size: 32.28336px;
+    line-height: 1.39955;
+  }
+}
+
+/* line 92, ../sass/main.scss */
+.icon-larger2 {
+  font-family: 'Feather';
+  font-size: 20.10771px;
+  line-height: 1.49792;
+}
+@media screen and (min-width: 600px) {
+  /* line 92, ../sass/main.scss */
+  .icon-larger2 {
+    font-size: 26.12068px;
+    line-height: 1.48865;
+  }
+}
+
+/* line 96, ../sass/main.scss */
+.icon-larger1 {
+  font-family: 'Feather';
+  font-size: 17.48248px;
+  line-height: 1.5379;
+}
+@media screen and (min-width: 600px) {
+  /* line 96, ../sass/main.scss */
+  .icon-larger1 {
+    font-size: 21.13442px;
+    line-height: 1.58341;
+  }
+}
+
+/* line 100, ../sass/main.scss */
+.icon-base {
+  font-family: 'Feather';
+  font-size: 15.2px;
+  line-height: 1.57895;
+}
+@media screen and (min-width: 600px) {
+  /* line 100, ../sass/main.scss */
+  .icon-base {
+    font-size: 17.1px;
+    line-height: 1.68421;
+  }
+}
+
+/* line 104, ../sass/main.scss */
+.icon-smaller {
+  font-family: Georgia, serif;
+  font-size: 13.91107px;
+  line-height: 1.54004;
+}
+@media screen and (min-width: 600px) {
+  /* line 104, ../sass/main.scss */
+  .icon-smaller {
+    font-size: 14.56392px;
+    line-height: 1.70185;
+  }
+}

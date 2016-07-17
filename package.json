@@ -1,0 +1,22 @@
+{
+  "name": "sane-scale",
+  "version": "1.0.0",
+  "description": "Sane Scale is a SASS framework for defining and applying typographic styles. Its goal is to generate a complex, nuanced typographic system from only a few key variables.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dfusilier/sane-scale.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dfusilier/sane-scale/issues"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-shell": "^0.5.2"
+  }
+}

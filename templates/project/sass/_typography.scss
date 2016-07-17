@@ -1,0 +1,84 @@
+@import "typography-config";
+
+/******************************************************
+* Typography
+******************************************************/
+
+$text-color-primary: rgba(#000000, 0.9);
+$text-color-secondary: rgba(#000000, 0.5);
+$text-color-tertiary: rgba(#000000, 0.35);
+$normal-margin: 12px;
+
+body {
+	@include ss-set-responsive-font-size($font-copy, 0);
+	font-weight: $font-copy-weight;
+	color: $text-color-primary;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 { 
+	font-weight: $font-heading-weight;
+}
+
+.h1 { 
+	@include ss-set-responsive-font-size($font-heading, 4);
+} 
+  
+.h2 { 
+	@include ss-set-responsive-font-size($font-heading, 3);
+} 
+
+.h3 { 
+	@include ss-set-responsive-font-size($font-heading, 2);
+}
+
+.h4 { 
+	@include ss-set-responsive-font-size($font-heading, 1);
+}
+
+.h5 { 
+	@include ss-set-responsive-font-size($font-heading, 0);
+}
+ 
+.h6 { 
+	@include ss-set-responsive-font-size($font-heading, -1);
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, p, ul, ol, li, small { 
+	margin-top: 0; 
+	margin-bottom: $normal-margin; 
+}
+
+.lead {
+	@include ss-set-responsive-font-size($font-copy, 1);
+}
+
+p {
+	font-size: inherit;
+	line-height: inherit;
+}
+
+small, .footnote {
+	@include ss-set-responsive-font-size($font-copy, -1); 
+}
+
+a {
+	color: inherit;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+a:hover {
+	color: red;
+}
+
+a:active {
+	color: red;
+}
+
+
+em {
+	font-style: italic; 
+}
+
+.text-secondary { color: $text-color-secondary; }
+

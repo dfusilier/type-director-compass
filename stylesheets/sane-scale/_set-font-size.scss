@@ -3,39 +3,50 @@
 ******************************************************/
 
 // Apply styles for a specific font, breakpoint, and size.
-@mixin ss-apply-font-styles($font, $size, $breakpoint-name) {
+@mixin ss-apply-font-styles($font, $size, $scale-name) {
 
-	// Get font-size and adjust by the normalize ratio.
-	$normalize-ratio: map-get($font, "normalize-ratio");
-	font-size: map-deep-get($sane-scale, $breakpoint-name, "scale", $size, "font-size") * $normalize-ratio;
+	// Get font-size and apply adjustments.
+	$unadjusted-font-size: map-deep-get($typography, $scale-name, "sizes", $size, "font-size"); 
+	$font-size-adjustment: map-get($font, "font-size-adjustment") or 1.00;
 
-	// Get line-height, but don't adjust by the normalize ratio.
-	line-height: map-deep-get($sane-scale, $breakpoint-name, "scale", $size, "line-height");
+	font-size: $unadjusted-font-size * $font-size-adjustment; 
+
+	// Get line-height and apply adjustments.
+	$unadjusted-line-height: map-deep-get($typography, $scale-name, "sizes", $size, "line-height");
+	$line-height-adjustment: map-get($font, "line-height-adjustment") or 1.00;
+
+	// If using relative line heights, the font-size-adjustment will 
+	// affect the line-height. This removes the unwanted effect.
+	@if unitless($unadjusted-line-height) {
+		$line-height-adjustment: $line-height-adjustment * (1 / $font-size-adjustment);
+	}
+
+	line-height: $unadjusted-line-height * $line-height-adjustment;
 }
 
 // Apply non-responsive styling. Only the size used for
 // the specified media query will be applied.
-@mixin ss-set-font-size($font, $size, $breakpoint-name) {
+@mixin ss-set-font-size($font, $size, $scale-name) {
 	font-family: map-get($font, "family");
-	@include ss-apply-font-styles($font, $size, $breakpoint-name);
+	@include ss-apply-font-styles($font, $size, $scale-name);
 }
 
 // Apply responsive styling. Corresponding sizes for
 // each media query will be applied.
 @mixin ss-set-responsive-font-size($font, $size) {
 	font-family: map-get($font, "family");
-	@each $breakpoint-name, $breakpoint-value in $sane-scale {
+	@each $scale-name, $scale-value in $typography {
 
 		// For the default styles, don't include a media query.
-		@if $breakpoint-name == "default" {
-			@include ss-apply-font-styles($font, $size, $breakpoint-name);
+		@if $scale-name == "default" {
+			@include ss-apply-font-styles($font, $size, $scale-name);
 		}
 
 		// For other breakpoints, set style with a media query.
 		@else {
-			$media-query: map-deep-get($sane-scale, $breakpoint-name, "media-query");
+			$media-query: map-deep-get($typography, $scale-name, "media-query");
 			@media #{$media-query} {
-				@include ss-apply-font-styles($font, $size, $breakpoint-name);
+				@include ss-apply-font-styles($font, $size, $scale-name);
 			} 
 		}
 	}

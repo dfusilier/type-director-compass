@@ -1,0 +1,59 @@
+ 
+// Create a modular font scale. 
+// Returns a nested list of font-size and line-height values.
+
+@function ss-build-font-scale(
+	$params: (
+		"media-query": "",
+		"base-font-size": 18px,
+		"base-line-height": 1.5,
+		"max-font-size": 28px,
+		"max-line-height": 1.35,
+		"rounding": false
+	),
+	$numb-smaller-sizes: 1,
+	$numb-larger-sizes: 4
+) {
+
+	// Create font-size and line-height scales
+	$font-size-scale: ss-build-scale(
+		map-get($params, "base-font-size"),
+		map-get($params, "max-font-size"),
+		$numb-smaller-sizes, 
+		$numb-larger-sizes, 
+		map-get($params, "rounding")
+	);
+
+	$line-height-scale: ss-build-scale(
+		map-get($params, "base-line-height"),
+		map-get($params, "max-line-height"),
+		$numb-smaller-sizes, 
+		$numb-larger-sizes, 
+		map-get($params, "rounding")
+	);
+    
+	$sizes: ();
+	
+	// Pair each size with the correponding font-size 
+	// and line-height, then add the size to the scale.
+	@for $i from -$numb-smaller-sizes to $numb-larger-sizes + 1 {
+		
+		// Calculate array position in order to lookup sizes in lists.
+		$arr-position: $i + $numb-smaller-sizes + 1;
+
+		// Key for size
+		$name-of-size: $i;
+
+		// Values for size
+		$values: (
+			font-size: nth($font-size-scale, $arr-position),
+			line-height: nth($line-height-scale, $arr-position)
+		);
+
+		// Merge into $font-scale. 
+		$sizes: map-merge($sizes, ($name-of-size: $values));
+	}
+
+	$font-scale: map-merge($params, ("sizes": $sizes));
+	@return $font-scale;
+}

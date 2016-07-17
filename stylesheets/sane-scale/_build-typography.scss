@@ -1,0 +1,40 @@
+
+// Augments a breakpoint map by building a "scale" property
+// containing the specified sizes to each breakpoint.
+
+@function ss-build-typography(
+	$font-scales: (
+		// Phone sizes
+		"default": (
+			"base-font-size": 18px,
+			"base-line-height": 1.5,
+			"max-font-size": 28px,
+			"max-line-height": 1.35,
+			"rounding": false
+		),
+		// Tablet sizes and larger
+		"tablet": (
+			"media-query": "screen and (min-width: 600px)",
+			"base-font-size": 20px,
+			"base-line-height": 1.6,
+			"max-font-size": 42px,
+			"max-line-height": 1.25,
+			"rounding": false
+		)
+	),
+	$numb-smaller-sizes: 1,
+	$numb-larger-sizes: 4
+) {
+
+	$typography: ();
+
+	// Create a scale for each breakpoint.
+	@each $font-scale-name, $font-scale-params in $font-scales {
+
+		// Create a font scale.
+		$font-scale: ss-build-font-scale($font-scale-params, $numb-smaller-sizes, $numb-larger-sizes);
+		$typography: map-merge($typography, ($font-scale-name: $font-scale));
+	}
+
+	@return $typography;
+}
