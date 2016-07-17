@@ -1,3 +1,4 @@
+
 # Sane Scale
 
 Sane Scale is a SASS framework for defining and applying typographic styles. Its goal is to generate a complex, nuanced typographic system from only a few key variables. 
@@ -74,7 +75,7 @@ $font-scales: (
 		"base-line-height": 1.5,
 		"max-font-size": 28px,
 		"max-line-height": 1.35,
-		"rounding": false
+		"round-under": 0px
 	),
 
 	// Tablet sizes and larger. 
@@ -84,7 +85,7 @@ $font-scales: (
 		"base-line-height": 1.6,
 		"max-font-size": 42px,
 		"max-line-height": 1.25,
-		"rounding": false
+		"round-under": 0px
 	)
 ); 
 ```
