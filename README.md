@@ -56,15 +56,15 @@ $font-feather: (
 
 Oftentimes two fonts set to the same size do not appear to be. This is because the heights of their lowercase letters are not equal. By using the `font-size-adjustment` property, additional fonts can be normalized to the default font. This will ensure they align to the modular scale.
 
-As an example, Verdana appears 11% larger than Georgia. To normalize it with Georgia, we can set a `normalize-ratio: 0.89`. This will cause Verdana to be 11% smaller than Georgia when both are set to the same size.
+For example, Verdana appears 11% larger than Georgia. To normalize it with Georgia, we can set a `font-size-adjustment: 0.89`. This will cause Verdana to be 11% smaller than Georgia when set to the same size.
 
-Similarly, you may also want to apply an adjustment to line-heights on a font-by-font basis. Specify a `line-height-adjustment` adjustment to do so.
+Similarly, you can also apply an adjustment to line-height on a font-by-font basis by specifying a `line-height-adjustment`.
 
 
 
 ### Define your constraints
 
-Font scales are built from constraints defined via a SASS map in the following format:
+Provide constraints for your font scales via a SASS map in the following format:
 
 ```scss
 $font-scales: (	
@@ -96,9 +96,10 @@ A `media-query` property should also be set for each, exluding the default scale
 If you need a bit of typographic guidance, [Responsive Typography: The Basics](https://ia.net/know-how/responsive-typography-the-basics "Responsive Typography: The Basics") by Information Architects is an excellent read.
 
 
+
 ### Build your font scales
 
-All thats left to do is to define the sizes you need and build the scale itself:
+All that's left to do is to define the sizes you need and build the scale itself:
 
 ```scss
 $numb-smaller-sizes: 1;
