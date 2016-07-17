@@ -19,7 +19,7 @@ Sane Scale is a SASS framework for defining and applying typographic styles. Its
 * Compass config.rb: `require 'sane-scale'`
 * SCSS: `@import 'sane-scale';`
 
-With a sample configuration and type specimen:
+Or create a new project with a sample config and type specimen:
 
 * Terminal: `compass create project-name -r sane-scale --using sane-scale`
 
