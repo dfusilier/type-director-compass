@@ -62,9 +62,9 @@ Similarly, you may also want to apply an adjustment to line-heights on a font-by
 
 
 
-### Define your font scales
+### Define your constraints
 
-Font scales are defined via SASS maps in the following format:
+Font scales built from constraints defined via a SASS map in the following format:
 
 ```scss
 $font-scales: (	
@@ -96,7 +96,7 @@ A `media-query` property should also be set for each, exluding the default scale
 If you need a bit of typographic guidance, [Responsive Typography: The Basics](https://ia.net/know-how/responsive-typography-the-basics "Responsive Typography: The Basics") by Information Architects is an excellent read.
 
 
-### Build the scale
+### Build your font scales
 
 All thats left to do is to define the sizes you need and build the scale itself:
 
