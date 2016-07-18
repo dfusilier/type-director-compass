@@ -17,7 +17,7 @@ Compass::Frameworks.register('sane-scale', :path => extension_path)
 # version contains alphas, it will be created as a 
 # prerelease version. Date is in the form of YYYY-MM-DD
 module SaneScale
-  VERSION = "0.50"
+  VERSION = "0.5.1"
   DATE = "2016-07-17"
 end
 

@@ -71,21 +71,21 @@ $font-scales: (
 
 	// Phone sizes. 
 	"default": (
-		"base-font-size": 18px,
+		"base-font-size": 16px,
 		"base-line-height": 1.5,
 		"max-font-size": 28px,
 		"max-line-height": 1.35,
-		"round-under": 0px
+		"rounding": false
 	),
 
 	// Tablet sizes and larger. 
 	"tablet": (
-		"media-query": "screen and (min-width: 600px)",
-		"base-font-size": 16px,
+		"media-query": "screen and (min-width: 768px)",
+		"base-font-size": 18px,
 		"base-line-height": 1.6,
 		"max-font-size": 42px,
 		"max-line-height": 1.25,
-		"round-under": 0px
+		"rounding": false
 	)
 ); 
 ```
