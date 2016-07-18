@@ -6,6 +6,10 @@
 * Style Guide
 ******************************************************/
 
+* {
+	box-sizing: border-box;
+}
+
 body {
 	background-color: #EFEFEF;
 }
@@ -21,7 +25,7 @@ nav {
 .section {
 	width: 100%;
 	padding: 30px 24px;
-	@media (min-width: 600px) {
+	@media (min-width: 768px) {
 		padding: 60px;
 	}
 }
@@ -40,33 +44,80 @@ nav {
 .font-comparison td, th {
 	padding: 12px 15px 15px 20px; 
 	vertical-align: top;
-	border-right: 1px solid #ededed;
 	position: relative;
+	width: 100%;
+	display: block;
+	border-right: none;
+
+	@media screen and (min-width: 768px) {
+		width: auto;
+		display: table-cell;
+		border-right: 1px solid #ededed;
+	}
 }
 
 .font-comparison th {
-	@extend .h5;
+	@include ss-set-responsive-font-size($font-heading, 0);
 	@extend .text-secondary;
+	border-bottom: 1px solid #ededed;
 }
 
 .font-comparison tr {
 	border-top: 1px solid #ededed;
 	border-bottom: 1px solid #ededed;
+	width: 100%;
+}
+
+.font-comparison thead {
+	display: none;
+
+	@media screen and (min-width: 768px) {
+		display: table-header-group;
+	}	
+}
+
+.font-comparison td p {
+	max-height: 160px;
+	overflow: hidden;
+	margin-bottom: $normal-margin * 1.5;
+	position: relative;
+	@media screen and (min-width: 768px) {
+	    max-height: 300px;
+	}
+	
+	&:after {
+		content: "";
+		height: 40px;
+		background-color: white;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: -moz-linear-gradient(top, 		rgba(255,255,255,0), 	rgba(255,255,255,1)); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, 	rgba(255,255,255,0), 	rgba(255,255,255,1)); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, 		rgba(255,255,255,0), 	rgba(255,255,255,1)); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	}
 }
 
 .font-comparison th:first-child {
 	border-right: 1px solid #ededed;
-	text-align: right;
+	text-align: left;
+
+	@media screen and (min-width: 768px) {
+		width: 8%;
+		display: table-cell;
+		text-align: right;
+	}
+}
+
+.font-comparison th:last-child {
+	@media screen and (min-width: 768px) {
+		width: 18%;
+	}
 }
 
 .metrics {
-	padding: 12px 15px 15px 20px;
-	// border-top: 1px solid #ededed;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background-color: rgba(255,255,255, 0.95);
+	@include ss-set-responsive-font-size($font-heading, 0);
 }
 
 .copy-larger4 { 
