@@ -71,7 +71,7 @@ $typography: ss-build-typography((
 
 	// Define your font scales and their constraints.
 	"scales": (
-		
+
 		// Phone sizes 
 		"default": (
 			"base-font-size": 16px,
@@ -124,7 +124,7 @@ We just applied responsive styling to the lead paragraph style. It will use medi
 	@include ss-set-responsive-font-size($font-verdana, 1);
 }
 ```
-We used the same size for the `.h4` heading, but with `$font-verdana`. That will result in a font-size of 16.4px by default and 19.8px for tablets and larger. Mathematically different, but visually equal.
+We used the same size for the `.h4` heading, but with `$font-verdana`. This will result in a font-size of 16.4px by default and 19.8px for tablets and larger. Mathematically different, but visually equal.
 
 
 
@@ -154,7 +154,7 @@ $font-verdana: (
 );
 ```
 
-Apply the uppercase style like so:
+Apply an uppercase style like so:
 ```scss
 .h4 { 
 	@include ss-set-responsive-font-size($font-verdana, 1, $uppercase: true);
