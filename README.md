@@ -71,7 +71,8 @@ $typography: ss-build-typography((
 
 	// Define your font scales and their constraints.
 	"scales": (
-		// Phone sizes. 
+		
+		// Phone sizes 
 		"default": (
 			"base-font-size": 16px,
 			"base-line-height": 1.5,
@@ -79,7 +80,7 @@ $typography: ss-build-typography((
 			"max-line-height": 1.35
 		),
 
-		// Tablet sizes and larger. 
+		// Tablet sizes and larger 
 		"tablet": (
 			"media-query": "screen and (min-width: 768px)",
 			"base-font-size": 18px,
