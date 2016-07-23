@@ -140,7 +140,7 @@ You might occassionally want finer-grained control of your type styles. For thes
 Here we just styled our h4 to have the size 1 for only the tablet breakpoint. With `ss-set-responsive-font-size()` the corresponding sizes for each other breakpoint would have also been applied.
 
 
-### Working with uppercase
+### Working with uppercase styles
 
 If you'd like to set something in all caps and have it align to your font scales, include an `uppercase-adjustment` when defining fonts:
 
@@ -151,7 +151,7 @@ $font-verdana: (
 	"line-height-adjustment": 0.94,
 	"uppercase-adjustment": 0.85
 );
-``
+```
 
 Apply the uppercase style like so:
 ```scss
