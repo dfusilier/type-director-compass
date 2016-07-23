@@ -62,52 +62,45 @@ Similarly, you can also apply an adjustment to line-height on a font-by-font bas
 
 
 
-### Define your constraints
+### Build font scales
 
-Provide constraints for your font scales via a SASS map in the following format:
+From a few constraints, `ss-build-typography` builds a modular scale for each specified media query.
 
 ```scss
-$font-scales: (	
+$typography: ss-build-typography((	
 
-	// Phone sizes. 
-	"default": (
-		"base-font-size": 16px,
-		"base-line-height": 1.5,
-		"max-font-size": 28px,
-		"max-line-height": 1.35,
-		"rounding": false
+	// Define your font scales and their constraints.
+	"scales": (
+		// Phone sizes. 
+		"default": (
+			"base-font-size": 16px,
+			"base-line-height": 1.5,
+			"max-font-size": 28px,
+			"max-line-height": 1.35
+		),
+
+		// Tablet sizes and larger. 
+		"tablet": (
+			"media-query": "screen and (min-width: 768px)",
+			"base-font-size": 18px,
+			"base-line-height": 1.6,
+			"max-font-size": 42px,
+			"max-line-height": 1.25
+		)
 	),
 
-	// Tablet sizes and larger. 
-	"tablet": (
-		"media-query": "screen and (min-width: 768px)",
-		"base-font-size": 18px,
-		"base-line-height": 1.6,
-		"max-font-size": 42px,
-		"max-line-height": 1.25,
-		"rounding": false
-	)
-); 
+	// Other than the base, how many sizes do you need?
+	"numb-smaller-sizes": 1,
+	"numb-larger-sizes": 4
+));
 ```
-For each scale, you'll need to specify a font-size and line-height for both the base size and the max size. Additional font-sizes and line-heights will be interpolated from these constraints.
+For each scale, you'll need to specify font-size and line-height for both a base size and a max size. Additional font-sizes and line-heights will be interpolated from these constraints.
 
-A `media-query` property should also be set for each, exluding the default scale. Feel free to name the other scales whatever you like.
+A `media-query` property should also be set for each, exluding the "default" scale. Feel free to name the other scales whatever you like.
+
+That's it! Note that `$typography` is a key variable. This map will be used by the following mixins to lookup and apply sizes.
 
 If you need a bit of typographic guidance, [Responsive Typography: The Basics](https://ia.net/know-how/responsive-typography-the-basics "Responsive Typography: The Basics") by Information Architects is an excellent read.
-
-
-
-### Build your font scales
-
-All that's left to do is to define the sizes you need and build the scale itself:
-
-```scss
-$numb-smaller-sizes: 1;
-$numb-larger-sizes: 4;
-
-$typography: ss-build-typography($font-scales, $numb-smaller-sizes, $numb-larger-sizes);
-```
-That's it! Note that `$typography` is a key variable. This map will be used by the following mixins to lookup and apply sizes.
 
 
 
@@ -145,3 +138,25 @@ You might occassionally want finer-grained control of your type styles. For thes
 ```
 
 Here we just styled our h4 to have the size 1 for only the tablet breakpoint. With `ss-set-responsive-font-size()` the corresponding sizes for each other breakpoint would have also been applied.
+
+
+### Working with uppercase
+
+If you'd like to set something in all caps and have it align to your font scales, include an `uppercase-adjustment` when defining fonts:
+
+```scss
+$font-verdana: (
+	"family": unquote("Verdana, sans-serif"),
+	"font-size-adjustment": 0.89,
+	"line-height-adjustment": 0.94,
+	"uppercase-adjustment": 0.85
+);
+``
+
+Apply the uppercase style like so:
+```scss
+.h4 { 
+	@include ss-set-responsive-font-size($font-verdana, 1, $uppercase: true);
+}
+```
+

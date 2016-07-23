@@ -3,14 +3,22 @@
 ******************************************************/
 
 // Apply styles for a specific font, breakpoint, and size.
-@mixin ss-apply-font-styles($font, $size, $scale-name) {
+@mixin ss-apply-font-styles($font, $size, $scale-name, $uppercase: false) {
 
 	// Get font-size and apply adjustments.
 	$unadjusted-font-size: map-deep-get($typography, $scale-name, "sizes", $size, "font-size"); 
 	$font-size-adjustment: map-get($font, "font-size-adjustment") or 1.00;
+	$uppercase-adjustment: map-get($font, "uppercase-adjustment") or 1.00;
 
-	font-size: $unadjusted-font-size * $font-size-adjustment; 
+	@if $uppercase {
+		$font-size-adjustment: $font-size-adjustment * $uppercase-adjustment;
+	}
 
+	$font-size: $unadjusted-font-size * $font-size-adjustment;
+
+	// Round font-size.
+	$font-size-precision: map-deep-get($typography, $scale-name, "font-size-precision") or 0.001;
+	
 	// Get line-height and apply adjustments.
 	$unadjusted-line-height: map-deep-get($typography, $scale-name, "sizes", $size, "line-height");
 	$line-height-adjustment: map-get($font, "line-height-adjustment") or 1.00;
@@ -21,32 +29,51 @@
 		$line-height-adjustment: $line-height-adjustment * (1 / $font-size-adjustment);
 	}
 
-	line-height: $unadjusted-line-height * $line-height-adjustment;
+	$line-height: $unadjusted-line-height * $line-height-adjustment;
+
+	// Round line-height.
+	$line-height-precision: map-deep-get($typography, $scale-name, "line-height-precision") or 0.001;
+	// $line-height: ss-round($line-height, $line-height-precision);
+
+	font-size: $font-size; 
+	line-height: $line-height;
 }
 
 // Apply non-responsive styling. Only the size used for
 // the specified media query will be applied.
-@mixin ss-set-font-size($font, $size, $scale-name) {
+@mixin ss-set-font-size($font, $size, $scale-name, $uppercase: false) {
+	
 	font-family: map-get($font, "family");
+
+	@if $uppercase {
+		text-transform: uppercase;
+	}
+
 	@include ss-apply-font-styles($font, $size, $scale-name);
 }
 
 // Apply responsive styling. Corresponding sizes for
 // each media query will be applied.
-@mixin ss-set-responsive-font-size($font, $size) {
+@mixin ss-set-responsive-font-size($font, $size: 0, $uppercase: false) {
+
 	font-family: map-get($font, "family");
+
+	@if $uppercase {
+		text-transform: uppercase;
+	}
+
 	@each $scale-name, $scale-value in $typography {
 
 		// For the default styles, don't include a media query.
 		@if $scale-name == "default" {
-			@include ss-apply-font-styles($font, $size, $scale-name);
+			@include ss-apply-font-styles($font, $size, $scale-name, $uppercase);
 		}
 
 		// For other breakpoints, set style with a media query.
 		@else {
 			$media-query: map-deep-get($typography, $scale-name, "media-query");
 			@media #{$media-query} {
-				@include ss-apply-font-styles($font, $size, $scale-name);
+				@include ss-apply-font-styles($font, $size, $scale-name, $uppercase);
 			} 
 		}
 	}

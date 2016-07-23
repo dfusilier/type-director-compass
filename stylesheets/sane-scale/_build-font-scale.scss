@@ -2,44 +2,43 @@
 // Create a modular font scale. 
 // Returns a nested list of font-size and line-height values.
 
-@function ss-build-font-scale(
-	$params: (
-		"media-query": "",
-		"base-font-size": 18px,
+@function ss-build-font-scale($opts: ()) {
+
+	// Extend default opts
+	$opts: map-merge((
+		"base-font-size": 16px,
 		"base-line-height": 1.5,
 		"max-font-size": 28px,
 		"max-line-height": 1.35,
-		"rounding": false
-	),
-	$numb-smaller-sizes: 1,
-	$numb-larger-sizes: 4
-) {
+		"round-under": null,
+		"numb-smaller-sizes": 1,
+		"numb-larger-sizes": 4
+	), $opts);
+
 
 	// Create font-size and line-height scales
-	$font-size-scale: ss-build-scale(
-		map-get($params, "base-font-size"),
-		map-get($params, "max-font-size"),
-		$numb-smaller-sizes, 
-		$numb-larger-sizes, 
-		map-get($params, "rounding")
-	);
+	$font-size-scale: ss-build-scale((
+		"base-value": map-get($opts, "base-font-size"),
+		"max-value": map-get($opts, "max-font-size"),
+		"numb-smaller-values": map-get($opts, "numb-smaller-sizes"),
+		"numb-larger-values": map-get($opts, "numb-larger-sizes")
+	));
 
-	$line-height-scale: ss-build-scale(
-		map-get($params, "base-line-height"),
-		map-get($params, "max-line-height"),
-		$numb-smaller-sizes, 
-		$numb-larger-sizes, 
-		map-get($params, "rounding")
-	);
+	$line-height-scale: ss-build-scale((
+		"base-value": map-get($opts, "base-line-height"),
+		"max-value": map-get($opts, "max-line-height"),
+		"numb-smaller-values": map-get($opts, "numb-smaller-sizes"),
+		"numb-larger-values": map-get($opts, "numb-larger-sizes")
+	));
     
 	$sizes: ();
 	
 	// Pair each size with the correponding font-size 
 	// and line-height, then add the size to the scale.
-	@for $i from -$numb-smaller-sizes to $numb-larger-sizes + 1 {
+	@for $i from -(map-get($opts, "numb-smaller-sizes")) to map-get($opts, "numb-larger-sizes") + 1 {
 		
 		// Calculate array position in order to lookup sizes in lists.
-		$arr-position: $i + $numb-smaller-sizes + 1;
+		$arr-position: $i + map-get($opts, "numb-smaller-sizes") + 1;
 
 		// Key for size
 		$name-of-size: $i;
@@ -54,6 +53,6 @@
 		$sizes: map-merge($sizes, ($name-of-size: $values));
 	}
 
-	$font-scale: map-merge($params, ("sizes": $sizes));
+	$font-scale: map-merge($opts, ("sizes": $sizes));
 	@return $font-scale;
 }
