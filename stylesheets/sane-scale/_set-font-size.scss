@@ -3,7 +3,13 @@
 ******************************************************/
 
 // Apply styles for a specific font, breakpoint, and size.
-@mixin ss-apply-font-styles($font, $size, $scale-name, $uppercase: false) {
+@mixin ss-apply-font-styles($font, $size, $scale-name, $opts: ()) {
+
+	// Extend default opts
+	$opts: map-merge((
+		"uppercase": false,
+		"tighten": false
+	), $opts);
 
 	// FONT SIZE
 	// Get and apply adjustments.
@@ -12,7 +18,7 @@
 	$font-size-adjustment: map-get($font, "font-size-adjustment") or 1.00;
 	$uppercase-adjustment: map-get($font, "uppercase-adjustment") or 1.00;
 
-	@if $uppercase {
+	@if map-get($opts, "uppercase") {
 		$font-size-adjustment: $font-size-adjustment * $uppercase-adjustment;
 	}
 
@@ -52,24 +58,34 @@
 
 // Apply non-responsive styling. Only the size used for
 // the specified media query will be applied.
-@mixin ss-set-font-size($font, $size, $scale-name, $uppercase: false) {
+@mixin ss-set-font-size($font, $size, $scale-name, $opts: ()) {
 	
+	// Extend default opts
+	$opts: map-merge((
+		"uppercase": false
+	), $opts);
+
 	font-family: map-get($font, "family");
 
-	@if $uppercase {
+	@if map-get($opts, "uppercase") {
 		text-transform: uppercase;
 	}
 
-	@include ss-apply-font-styles($font, $size, $scale-name);
+	@include ss-apply-font-styles($font, $size, $scale-name, $opts);
 }
 
 // Apply responsive styling. Corresponding sizes for
 // each media query will be applied.
-@mixin ss-set-responsive-font-size($font, $size: 0, $uppercase: false) {
+@mixin ss-set-responsive-font-size($font, $size: 0, $opts: ()) {
+	
+	// Extend default opts
+	$opts: map-merge((
+		"uppercase": false
+	), $opts);
 
 	font-family: map-get($font, "family");
 
-	@if $uppercase {
+	@if map-get($opts, "uppercase") {
 		text-transform: uppercase;
 	}
 
@@ -77,14 +93,14 @@
 
 		// For the default styles, don't include a media query.
 		@if $scale-name == "default" {
-			@include ss-apply-font-styles($font, $size, $scale-name, $uppercase);
+			@include ss-apply-font-styles($font, $size, $scale-name, $opts);
 		}
 
 		// For other breakpoints, set style with a media query.
 		@else {
 			$media-query: map-deep-get($typography, $scale-name, "media-query");
 			@media #{$media-query} {
-				@include ss-apply-font-styles($font, $size, $scale-name, $uppercase);
+				@include ss-apply-font-styles($font, $size, $scale-name, $opts);
 			} 
 		}
 	}

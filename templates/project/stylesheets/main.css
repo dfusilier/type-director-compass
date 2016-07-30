@@ -102,150 +102,155 @@ body {
 /* line 22, ../sass/_typography.scss */
 .h1 {
   font-family: Verdana, sans-serif;
-  font-size: 24.92px;
-  line-height: 1.42584;
+  text-transform: uppercase;
+  font-size: 21.182px;
+  line-height: 1.67746;
 }
 @media screen and (min-width: 768px) {
   /* line 22, ../sass/_typography.scss */
   .h1 {
-    font-size: 37.38px;
+    font-size: 31.773px;
     line-height: 50.76px;
   }
 }
 
-/* line 26, ../sass/_typography.scss */
+/* line 28, ../sass/_typography.scss */
 .h2 {
   font-family: Verdana, sans-serif;
-  font-size: 21.66649px;
-  line-height: 1.4639;
+  text-transform: uppercase;
+  font-size: 18.41652px;
+  line-height: 1.72223;
 }
 @media screen and (min-width: 768px) {
-  /* line 26, ../sass/_typography.scss */
+  /* line 28, ../sass/_typography.scss */
   .h2 {
-    font-size: 30.24441px;
+    font-size: 25.70775px;
     line-height: 43.45329px;
   }
 }
 
-/* line 30, ../sass/_typography.scss */
+/* line 34, ../sass/_typography.scss */
 .h3 {
   font-family: Verdana, sans-serif;
-  font-size: 18.83775px;
-  line-height: 1.50297;
+  text-transform: uppercase;
+  font-size: 16.01209px;
+  line-height: 1.7682;
 }
 @media screen and (min-width: 768px) {
-  /* line 30, ../sass/_typography.scss */
+  /* line 34, ../sass/_typography.scss */
   .h3 {
-    font-size: 24.47095px;
+    font-size: 20.80031px;
     line-height: 37.19835px;
   }
 }
 
-/* line 34, ../sass/_typography.scss */
+/* line 40, ../sass/_typography.scss */
 .h4 {
   font-family: Verdana, sans-serif;
-  font-size: 16.37833px;
-  line-height: 1.54308;
+  text-transform: uppercase;
+  font-size: 13.92158px;
+  line-height: 1.81539;
 }
 @media screen and (min-width: 768px) {
-  /* line 34, ../sass/_typography.scss */
+  /* line 40, ../sass/_typography.scss */
   .h4 {
-    font-size: 19.79961px;
+    font-size: 16.82967px;
     line-height: 31.84379px;
   }
 }
 
-/* line 38, ../sass/_typography.scss */
+/* line 46, ../sass/_typography.scss */
 .h5 {
   font-family: Verdana, sans-serif;
-  font-size: 14.24px;
-  line-height: 1.58427;
+  text-transform: uppercase;
+  font-size: 12.104px;
+  line-height: 1.86385;
 }
 @media screen and (min-width: 768px) {
-  /* line 38, ../sass/_typography.scss */
+  /* line 46, ../sass/_typography.scss */
   .h5 {
-    font-size: 16.02px;
+    font-size: 13.617px;
     line-height: 27.26px;
   }
 }
 
-/* line 42, ../sass/_typography.scss */
+/* line 52, ../sass/_typography.scss */
 .h6 {
   font-family: Verdana, sans-serif;
   font-size: 12.38085px;
   line-height: 1.62655;
 }
 @media screen and (min-width: 768px) {
-  /* line 42, ../sass/_typography.scss */
+  /* line 52, ../sass/_typography.scss */
   .h6 {
     font-size: 12.96189px;
     line-height: 23.33603px;
   }
 }
 
-/* line 46, ../sass/_typography.scss */
+/* line 56, ../sass/_typography.scss */
 .h1, .h2, .h3, .h4, .h5, .h6, p, ul, ol, li, small {
   margin-top: 0;
   margin-bottom: 12px;
 }
 
-/* line 51, ../sass/_typography.scss */
+/* line 61, ../sass/_typography.scss */
 .lead {
   font-family: Georgia, serif;
   font-size: 18.40261px;
   line-height: 1.46101;
 }
 @media screen and (min-width: 768px) {
-  /* line 51, ../sass/_typography.scss */
+  /* line 61, ../sass/_typography.scss */
   .lead {
     font-size: 22.24676px;
     line-height: 33.87638px;
   }
 }
 
-/* line 55, ../sass/_typography.scss */
+/* line 65, ../sass/_typography.scss */
 p {
   font-size: inherit;
   line-height: inherit;
 }
 
-/* line 60, ../sass/_typography.scss */
+/* line 70, ../sass/_typography.scss */
 small, .footnote {
   font-family: Georgia, serif;
   font-size: 13.91107px;
   line-height: 1.54004;
 }
 @media screen and (min-width: 768px) {
-  /* line 60, ../sass/_typography.scss */
+  /* line 70, ../sass/_typography.scss */
   small, .footnote {
     font-size: 14.56392px;
     line-height: 24.82556px;
   }
 }
 
-/* line 64, ../sass/_typography.scss */
+/* line 74, ../sass/_typography.scss */
 a {
   color: inherit;
   text-decoration: underline;
   cursor: pointer;
 }
 
-/* line 70, ../sass/_typography.scss */
+/* line 80, ../sass/_typography.scss */
 a:hover {
   color: red;
 }
 
-/* line 74, ../sass/_typography.scss */
+/* line 84, ../sass/_typography.scss */
 a:active {
   color: red;
 }
 
-/* line 79, ../sass/_typography.scss */
+/* line 89, ../sass/_typography.scss */
 em {
   font-style: italic;
 }
 
-/* line 83, ../sass/_typography.scss */
+/* line 93, ../sass/_typography.scss */
 .text-secondary, .font-comparison th {
   color: rgba(0, 0, 0, 0.5);
 }
