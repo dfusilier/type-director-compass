@@ -90,7 +90,7 @@ body {
   /* line 12, ../sass/_typography.scss */
   body {
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 29px;
   }
 }
 
@@ -109,7 +109,7 @@ body {
   /* line 22, ../sass/_typography.scss */
   .h1 {
     font-size: 37.38px;
-    line-height: 1.32022;
+    line-height: 50.76px;
   }
 }
 
@@ -123,7 +123,7 @@ body {
   /* line 26, ../sass/_typography.scss */
   .h2 {
     font-size: 30.24441px;
-    line-height: 1.40427;
+    line-height: 43.45329px;
   }
 }
 
@@ -137,7 +137,7 @@ body {
   /* line 30, ../sass/_typography.scss */
   .h3 {
     font-size: 24.47095px;
-    line-height: 1.49366;
+    line-height: 37.19835px;
   }
 }
 
@@ -151,7 +151,7 @@ body {
   /* line 34, ../sass/_typography.scss */
   .h4 {
     font-size: 19.79961px;
-    line-height: 1.58875;
+    line-height: 31.84379px;
   }
 }
 
@@ -165,7 +165,7 @@ body {
   /* line 38, ../sass/_typography.scss */
   .h5 {
     font-size: 16.02px;
-    line-height: 1.68989;
+    line-height: 27.26px;
   }
 }
 
@@ -179,7 +179,7 @@ body {
   /* line 42, ../sass/_typography.scss */
   .h6 {
     font-size: 12.96189px;
-    line-height: 1.79746;
+    line-height: 23.33603px;
   }
 }
 
@@ -199,7 +199,7 @@ body {
   /* line 51, ../sass/_typography.scss */
   .lead {
     font-size: 22.24676px;
-    line-height: 1.50424;
+    line-height: 33.87638px;
   }
 }
 
@@ -219,7 +219,7 @@ small, .footnote {
   /* line 60, ../sass/_typography.scss */
   small, .footnote {
     font-size: 14.56392px;
-    line-height: 1.70185;
+    line-height: 24.82556px;
   }
 }
 
@@ -1026,7 +1026,7 @@ nav a {
   /* line 59, ../sass/main.scss */
   .font-comparison th {
     font-size: 16.02px;
-    line-height: 1.68989;
+    line-height: 27.26px;
   }
 }
 
@@ -1109,7 +1109,7 @@ nav a {
   /* line 119, ../sass/main.scss */
   .metrics {
     font-size: 16.02px;
-    line-height: 1.68989;
+    line-height: 27.26px;
   }
 }
 
@@ -1123,7 +1123,7 @@ nav a {
   /* line 123, ../sass/main.scss */
   .copy-larger4 {
     font-size: 42px;
-    line-height: 1.25;
+    line-height: 54.0px;
   }
 }
 
@@ -1137,7 +1137,7 @@ nav a {
   /* line 127, ../sass/main.scss */
   .copy-larger3 {
     font-size: 33.98248px;
-    line-height: 1.32957;
+    line-height: 46.22691px;
   }
 }
 
@@ -1151,7 +1151,7 @@ nav a {
   /* line 131, ../sass/main.scss */
   .copy-larger2 {
     font-size: 27.49545px;
-    line-height: 1.41421;
+    line-height: 39.57272px;
   }
 }
 
@@ -1165,7 +1165,7 @@ nav a {
   /* line 135, ../sass/main.scss */
   .icon-larger4 {
     font-size: 39.9px;
-    line-height: 1.31579;
+    line-height: 54.0px;
   }
 }
 
@@ -1179,7 +1179,7 @@ nav a {
   /* line 139, ../sass/main.scss */
   .icon-larger3 {
     font-size: 32.28336px;
-    line-height: 1.39955;
+    line-height: 46.22691px;
   }
 }
 
@@ -1193,7 +1193,7 @@ nav a {
   /* line 143, ../sass/main.scss */
   .icon-larger2 {
     font-size: 26.12068px;
-    line-height: 1.48865;
+    line-height: 39.57272px;
   }
 }
 
@@ -1207,7 +1207,7 @@ nav a {
   /* line 147, ../sass/main.scss */
   .icon-larger1 {
     font-size: 21.13442px;
-    line-height: 1.58341;
+    line-height: 33.87638px;
   }
 }
 
@@ -1221,7 +1221,7 @@ nav a {
   /* line 151, ../sass/main.scss */
   .icon-base {
     font-size: 17.1px;
-    line-height: 1.68421;
+    line-height: 29px;
   }
 }
 
@@ -1235,6 +1235,6 @@ nav a {
   /* line 155, ../sass/main.scss */
   .icon-smaller {
     font-size: 14.56392px;
-    line-height: 1.70185;
+    line-height: 24.82556px;
   }
 }

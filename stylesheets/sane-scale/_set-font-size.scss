@@ -5,7 +5,9 @@
 // Apply styles for a specific font, breakpoint, and size.
 @mixin ss-apply-font-styles($font, $size, $scale-name, $uppercase: false) {
 
-	// Get font-size and apply adjustments.
+	// FONT SIZE
+	// Get and apply adjustments.
+
 	$unadjusted-font-size: map-deep-get($typography, $scale-name, "sizes", $size, "font-size"); 
 	$font-size-adjustment: map-get($font, "font-size-adjustment") or 1.00;
 	$uppercase-adjustment: map-get($font, "uppercase-adjustment") or 1.00;
@@ -17,9 +19,16 @@
 	$font-size: $unadjusted-font-size * $font-size-adjustment;
 
 	// Round font-size.
-	$font-size-precision: map-deep-get($typography, $scale-name, "font-size-precision") or 0.001;
+	$font-size-precision: map-deep-get($typography, $scale-name, "font-size-precision") or null;
+	@if ($font-size-precision) {
+        $font-size: ss-round($font-size, $font-size-precision);
+    } 
 	
-	// Get line-height and apply adjustments.
+
+
+	// LINE HEIGHT
+	// Get and apply adjustments.
+
 	$unadjusted-line-height: map-deep-get($typography, $scale-name, "sizes", $size, "line-height");
 	$line-height-adjustment: map-get($font, "line-height-adjustment") or 1.00;
 
@@ -32,8 +41,10 @@
 	$line-height: $unadjusted-line-height * $line-height-adjustment;
 
 	// Round line-height.
-	$line-height-precision: map-deep-get($typography, $scale-name, "line-height-precision") or 0.001;
-	// $line-height: ss-round($line-height, $line-height-precision);
+	$line-height-precision: map-deep-get($typography, $scale-name, "line-height-precision") or null;
+	@if ($line-height-precision) {
+		$line-height: ss-round($line-height, $line-height-precision);
+	}
 
 	font-size: $font-size; 
 	line-height: $line-height;
