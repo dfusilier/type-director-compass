@@ -167,7 +167,7 @@ $typography: ss-build-typography((
 ));
 ```
 
-### Solid and tight line-spacing
+### Solid and tight line-height
 
 Oftentimes you may need to set very narrow lines of text, causing your line-height to look too loose. For a tighter line-height, use the `"line-height": "tight"` option.
 
@@ -205,4 +205,3 @@ Apply an uppercase style like so:
 }
 ```
 
-### Uppercase styles
