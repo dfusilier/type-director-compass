@@ -141,7 +141,51 @@ You might occassionally want finer-grained control of your type styles. For thes
 Here we just styled our h4 to have the size 1 for only the tablet breakpoint. With `ss-set-responsive-font-size()` the corresponding sizes for each other breakpoint would have also been applied.
 
 
-### Working with uppercase styles
+## Advanced Usage
+
+### Rounding 
+
+Rounding to any precision is supported. 
+
+```scss
+$typography: ss-build-typography((	
+
+	// Define your font scales and their constraints.
+	"scales": (
+
+		// Phone sizes 
+		"default": (
+			"base-font-size": 16px,
+			"base-line-height": 1.5,
+			"max-font-size": 28px,
+			"max-line-height": 1.35,
+			"font-size-precision": 0.1,
+			"line-height-precision: 0.01
+		),
+
+		// ...
+));
+```
+
+### Solid and tight line-spacing
+
+Oftentimes you may need to set very narrow lines of text, causing your line-height to look too loose. For a tighter line-height, use the `"line-height": "tight"` option.
+
+```scss
+.caption-tight { 
+	@include ss-set-responsive-font-size($font-verdana, -1, opts: ("line-height": "tight"));
+}
+```
+
+Other times you may want to set text to be solid (meaning no "leading"). In terms of CSS, this setting the line-height to be equal to the font-size. To do this, use the `"line-height": "solid"` option.
+
+```scss
+.btn { 
+	@include ss-set-responsive-font-size($font-verdana, 1, opts: ("line-height": "solid"));
+}
+```
+
+### Uppercase styles
 
 If you'd like to set something in all caps and have it align to your font scales, include an `uppercase-adjustment` when defining fonts:
 
@@ -161,3 +205,4 @@ Apply an uppercase style like so:
 }
 ```
 
+### Uppercase styles

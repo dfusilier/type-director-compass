@@ -120,6 +120,9 @@ nav {
 	@include ss-set-responsive-font-size($font-heading, 0);
 }
 
+
+// Copy
+
 .copy-larger4 { 
 	@include ss-set-responsive-font-size($font-copy, 4);
 } 
@@ -131,6 +134,8 @@ nav {
 .copy-larger2 { 
 	@include ss-set-responsive-font-size($font-copy, 2); 
 }
+
+// Icons
 
 .icon-larger4 { 
 	@include ss-set-responsive-font-size($font-icon, 4);

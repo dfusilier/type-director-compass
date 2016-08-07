@@ -10,13 +10,11 @@
 		"base-line-height": 1.5,
 		"max-font-size": 28px,
 		"max-line-height": 1.35,
-		"round-under": null,
 		"numb-smaller-sizes": 1,
 		"numb-larger-sizes": 4
 	), $opts);
 
-
-	// Create font-size and line-height scales
+	// Create font-size scale
 	$font-size-scale: ss-build-scale((
 		"base-value": map-get($opts, "base-font-size"),
 		"max-value": map-get($opts, "max-font-size"),
@@ -24,13 +22,14 @@
 		"numb-larger-values": map-get($opts, "numb-larger-sizes")
 	));
 
+	// Create line-height scale
 	$line-height-scale: ss-build-scale((
 		"base-value": map-get($opts, "base-line-height"),
 		"max-value": map-get($opts, "max-line-height"),
 		"numb-smaller-values": map-get($opts, "numb-smaller-sizes"),
 		"numb-larger-values": map-get($opts, "numb-larger-sizes")
 	));
-    
+
 	$sizes: ();
 	
 	// Pair each size with the correponding font-size 
@@ -45,11 +44,11 @@
 
 		// Values for size
 		$values: (
-			font-size: nth($font-size-scale, $arr-position),
-			line-height: nth($line-height-scale, $arr-position)
+			"font-size": nth($font-size-scale, $arr-position),
+			"line-height": nth($line-height-scale, $arr-position)
 		);
 
-		// Merge into $font-scale. 
+		// Add to size array.
 		$sizes: map-merge($sizes, ($name-of-size: $values));
 	}
 

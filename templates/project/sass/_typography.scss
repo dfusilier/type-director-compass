@@ -20,33 +20,23 @@ body {
 }
 
 .h1 { 
-	@include ss-set-responsive-font-size($font-heading, 4, (
-		"uppercase": true
-	));
+	@include ss-set-responsive-font-size($font-heading, 4);
 } 
   
 .h2 { 
-	@include ss-set-responsive-font-size($font-heading, 3, (
-		"uppercase": true
-	));
+	@include ss-set-responsive-font-size($font-heading, 3);
 } 
 
 .h3 { 
-	@include ss-set-responsive-font-size($font-heading, 2, (
-		"uppercase": true
-	));
+	@include ss-set-responsive-font-size($font-heading, 2);
 }
 
 .h4 { 
-	@include ss-set-responsive-font-size($font-heading, 1, (
-		"uppercase": true
-	));
+	@include ss-set-responsive-font-size($font-heading, 1);
 }
 
 .h5 { 
-	@include ss-set-responsive-font-size($font-heading, 0, (
-		"uppercase": true
-	));
+	@include ss-set-responsive-font-size($font-heading, 0);
 }
  
 .h6 { 

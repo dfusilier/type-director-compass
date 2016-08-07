@@ -18,7 +18,7 @@ Compass::Frameworks.register('sane-scale', :path => extension_path)
 # prerelease version. Date is in the form of YYYY-MM-DD
 module SaneScale
   VERSION = "0.7"
-  DATE = "2016-07-30"
+  DATE = "2016-08-07"
 end
 
 # This is where any custom SassScript should be placed. The functions will be  
