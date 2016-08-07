@@ -201,7 +201,7 @@ $font-verdana: (
 Apply an uppercase style like so:
 ```scss
 .h4 { 
-	@include ss-set-responsive-font-size($font-verdana, 1, $uppercase: true);
+	@include ss-set-responsive-font-size($font-verdana, 1, opts: ("uppercase": true));
 }
 ```
 
