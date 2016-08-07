@@ -160,7 +160,7 @@ $typography: ss-build-typography((
 			"max-font-size": 28px,
 			"max-line-height": 1.35,
 			"font-size-precision": 0.1,
-			"line-height-precision: 0.01
+			"line-height-precision": 0.01
 		),
 
 		// ...
