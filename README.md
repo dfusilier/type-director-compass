@@ -173,7 +173,7 @@ Oftentimes you may need to set very narrow lines of text, causing your line-heig
 
 ```scss
 .caption-tight { 
-	@include ss-set-responsive-font-size($font-verdana, -1, opts: ("line-height": "tight"));
+	@include ss-set-responsive-font-size($font-verdana, -1, $opts: ("line-height": "tight"));
 }
 ```
 
@@ -181,7 +181,7 @@ Other times you may want to set text to be solid (meaning no "leading"). In term
 
 ```scss
 .btn { 
-	@include ss-set-responsive-font-size($font-verdana, 1, opts: ("line-height": "solid"));
+	@include ss-set-responsive-font-size($font-verdana, 1, $opts: ("line-height": "solid"));
 }
 ```
 
@@ -201,7 +201,7 @@ $font-verdana: (
 Apply an uppercase style like so:
 ```scss
 .h4 { 
-	@include ss-set-responsive-font-size($font-verdana, 1, opts: ("uppercase": true));
+	@include ss-set-responsive-font-size($font-verdana, 1, $opts: ("uppercase": true));
 }
 ```
 
