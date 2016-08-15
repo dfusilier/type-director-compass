@@ -8,8 +8,8 @@ Type Director is a SASS framework that generates a responsive, modular, nuanced 
 ## Features
 
 1. Modular. Typographic measurements are based on proportional lists of values. 
-2. Responsive. Typography adjusts to the constraints of each breakpoint.
-3. Font rebalancing. Different fonts set to the same size often don't appear to be. Fonts are normalized, so every font appears to be exactly the size you intend.
+2. Responsive. Typography adjusts to the unique constraints of each breakpoint.
+3. Nuanced. Various properties allow detail-oriented typographers to align additional fonts or uppercase styles to a modular scale.
 
 
 
