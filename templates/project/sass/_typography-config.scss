@@ -1,4 +1,4 @@
-@import "sane-scale";
+@import "type-director";
 
 /******************************************************
 * FONTS
@@ -48,7 +48,7 @@ $font-icon-weight: normal;
 * TYPOGRAPHY CONFIG
 ******************************************************/
 
-$typography: ss-build-typography((	
+$typography: td-build-typography((	
 
 	// Define your font scales and their constraints.
 	"scales": (

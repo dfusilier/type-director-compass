@@ -1,7 +1,7 @@
 
 // Create a modular scale. Returns a list of values.
 
-@function ss-build-scale($opts: ()) {
+@function td-build-scale($opts: ()) {
 
 	// Extend default opts
 	$opts: map-merge((

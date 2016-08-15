@@ -7,7 +7,7 @@ var paths = {
 };
 
 gulp.task('delete-gem-files', function (cb) {
-	exec('rm sane-scale-*.gem', function (err, stdout, stderr) {
+	exec('rm type-director-*.gem', function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     // Will throw error if files doens't exist. 
@@ -17,7 +17,7 @@ gulp.task('delete-gem-files', function (cb) {
 });
 
 gulp.task('cleanup-gem-versions', ['delete-gem-files'], function (cb) {
-  exec('gem cleanup sane-scale', function (err, stdout, stderr) {
+  exec('gem cleanup type-director', function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     cb(err);
@@ -25,7 +25,7 @@ gulp.task('cleanup-gem-versions', ['delete-gem-files'], function (cb) {
 });
 
 gulp.task('uninstall-gem', ['cleanup-gem-versions'], function (cb) {
-  exec('gem uninstall sane-scale', function (err, stdout, stderr) {
+  exec('gem uninstall type-director', function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     cb(err);
@@ -33,7 +33,7 @@ gulp.task('uninstall-gem', ['cleanup-gem-versions'], function (cb) {
 });
 
 gulp.task('build-gem', ['uninstall-gem'], function (cb) {
-  exec('gem build sane-scale.gemspec', function (err, stdout, stderr) {
+  exec('gem build type-director.gemspec', function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     cb(err);
@@ -41,7 +41,7 @@ gulp.task('build-gem', ['uninstall-gem'], function (cb) {
 })
 
 gulp.task('install-gem', ['build-gem'], function (cb) {
-  exec('gem install sane-scale-*.gem', function (err, stdout, stderr) {
+  exec('gem install type-director-*.gem', function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     cb(err);

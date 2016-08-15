@@ -1,4 +1,4 @@
-require 'sane-scale'
+require 'type-director'
 require 'compass/import-once/activate'
 # Require any additional compass plugins here.
 

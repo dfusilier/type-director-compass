@@ -10,7 +10,7 @@ $text-color-tertiary: rgba(#000000, 0.35);
 $normal-margin: 12px;
 
 body {
-	@include ss-set-responsive-font-size($font-copy, 0);
+	@include td-set-responsive-font-size($font-copy, 0);
 	font-weight: $font-copy-weight;
 	color: $text-color-primary;
 }
@@ -20,27 +20,27 @@ body {
 }
 
 .h1 { 
-	@include ss-set-responsive-font-size($font-heading, 4);
+	@include td-set-responsive-font-size($font-heading, 4);
 } 
   
 .h2 { 
-	@include ss-set-responsive-font-size($font-heading, 3);
+	@include td-set-responsive-font-size($font-heading, 3);
 } 
 
 .h3 { 
-	@include ss-set-responsive-font-size($font-heading, 2);
+	@include td-set-responsive-font-size($font-heading, 2);
 }
 
 .h4 { 
-	@include ss-set-responsive-font-size($font-heading, 1);
+	@include td-set-responsive-font-size($font-heading, 1);
 }
 
 .h5 { 
-	@include ss-set-responsive-font-size($font-heading, 0);
+	@include td-set-responsive-font-size($font-heading, 0);
 }
  
 .h6 { 
-	@include ss-set-responsive-font-size($font-heading, -1);
+	@include td-set-responsive-font-size($font-heading, -1);
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, p, ul, ol, li, small { 
@@ -49,7 +49,7 @@ body {
 }
 
 .lead {
-	@include ss-set-responsive-font-size($font-copy, 1);
+	@include td-set-responsive-font-size($font-copy, 1);
 }
 
 p {
@@ -58,7 +58,7 @@ p {
 }
 
 small, .footnote {
-	@include ss-set-responsive-font-size($font-copy, -1); 
+	@include td-set-responsive-font-size($font-copy, -1); 
 }
 
 a {

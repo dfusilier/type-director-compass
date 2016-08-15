@@ -2,7 +2,7 @@
 // Augments a breakpoint map by building a "scale" property
 // containing the specified sizes to each breakpoint.
 
-@function ss-build-typography($opts: ()) {
+@function td-build-typography($opts: ()) {
 
 	// Extend default opts
 	$opts: map-merge((
@@ -38,7 +38,7 @@
 		));
 
 		// Create a font scale.
-		$font-scale: ss-build-font-scale($font-scale-opts);
+		$font-scale: td-build-font-scale($font-scale-opts);
 		$typography: map-merge($typography, ($font-scale-name: $font-scale));
 	}
 

@@ -1,7 +1,7 @@
 
-# Sane Scale
+# Type Director
 
-Sane Scale is a SASS framework for defining and applying typographic styles. Its goal is to generate a complex, nuanced typographic system from only a few key variables. 
+Type Director is a SASS framework for defining and applying typographic styles. Its goal is to generate a complex, nuanced typographic system from only a few key variables. 
 
 
 
@@ -15,13 +15,13 @@ Sane Scale is a SASS framework for defining and applying typographic styles. Its
 
 ## Install 
 
-* Terminal: `gem install sane-scale`
-* Compass config.rb: `require 'sane-scale'`
-* SCSS: `@import 'sane-scale';`
+* Terminal: `gem install type-director`
+* Compass config.rb: `require 'type-director'`
+* SCSS: `@import 'type-director';`
 
 Or create a new project with a sample config and type specimen:
 
-* Terminal: `compass create project-name -r sane-scale --using sane-scale`
+* Terminal: `compass create project-name -r type-director --using type-director`
 
 
 ## Usage
@@ -64,10 +64,10 @@ Similarly, you can also apply an adjustment to line-height on a font-by-font bas
 
 ### Build font scales
 
-From a few constraints, `ss-build-typography` builds a modular scale for each specified media query.
+From a few constraints, `td-build-typography` builds a modular scale for each specified media query.
 
 ```scss
-$typography: ss-build-typography((	
+$typography: td-build-typography((	
 
 	// Define your font scales and their constraints.
 	"scales": (
@@ -107,21 +107,21 @@ If you need a bit of typographic guidance, [Responsive Typography: The Basics](h
 
 ### Apply responsize sizing
 
-Use `@include ss-set-responsive-font-size($font, $size)` to apply a responsive size. The sizes available to you are based on your parameters: 
+Use `@include td-set-responsive-font-size($font, $size)` to apply a responsive size. The sizes available to you are based on your parameters: 
 * 0 is your base size.
 * 1, 2, 3... are your increasingly larger sizes.
 * -1, -2, -3... are your increasingly smaller sizes.
 
 ```scss
 .lead {
-	@include ss-set-responsive-font-size($font-georgia, 1);
+	@include td-set-responsive-font-size($font-georgia, 1);
 }
 ```
 We just applied responsive styling to the lead paragraph style. It will use media queries to apply `$font-georgia` at size `1` from the corresponding scale: 18.4px by default, and then resizing to 22.2px for tablets and larger.
 
 ```scss
 .h4 { 
-	@include ss-set-responsive-font-size($font-verdana, 1);
+	@include td-set-responsive-font-size($font-verdana, 1);
 }
 ```
 We used the same size for the `.h4` heading, but with `$font-verdana`. This will result in a font-size of 16.4px by default and 19.8px for tablets and larger. Mathematically different, but visually equal.
@@ -130,15 +130,15 @@ We used the same size for the `.h4` heading, but with `$font-verdana`. This will
 
 ### Apply static sizing
 
-You might occassionally want finer-grained control of your type styles. For these cases, use the `ss-set-font-size()` mixin which accepts an additional `$breakpoint` parameter:
+You might occassionally want finer-grained control of your type styles. For these cases, use the `td-set-font-size()` mixin which accepts an additional `$breakpoint` parameter:
 
 ```scss
 .h4 { 
-	@include ss-set-font-size($font-verdana, 1, "tablet");
+	@include td-set-font-size($font-verdana, 1, "tablet");
 }
 ```
 
-Here we just styled our h4 to have the size 1 for only the tablet breakpoint. With `ss-set-responsive-font-size()` the corresponding sizes for each other breakpoint would have also been applied.
+Here we just styled our h4 to have the size 1 for only the tablet breakpoint. With `td-set-responsive-font-size()` the corresponding sizes for each other breakpoint would have also been applied.
 
 
 ## Advanced Usage
@@ -148,7 +148,7 @@ Here we just styled our h4 to have the size 1 for only the tablet breakpoint. Wi
 Rounding to any precision is supported. 
 
 ```scss
-$typography: ss-build-typography((	
+$typography: td-build-typography((	
 
 	// Define your font scales and their constraints.
 	"scales": (
@@ -173,7 +173,7 @@ Oftentimes you may need to set very narrow lines of text, causing your line-heig
 
 ```scss
 .caption-tight { 
-	@include ss-set-responsive-font-size($font-verdana, -1, $opts: ("line-height": "tight"));
+	@include td-set-responsive-font-size($font-verdana, -1, $opts: ("line-height": "tight"));
 }
 ```
 
@@ -181,7 +181,7 @@ Other times you may want to set text to be solid (meaning no "leading"). In term
 
 ```scss
 .btn { 
-	@include ss-set-responsive-font-size($font-verdana, 1, $opts: ("line-height": "solid"));
+	@include td-set-responsive-font-size($font-verdana, 1, $opts: ("line-height": "solid"));
 }
 ```
 
@@ -201,7 +201,7 @@ $font-verdana: (
 Apply an uppercase style like so:
 ```scss
 .h4 { 
-	@include ss-set-responsive-font-size($font-verdana, 1, $opts: ("uppercase": true));
+	@include td-set-responsive-font-size($font-verdana, 1, $opts: ("uppercase": true));
 }
 ```
 

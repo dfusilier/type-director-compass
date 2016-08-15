@@ -2,7 +2,7 @@
 // Create a modular font scale. 
 // Returns a nested list of font-size and line-height values.
 
-@function ss-build-font-scale($opts: ()) {
+@function td-build-font-scale($opts: ()) {
 
 	// Extend default opts
 	$opts: map-merge((
@@ -15,7 +15,7 @@
 	), $opts);
 
 	// Create font-size scale
-	$font-size-scale: ss-build-scale((
+	$font-size-scale: td-build-scale((
 		"base-value": map-get($opts, "base-font-size"),
 		"max-value": map-get($opts, "max-font-size"),
 		"numb-smaller-values": map-get($opts, "numb-smaller-sizes"),
@@ -23,7 +23,7 @@
 	));
 
 	// Create line-height scale
-	$line-height-scale: ss-build-scale((
+	$line-height-scale: td-build-scale((
 		"base-value": map-get($opts, "base-line-height"),
 		"max-value": map-get($opts, "max-line-height"),
 		"numb-smaller-values": map-get($opts, "numb-smaller-sizes"),

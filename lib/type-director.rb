@@ -9,16 +9,16 @@ require 'sassy-math'
 # and where to find its files. Replace 'extension' with the 
 # name of your extension. Spaces allowed.
 extension_path = File.expand_path(File.join(File.dirname(__FILE__), ".."))
-Compass::Frameworks.register('sane-scale', :path => extension_path)
+Compass::Frameworks.register('type-director', :path => extension_path)
 
 # Version and date of version for your Compass extension.
 # Replace Extension with the name of your extension. Letters, 
 # numbers, and underscores only. Version is a number. If a 
 # version contains alphas, it will be created as a 
 # prerelease version. Date is in the form of YYYY-MM-DD
-module SaneScale
-  VERSION = "0.7"
-  DATE = "2016-08-07"
+module TypeDirector
+  VERSION = "0.8"
+  DATE = "2016-08-14"
 end
 
 # This is where any custom SassScript should be placed. The functions will be  

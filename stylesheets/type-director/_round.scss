@@ -1,7 +1,7 @@
  
 // Round a value to any precision
 
-@function ss-round($value: 1.0, $precision: 1.0) {
+@function td-round($value: 1.0, $precision: 1.0) {
 	$scale: 1 / $precision;
 	$result: round($value * $scale) / $scale;
 	@return $result;

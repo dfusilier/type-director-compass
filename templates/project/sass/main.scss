@@ -57,7 +57,7 @@ nav {
 }
 
 .font-comparison th {
-	@include ss-set-responsive-font-size($font-heading, 0);
+	@include td-set-responsive-font-size($font-heading, 0);
 	@extend .text-secondary;
 	border-bottom: 1px solid #ededed;
 }
@@ -117,46 +117,46 @@ nav {
 }
 
 .metrics {
-	@include ss-set-responsive-font-size($font-heading, 0);
+	@include td-set-responsive-font-size($font-heading, 0);
 }
 
 
 // Copy
 
 .copy-larger4 { 
-	@include ss-set-responsive-font-size($font-copy, 4);
+	@include td-set-responsive-font-size($font-copy, 4);
 } 
  
 .copy-larger3 { 
-	@include ss-set-responsive-font-size($font-copy, 3);
+	@include td-set-responsive-font-size($font-copy, 3);
 }
 
 .copy-larger2 { 
-	@include ss-set-responsive-font-size($font-copy, 2); 
+	@include td-set-responsive-font-size($font-copy, 2); 
 }
 
 // Icons
 
 .icon-larger4 { 
-	@include ss-set-responsive-font-size($font-icon, 4);
+	@include td-set-responsive-font-size($font-icon, 4);
 } 
  
 .icon-larger3 { 
-	@include ss-set-responsive-font-size($font-icon, 3);
+	@include td-set-responsive-font-size($font-icon, 3);
 }
 
 .icon-larger2 { 
-	@include ss-set-responsive-font-size($font-icon, 2); 
+	@include td-set-responsive-font-size($font-icon, 2); 
 }
 
 .icon-larger1 { 
-	@include ss-set-responsive-font-size($font-icon, 1);
+	@include td-set-responsive-font-size($font-icon, 1);
 } 
  
 .icon-base { 
-	@include ss-set-responsive-font-size($font-icon, 0);
+	@include td-set-responsive-font-size($font-icon, 0);
 }
 
 .icon-smaller { 
-	@include ss-set-responsive-font-size($font-copy, -1); 
+	@include td-set-responsive-font-size($font-copy, -1); 
 }

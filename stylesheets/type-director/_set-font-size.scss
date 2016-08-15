@@ -3,7 +3,7 @@
 ******************************************************/
 
 // Apply styles for a specific font, breakpoint, and size.
-@mixin ss-apply-font-styles($font, $size, $scale-name, $opts: ()) {
+@mixin td-apply-font-styles($font, $size, $scale-name, $opts: ()) {
 
 	// Extend default opts
 	$opts: map-merge((
@@ -27,7 +27,7 @@
 	// Round font-size.
 	$font-size-precision: map-deep-get($typography, $scale-name, "font-size-precision") or null;
 	@if ($font-size-precision) {
-        $font-size: ss-round($font-size, $font-size-precision);
+        $font-size: td-round($font-size, $font-size-precision);
     } 
 	
 
@@ -76,7 +76,7 @@
 	// Round line-height.
 	$line-height-precision: map-deep-get($typography, $scale-name, "line-height-precision") or null;
 	@if ($line-height-precision) {
-		$line-height: ss-round($line-height, $line-height-precision);
+		$line-height: td-round($line-height, $line-height-precision);
 	}
 
 	font-size: $font-size; 
@@ -85,7 +85,7 @@
 
 // Apply non-responsive styling. Only the size used for
 // the specified media query will be applied.
-@mixin ss-set-font-size($font, $size, $scale-name, $opts: ()) {
+@mixin td-set-font-size($font, $size, $scale-name, $opts: ()) {
 	
 	// Extend default opts
 	$opts: map-merge((
@@ -99,12 +99,12 @@
 		text-transform: uppercase;
 	}
 
-	@include ss-apply-font-styles($font, $size, $scale-name, $opts);
+	@include td-apply-font-styles($font, $size, $scale-name, $opts);
 }
 
 // Apply responsive styling. Corresponding sizes for
 // each media query will be applied.
-@mixin ss-set-responsive-font-size($font, $size: 0, $opts: ()) {
+@mixin td-set-responsive-font-size($font, $size: 0, $opts: ()) {
 	
 	// Extend default opts
 	$opts: map-merge((
@@ -122,14 +122,14 @@
 
 		// For the default styles, don't include a media query.
 		@if $scale-name == "default" {
-			@include ss-apply-font-styles($font, $size, $scale-name, $opts);
+			@include td-apply-font-styles($font, $size, $scale-name, $opts);
 		}
 
 		// For other breakpoints, set style with a media query.
 		@else {
 			$media-query: map-deep-get($typography, $scale-name, "media-query");
 			@media #{$media-query} {
-				@include ss-apply-font-styles($font, $size, $scale-name, $opts);
+				@include td-apply-font-styles($font, $size, $scale-name, $opts);
 			} 
 		}
 	}

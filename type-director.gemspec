@@ -1,21 +1,21 @@
 # Replace extension with the name of your extension's .rb file
-require './lib/sane-scale'
+require './lib/type-director'
 
 Gem::Specification.new do |s|
   # Release Specific Information
   #  Replace Extension with the name you used in your extension.rb
   #   in the mdodule with version and date.
-  s.version = SaneScale::VERSION
-  s.date = SaneScale::DATE
+  s.version = TypeDirector::VERSION
+  s.date = TypeDirector::DATE
 
   # Gem Details
   # Replace "extension" with the name of your extension
-  s.name = "sane-scale"
-  s.rubyforge_project = "sane-scale"
+  s.name = "type-director"
+  s.rubyforge_project = "type-director"
   # Description of your extension
   s.description = %q{Modular, responsive, scalable typography}
   # A summary of your Compass extension. Should be different than Description
-  s.summary = %q{Sane Scale is a framework for defining and applying typographic styles. Its goal is to generate a complex, nuanced typographic system from only a few key variables.}
+  s.summary = %q{Type Director is a SASS framework that generates a responsive, modular, nuanced typographic system from only a few key variables.}
   # The names of the author(s) of the extension.
   # If more than one author, comma separate inside of the brackets
   s.authors = ["David Fusilier"]
@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   # If more than one author, comma separate inside of the brackets
   s.email = ["dfusil2@gmail.com"]
   # URL of the extension
-  s.homepage = "https://github.com/dfusilier/sane-scale.git"
+  s.homepage = "https://github.com/dfusilier/type-director.git"
   # More
   s.licenses    = ['MIT']
 
