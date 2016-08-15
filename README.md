@@ -1,7 +1,7 @@
 
 # Type Director
 
-Type Director is a SASS framework for defining and applying typographic styles. Its goal is to generate a complex, nuanced typographic system from only a few key variables. 
+Type Director is a SASS framework that generates a responsive, modular, nuanced typographic system from only a few key variables.
 
 
 
