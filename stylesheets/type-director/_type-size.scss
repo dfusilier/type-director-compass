@@ -146,13 +146,27 @@
 		"line-height": "normal"
 	), $opts);
 
-	font-family: map-deep-get($typography, "typefaces", $typeface-name, "family");
+	$media-query: map-deep-get($typography, "environments", $environment-name, "media-query");
 
-	@if map-get($opts, "uppercase") {
-		text-transform: uppercase;
+	// If media query is null, apply styles w/o media query.
+	@if $media-query == null {
+
+		// Apply general styles.
+		font-family: map-deep-get($typography, "typefaces", $typeface-name, "family");
+
+		@if map-get($opts, "uppercase") {
+			text-transform: uppercase;
+		}
+		
+		@include td-apply-adjusted-type-size($typeface-name, $size, $environment-name, $opts);
 	}
 
-	@include td-apply-adjusted-type-size($typeface-name, $size, $environment-name, $opts);
+	// Otherwise, apply within media query.
+	@else {
+		@media #{$media-query} {
+			@include td-apply-adjusted-type-size($typeface-name, $size, $environment-name, $opts);
+		} 
+	}
 }
 
 
@@ -166,29 +180,8 @@
 		"line-height": "normal"
 	), $opts);
 
-	// Apply general styles.
-	font-family: map-deep-get($typography, "typefaces", $typeface-name, "family");
-
-	@if map-get($opts, "uppercase") {
-		text-transform: uppercase;
-	}
-
 	// Apply type size (font-size and line-height) for each environment.
-	$environments: map-get($typography, "environments");
-	@each $environment-name, $environment in $environments {
-
-		$media-query: map-get($environment, "media-query");
-
-		// If media query is null, apply styles w/o media query.
-		@if $media-query == null {
-			@include td-apply-adjusted-type-size($typeface-name, $size, $environment-name, $opts);
-		}
-
-		// Otherwise, apply within media query.
-		@else {
-			@media #{$media-query} {
-				@include td-apply-adjusted-type-size($typeface-name, $size, $environment-name, $opts);
-			} 
-		}
+	@each $environment-name, $environment in map-get($typography, "environments") {
+		@include td-type-size($typeface-name, $size, $environment-name, $opts);
 	}
 }

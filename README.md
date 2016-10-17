@@ -59,7 +59,7 @@ Oftentimes two typfaces set to the same font-size do not appear to be. This is b
 
 For example, Verdana appears 11% larger than Georgia. To normalize it with Georgia, we can set a `font-size-adjustment: 0.89`. This will cause Verdana to be 11% smaller than Georgia when set to the same size.
 
-Similarly, you can also apply an adjustment to line-height on a font-by-font basis by specifying a `line-height-adjustment`.
+Similarly, you can also apply an adjustment to line-height on a typeface-by-typeface basis by specifying a `line-height-adjustment`.
 
 
 
@@ -88,7 +88,7 @@ $environments: (
 	)
 );
 ```
-For each environment, you'll need to specify font-size and line-height pair for both a base size and a max size. The type scale for each environment will be interpolated from these constraints.
+For each environment, you'll need to specify font-size and line-height for both a base size and a max size. The type scale for each environment will be interpolated from these constraints.
 
 A `media-query` property should also be set for each environment, except for the environment you'd like to be default.
 
@@ -116,7 +116,7 @@ If you need a bit of typographic guidance, [Responsive Typography: The Basics](h
 
 ### Apply responsize sizing
 
-Use `@include td-responsive-type-size($font-name, $size)` to apply a responsive size. The type sizes available to you are based on your parameters: 
+Use `@include td-responsive-type-size($typface-name, $size)` to apply a responsive size. The type sizes available to you are based on your parameters: 
 * 0 is your base size.
 * 1, 2, 3... are your increasingly larger sizes.
 * -1, -2, -3... are your increasingly smaller sizes.
@@ -130,10 +130,10 @@ We just applied responsive styling to the lead paragraph style. It will use medi
 
 ```scss
 .h4 { 
-	@include td-set-responsive-font-size("verdana", 1);
+	@include td-responsive-type-size("verdana", 1);
 }
 ```
-We used the same size for the `.h4` heading, but with Verdana. This will result in a font-size of 16.4px for phones and 19.8px for tablets and larger. Mathematically different that Georgia at size `1`, but visually equal.
+We used the same size for the `.h4` heading, but with Verdana. This will result in a font-size of 16.4px for phones and 19.8px for tablets and larger. Mathematically different than Georgia at size `1`, but visually equal.
 
 
 
@@ -143,11 +143,12 @@ You might occassionally want finer-grained control of your type styles. For thes
 
 ```scss
 .h4 { 
-	@include td-set-font-size("verdana", 1, "tablet");
+	@include td-font-size("verdana", 1, "phone");
+	@include td-font-size("verdana", 2, "tablet");
 }
 ```
 
-Here we just styled our h4 to have the size 1 for only the tablet breakpoint. With `td-set-responsive-font-size()` the corresponding sizes for each other environments would have also been applied.
+Here we just applied size 1 for phones and size 2 for tablets. If we had used `td-set-responsive-font-size()` the same size would have been applied for each environment. 
 
 
 ## Advanced Usage
