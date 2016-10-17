@@ -1,10 +1,11 @@
 @import "type-director/map-deep-get";
-@import "type-director/build-scale";
-@import "type-director/build-font-scale";
-@import "type-director/build-typography";
+@import "type-director/scale";
+@import "type-director/type-scale";
+@import "type-director/environment";
+@import "type-director/typography";
 
-$typography: td-build-typography() !default; 
+$typography: td-typography() !default; 
  
 @import "type-director/round";
-@import "type-director/set-font-size";
+@import "type-director/type-size";
 

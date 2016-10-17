@@ -1,0 +1,194 @@
+/******************************************************
+* MIXINS
+******************************************************/
+
+@function td-get-font-size-adjustment($typeface-name, $opts: ()) {
+
+  	// Extend default opts with passed opts.
+	$opts: map-merge((
+		"uppercase": false,
+		"line-height": "normal"
+	), $opts);
+
+	// Apply font-size adjustment for the font passed.
+	$font-size-adjustment: map-deep-get($typography, "typefaces", $typeface-name, "font-size-adjustment") or 1.00;
+
+	// If uppercase option passed, also apply uppercase adjustment for the font passed.
+	@if map-get($opts, "uppercase") {
+		$uppercase-adjustment: map-deep-get($typography, "typefaces", $typeface-name, "uppercase-adjustment") or 1.00;
+		$font-size-adjustment: $font-size-adjustment * $uppercase-adjustment;
+	}
+
+	@return $font-size-adjustment;
+}
+
+@function td-get-line-height-adjustment($typeface-name, $line-height, $opts: ()) {
+
+  	// Extend default opts with passed opts.
+	$opts: map-merge((
+		"uppercase": false,
+		"line-height": "normal"
+	), $opts);
+
+	// Calculate adjustments.
+	$line-height-adjustment: map-deep-get($typography, "typefaces", $typeface-name, "line-height-adjustment") or 1.00;
+	$font-size-adjustment: td-get-font-size-adjustment($typeface-name, $opts);
+
+	// If using relative line heights, the font-size-adjustment will 
+	// affect the line-height. This removes the unwanted effect.
+	@if unitless($line-height) { 
+		$line-height-adjustment: $line-height-adjustment * (1 / $font-size-adjustment);
+	}
+
+	@return $line-height-adjustment;
+}
+
+
+// Get adjusted font-size for specific font, environment, and size.
+@mixin td-apply-adjusted-font-size($typeface-name, $size, $environment-name, $opts: ()) {
+
+	// Extend default opts with passed opts.
+	$opts: map-merge((
+		"uppercase": false,
+		"line-height": "normal"
+	), $opts);
+	
+	// Default size.
+	$font-size: map-deep-get($typography, "environments", $environment-name, "sizes", $size, "font-size"); 
+
+	// Apply font-size adjustment for the font passed.
+	$font-size-adjustment: td-get-font-size-adjustment($typeface-name, $opts);
+	$font-size: $font-size * $font-size-adjustment;
+
+	// Round final value.
+	$font-size-precision: map-deep-get($typography, "environments", $environment-name, "font-size-precision") or null;
+	@if ($font-size-precision) {
+        $font-size: td-round($font-size, $font-size-precision);
+    } 
+
+	font-size: $font-size; 
+}
+
+
+
+// Get adjusted line-height for specific font, environment, and size.
+@mixin td-apply-adjusted-line-height($typeface-name, $size, $environment-name, $opts: ()) {
+
+	// Extend default opts with passed opts.
+	$opts: map-merge((
+		"uppercase": false,
+		"line-height": "normal"
+	), $opts);
+
+	$line-height: null;
+
+	// Normal line-height associated with environment and size.
+	$normal-line-height: map-deep-get($typography, "environments", $environment-name, "sizes", $size, "line-height");
+
+	// Solid line-height, meaning no space between lines. 
+	// 1.0 if unitless, otherwise equal to font-size.
+	$solid-line-height: if(unitless($normal-line-height), 1.0, $font-size);
+	
+	// Halfway between normal and solid line-height.
+	$tight-line-height: (($normal-line-height - $solid-line-height) / 2) + $solid-line-height;
+
+
+	$line-height-setting: map-get($opts, "line-height");
+	$line-height-adjustment: td-get-line-height-adjustment($typeface-name, $normal-line-height, $opts);
+
+	
+	// Use solid line height, but don't apply adjustment.
+	@if $line-height-setting == "solid" { 
+		$line-height: $solid-line-height;
+
+	// Use tight line-height and apply line-height adjustment.
+	} @else if $line-height-setting == "tight" {
+		$line-height: $tight-line-height * $line-height-adjustment;
+
+	// Use normal line-height and apply line-height adjustment.
+	} @else {
+		$line-height: $normal-line-height * $line-height-adjustment;
+	}
+
+	// Round line-height.
+	$line-height-precision: map-deep-get($typography, "environments", $environment-name, "line-height-precision") or null;
+	@if ($line-height-precision) {
+		$line-height: td-round($line-height, $line-height-precision);
+	}
+
+	line-height: $line-height;
+}
+
+
+
+// Apply styles for a specific font, environment, and size.
+@mixin td-apply-adjusted-type-size($typeface-name, $size, $environment-name, $opts: ()) {
+
+	// Extend default opts with passed opts.
+	$opts: map-merge((
+		"uppercase": false,
+		"line-height": "normal"
+	), $opts);
+
+	@include td-apply-adjusted-font-size($typeface-name, $size, $environment-name, $opts);
+	@include td-apply-adjusted-line-height($typeface-name, $size, $environment-name, $opts);
+}
+
+
+
+// Apply non-responsive styling. Only the size used for
+// the specified environment will be applied.
+@mixin td-type-size($typeface-name, $size, $environment-name, $opts: ()) {
+	
+	// Extend default opts with passed opts.
+	$opts: map-merge((
+		"uppercase": false,
+		"line-height": "normal"
+	), $opts);
+
+	font-family: map-deep-get($typography, "typefaces", $typeface-name, "family");
+
+	@if map-get($opts, "uppercase") {
+		text-transform: uppercase;
+	}
+
+	@include td-apply-adjusted-type-size($typeface-name, $size, $environment-name, $opts);
+}
+
+
+// Apply responsive styling. Unique font-size and line-height 
+// will be applied for each environment.
+@mixin td-responsive-type-size($typeface-name, $size: 0, $opts: ()) {
+	
+	// Extend default opts with passed opts.
+	$opts: map-merge((
+		"uppercase": false,
+		"line-height": "normal"
+	), $opts);
+
+	// Apply general styles.
+	font-family: map-deep-get($typography, "typefaces", $typeface-name, "family");
+
+	@if map-get($opts, "uppercase") {
+		text-transform: uppercase;
+	}
+
+	// Apply type size (font-size and line-height) for each environment.
+	$environments: map-get($typography, "environments");
+	@each $environment-name, $environment in $environments {
+
+		$media-query: map-get($environment, "media-query");
+
+		// If media query is null, apply styles w/o media query.
+		@if $media-query == null {
+			@include td-apply-adjusted-type-size($typeface-name, $size, $environment-name, $opts);
+		}
+
+		// Otherwise, apply within media query.
+		@else {
+			@media #{$media-query} {
+				@include td-apply-adjusted-type-size($typeface-name, $size, $environment-name, $opts);
+			} 
+		}
+	}
+}

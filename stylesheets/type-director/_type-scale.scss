@@ -1,10 +1,10 @@
  
-// Create a modular font scale. 
-// Returns a nested list of font-size and line-height values.
+// Returns a scale of a map of proportionally-related type sizes. 
+// Each size is composed of a font-size and line-height value.
 
-@function td-build-font-scale($opts: ()) {
+@function td-type-scale($opts: ()) {
 
-	// Extend default opts
+	// Extend default opts with passed opts.
 	$opts: map-merge((
 		"base-font-size": 16px,
 		"base-line-height": 1.5,
@@ -15,7 +15,7 @@
 	), $opts);
 
 	// Create font-size scale
-	$font-size-scale: td-build-scale((
+	$font-size-scale: td-scale((
 		"base-value": map-get($opts, "base-font-size"),
 		"max-value": map-get($opts, "max-font-size"),
 		"numb-smaller-values": map-get($opts, "numb-smaller-sizes"),
@@ -23,13 +23,14 @@
 	));
 
 	// Create line-height scale
-	$line-height-scale: td-build-scale((
+	$line-height-scale: td-scale((
 		"base-value": map-get($opts, "base-line-height"),
 		"max-value": map-get($opts, "max-line-height"),
 		"numb-smaller-values": map-get($opts, "numb-smaller-sizes"),
 		"numb-larger-values": map-get($opts, "numb-larger-sizes")
 	));
 
+	// The object we'll return.
 	$sizes: ();
 	
 	// Pair each size with the correponding font-size 
@@ -52,6 +53,5 @@
 		$sizes: map-merge($sizes, ($name-of-size: $values));
 	}
 
-	$font-scale: map-merge($opts, ("sizes": $sizes));
-	@return $font-scale;
+	@return $sizes;
 }

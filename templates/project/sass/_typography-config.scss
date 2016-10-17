@@ -1,67 +1,48 @@
 @import "type-director";
 
 /******************************************************
-* FONTS
-******************************************************/
-
-// Default font
-
-$font-georgia: (
-	"family": unquote("Georgia, serif"),
-	"font-size-adjustment": 1.00,
-	"line-height-adjustment": 1.00,
-	"uppercase-adjustment": 0.82
-);
-
-// Additional fonts
-
-$font-verdana: (
-	"family": unquote("Verdana, sans-serif"),
-	"font-size-adjustment": 0.89,
-	"line-height-adjustment": 0.94,
-	"uppercase-adjustment": 0.85
-);
- 
-$font-feather: (
-	"family": unquote("'Feather'"),
-	"font-size-adjustment": 0.95,
-	"line-height-adjustment": 1.00
-);
-
-/******************************************************
-* FONT ROLES
-******************************************************/
-
-// For simple projects I like to define font-copy, font-heading 
-// and font-icon roles, but this may not always be appropriate.
-
-$font-copy: $font-georgia;
-$font-copy-weight: normal;
-
-$font-heading: $font-verdana;
-$font-heading-weight: bold;
-
-$font-icon: $font-feather;
-$font-icon-weight: normal;
-
-/******************************************************
 * TYPOGRAPHY CONFIG
 ******************************************************/
 
-$typography: td-build-typography((	
+$typography: td-typography((	
 
-	// Define your font scales and their constraints.
-	"scales": (
+	// Define your typefaces and any relevant adjustments.
+	"typefaces": (
 
-		// Phone sizes 
-		"default": (
+		"georgia": (
+			"family": (Georgia, serif),
+			"font-size-adjustment": 1.00,
+			"line-height-adjustment": 1.00,
+			"uppercase-adjustment": 0.82
+		),
+
+		"verdana": (
+			"family": (Verdana, sans-serif),
+			"font-size-adjustment": 0.89,
+			"line-height-adjustment": 0.94,
+			"uppercase-adjustment": 0.85
+		),
+
+		"feather": (
+			"family": ("Feather"),
+			"font-size-adjustment": 1.00,
+			"line-height-adjustment": 1.00,
+			"uppercase-adjustment": 0.82
+		)
+	),
+
+	// Define your environments and their constraints.
+	"environments": (
+
+		// Phone environment
+		"phone": (
 			"base-font-size": 16px,
 			"base-line-height": 1.5,
 			"max-font-size": 28px,
 			"max-line-height": 1.35
 		),
 
-		// Tablet sizes and larger
+		// Tablet and larger environments
 		"tablet": (
 			"media-query": "screen and (min-width: 768px)",
 			"base-font-size": 18px,
@@ -71,8 +52,19 @@ $typography: td-build-typography((
 		)
 	),
 
-	// Other than the base, how many sizes do you need?
-	"numb-smaller-sizes": 1,
+	// Other than the base, how many type sizes do you need?
+	"numb-smaller-sizes": 2,
 	"numb-larger-sizes": 4
 ));
+
+/******************************************************
+* TYPEFACE ROLES
+******************************************************/
+
+// It's a good idea to future-proof yourself by 
+// mapping typefaces to more functional names.
+
+$typeface-default: "georgia";
+$typeface-alternate: "verdana";
+$typeface-icon: "feather";
 

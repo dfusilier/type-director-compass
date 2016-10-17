@@ -10,37 +10,37 @@ $text-color-tertiary: rgba(#000000, 0.35);
 $normal-margin: 12px;
 
 body {
-	@include td-set-responsive-font-size($font-copy, 0);
-	font-weight: $font-copy-weight;
+	@include td-responsive-type-size($typeface-default, 0);
+	font-weight: normal;
 	color: $text-color-primary;
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6 { 
-	font-weight: $font-heading-weight;
+	font-weight: bold;
 }
 
 .h1 { 
-	@include td-set-responsive-font-size($font-heading, 4);
+	@include td-responsive-type-size($typeface-alternate, 4);
 } 
-  
+
 .h2 { 
-	@include td-set-responsive-font-size($font-heading, 3);
+	@include td-responsive-type-size($typeface-alternate, 3);
 } 
 
 .h3 { 
-	@include td-set-responsive-font-size($font-heading, 2);
+	@include td-responsive-type-size($typeface-alternate, 2);
 }
 
 .h4 { 
-	@include td-set-responsive-font-size($font-heading, 1);
+	@include td-responsive-type-size($typeface-alternate, 1);
 }
 
 .h5 { 
-	@include td-set-responsive-font-size($font-heading, 0);
+	@include td-responsive-type-size($typeface-alternate, 0);
 }
  
 .h6 { 
-	@include td-set-responsive-font-size($font-heading, -1);
+	@include td-responsive-type-size($typeface-alternate, -1);
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, p, ul, ol, li, small { 
@@ -49,7 +49,7 @@ body {
 }
 
 .lead {
-	@include td-set-responsive-font-size($font-copy, 1);
+	@include td-responsive-type-size($typeface-default, 1);
 }
 
 p {
@@ -58,7 +58,7 @@ p {
 }
 
 small, .footnote {
-	@include td-set-responsive-font-size($font-copy, -1); 
+	@include td-responsive-type-size($typeface-default, -1); 
 }
 
 a {
@@ -74,7 +74,6 @@ a:hover {
 a:active {
 	color: red;
 }
-
 
 em {
 	font-style: italic; 

@@ -1,0 +1,29 @@
+ 
+// Returns an environment profile, which associates a 
+// media query with a type-scale and other parameters.
+
+@function td-environment($opts: ()) {
+
+	// Extend default opts with passed opts.
+	$opts: map-merge((
+		"media-query": null,
+		"font-size-precision": null,
+		"line-height-precision": null,
+		"base-font-size": 16px,
+		"base-line-height": 1.5,
+		"max-font-size": 28px,
+		"max-line-height": 1.35,
+		"numb-smaller-sizes": 1,
+		"numb-larger-sizes": 4
+	), $opts);
+
+	// Create environment.
+	$environment: (
+		"media-query": map-get($opts, "media-query"),
+		"font-size-precision": map-get($opts, "font-size-precision"),
+		"line-height-precision": map-get($opts, "line-height-precision"),
+		"sizes": td-type-scale($opts)
+	);
+
+	@return $environment;
+}

@@ -57,7 +57,7 @@ nav {
 }
 
 .font-comparison th {
-	@include td-set-responsive-font-size($font-heading, 0);
+	@include td-responsive-type-size($typeface-alternate, 0);
 	@extend .text-secondary;
 	border-bottom: 1px solid #ededed;
 }
@@ -117,46 +117,89 @@ nav {
 }
 
 .metrics {
-	@include td-set-responsive-font-size($font-heading, 0);
+	@include td-responsive-type-size($typeface-alternate, 0);
 }
 
+// Default font 
 
-// Copy
-
-.copy-larger4 { 
-	@include td-set-responsive-font-size($font-copy, 4);
+.typeface-default-larger4 { 
+	@include td-responsive-type-size($typeface-default, 4);
 } 
- 
-.copy-larger3 { 
-	@include td-set-responsive-font-size($font-copy, 3);
-}
 
-.copy-larger2 { 
-	@include td-set-responsive-font-size($font-copy, 2); 
-}
-
-// Icons
-
-.icon-larger4 { 
-	@include td-set-responsive-font-size($font-icon, 4);
+.typeface-default-larger3 { 
+	@include td-responsive-type-size($typeface-default, 3);
 } 
- 
-.icon-larger3 { 
-	@include td-set-responsive-font-size($font-icon, 3);
-}
 
-.icon-larger2 { 
-	@include td-set-responsive-font-size($font-icon, 2); 
-}
-
-.icon-larger1 { 
-	@include td-set-responsive-font-size($font-icon, 1);
+.typeface-default-larger2 { 
+	@include td-responsive-type-size($typeface-default, 2);
 } 
- 
-.icon-base { 
-	@include td-set-responsive-font-size($font-icon, 0);
-}
 
-.icon-smaller { 
-	@include td-set-responsive-font-size($font-copy, -1); 
-}
+.typeface-default-larger1 { 
+	@include td-responsive-type-size($typeface-default, 1);
+} 
+
+.typeface-default-base { 
+	@include td-responsive-type-size($typeface-default, 0);
+} 
+
+.typeface-default-smaller1 { 
+	@include td-responsive-type-size($typeface-default, -1);
+} 
+
+// Alternate font
+
+.typeface-alt-larger4 { 
+	@include td-responsive-type-size($typeface-alternate, 4);
+	font-weight: bold;
+} 
+
+.typeface-alt-larger3 { 
+	@include td-responsive-type-size($typeface-alternate, 3);
+	font-weight: bold;
+} 
+
+.typeface-alt-larger2 { 
+	@include td-responsive-type-size($typeface-alternate, 2);
+	font-weight: bold;
+} 
+
+.typeface-alt-larger1 { 
+	@include td-responsive-type-size($typeface-alternate, 1);
+	font-weight: bold;
+} 
+
+.typeface-alt-base { 
+	@include td-responsive-type-size($typeface-alternate, 0);
+	font-weight: bold;
+} 
+
+.typeface-alt-smaller1 { 
+	@include td-responsive-type-size($typeface-alternate, -1);
+	font-weight: bold;
+} 
+
+// Alternate font
+
+.typeface-icon-larger4 { 
+	@include td-responsive-type-size($typeface-icon, 4);
+} 
+
+.typeface-icon-larger3 { 
+	@include td-responsive-type-size($typeface-icon, 3);
+} 
+
+.typeface-icon-larger2 { 
+	@include td-responsive-type-size($typeface-icon, 2);
+} 
+
+.typeface-icon-larger1 { 
+	@include td-responsive-type-size($typeface-icon, 1);
+} 
+
+.typeface-icon-base { 
+	@include td-responsive-type-size($typeface-icon, 0);
+} 
+
+.typeface-icon-smaller1 { 
+	@include td-responsive-type-size($typeface-icon, -1);
+} 

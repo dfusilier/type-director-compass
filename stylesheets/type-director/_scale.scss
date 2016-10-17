@@ -1,9 +1,9 @@
 
 // Create a modular scale. Returns a list of values.
 
-@function td-build-scale($opts: ()) {
+@function td-scale($opts: ()) {
 
-	// Extend default opts
+	// Extend default opts with passed opts.
 	$opts: map-merge((
 		"base-value": 16px,
 		"max-value": 28px,
@@ -16,23 +16,14 @@
 	$numb-larger-values: map-get($opts, "numb-larger-values");
 	$numb-smaller-values: map-get($opts, "numb-smaller-values");
 
-	// Build the scale.
+	// The object we'll return.
 	$scale: ();
 
 	// The ratio we'll use to calculate the missing sizes.
 	$scaling-ratio: nth-root($max-value / $base-value, $numb-larger-values); 
 
-	// Calculate and add smaller values to the scale.
-	@for $i from -$numb-smaller-values through -1 {
-		$size: $base-value * power($scaling-ratio, $i);
-		$scale: append($scale, $size);
-	}
-
-	// Add the base value to the scale.
-	$scale: append($scale, $base-value);
-
-	// Calculate and add larger values to the scale.
-	@for $i from 1 through ($numb-larger-values) {
+	// Calculate and add values to the scale.
+	@for $i from -$numb-smaller-values through $numb-larger-values {
 		$size: $base-value * power($scaling-ratio, $i);
 		$scale: append($scale, $size);
 	}

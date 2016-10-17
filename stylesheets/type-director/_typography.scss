@@ -1,0 +1,62 @@
+
+// An comprehensize map defining typography. Composed of multiple
+// environment profiles, each associating a media query with a type
+// scale. Each type scale is composed of proportionally related
+// sizes, themselves composed of a font-size and a line-height.
+
+@function td-typography($opts: ()) {
+
+	// Extend default opts with passed opts.
+	$opts: map-merge((
+		"typefaces": (
+			"georgia": (
+				"family": (Georgia, serif),
+				"font-size-adjustment": 1.00,
+				"line-height-adjustment": 1.00,
+				"uppercase-adjustment": 0.82
+			)
+		),
+		"environments": (
+			"default": (
+				"base-font-size": 16px,
+				"base-line-height": 1.5,
+				"max-font-size": 28px,
+				"max-line-height": 1.35
+			),
+			"tablet": (
+				"media-query": "screen and (min-width: 768px)",
+				"base-font-size": 18px,
+				"base-line-height": 1.6,
+				"max-font-size": 42px,
+				"max-line-height": 1.25
+			)
+		),
+		"numb-smaller-sizes": 1,
+		"numb-larger-sizes": 4
+	), $opts);
+
+	$typefaces: map-get($opts, "typefaces");
+	$environments: ();
+
+	// Create a type environment for each environment.
+	@each $environment-name, $environment-opts in map-get($opts, "environments") {
+
+		// Create environment opts by merging global opts with environment opts
+		$environment-opts: map-merge($environment-opts, (
+			"numb-smaller-sizes": map-get($opts, "numb-smaller-sizes"),
+			"numb-larger-sizes": map-get($opts, "numb-larger-sizes")
+		));
+
+		// Create environment and merge into typography.
+		$environment: td-environment($environment-opts);
+		$environments: map-merge($environments, ($environment-name: $environment));
+	}
+
+	// The object we'll return.
+	$typography: (
+		"typefaces": $typefaces,
+		"environments": $environments
+	);
+
+	@return $typography;
+}
